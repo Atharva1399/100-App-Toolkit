@@ -1,0 +1,109 @@
+{
+ "stats": {
+  "n": 100,
+  "ready": 59,
+  "friction": 30,
+  "blocked": 11,
+  "selfserve": 73,
+  "free": 57,
+  "gated": 15,
+  "oauth": 78,
+  "static": 80,
+  "both": 62,
+  "oauth_only": 13,
+  "mcp_official": 83,
+  "mcp_none": 7,
+  "needs_human": 2,
+  "acc1": 97.5,
+  "acc2": 98.8,
+  "acc1_raw": 91.2,
+  "perfect1": 19,
+  "perfect2": 19,
+  "flagged1": 41,
+  "flagged2": 15,
+  "urls1_ok": 377,
+  "urls1": 382,
+  "urls2_ok": 388,
+  "urls2": 394,
+  "changes": 212,
+  "changed_apps": 40,
+  "changes_agent": 27,
+  "changes_browser": 0,
+  "browser_checked": 6,
+  "evidence_upgrades": 185,
+  "substantive_apps": 19,
+  "low1": 13,
+  "low2": 1,
+  "nh1": 18,
+  "nonready": 41,
+  "human_gate": 22,
+  "paid_gate": 11,
+  "no_api": 4,
+  "support_trial": 6,
+  "ai_paid": 4,
+  "devprod_free": 17,
+  "seg_ready::CRM": 9,
+  "seg_ready::Customer support": 7,
+  "seg_ready::Messaging & voice": 7,
+  "seg_ready::Marketing & ads": 5,
+  "seg_ready::E-commerce": 3,
+  "seg_ready::SEO, scraping & enrichment": 5,
+  "seg_ready::Dev & data infra": 8,
+  "seg_ready::Productivity & PM": 9,
+  "seg_ready::Finance & payments": 2,
+  "seg_ready::AI & niche tools": 4
+ },
+ "score_pass1": {
+  "n_apps": 20,
+  "per_field": {
+   "auth": 1.0,
+   "access": 0.95,
+   "mcp": 1.0,
+   "buildability": 0.95
+  },
+  "overall": 0.975,
+  "all_fields_right": 19,
+  "misses": [
+   {
+    "id": 60,
+    "app": "Clay",
+    "field": "access",
+    "predicted": "paid-plan",
+    "expected": [
+     "self-serve-free"
+    ]
+   },
+   {
+    "id": 60,
+    "app": "Clay",
+    "field": "buildability",
+    "predicted": "ready-with-friction",
+    "expected": [
+     "ready"
+    ]
+   }
+  ]
+ },
+ "score_final": {
+  "n_apps": 20,
+  "per_field": {
+   "auth": 1.0,
+   "access": 1.0,
+   "mcp": 1.0,
+   "buildability": 0.95
+  },
+  "overall": 0.9875,
+  "all_fields_right": 19,
+  "misses": [
+   {
+    "id": 60,
+    "app": "Clay",
+    "field": "buildability",
+    "predicted": "ready-with-friction",
+    "expected": [
+     "ready"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,3101 @@
+[
+ {
+  "id": 1,
+  "app": "Salesforce",
+  "checks": {
+   "auth": {
+    "url": "https://raw.githubusercontent.com/wiki/forcedotcom/mcp-hosted/FAQ.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://github.com/salesforcecli/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://github.com/salesforcecli/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "agent-asked-for-human"
+  ]
+ },
+ {
+  "id": 2,
+  "app": "HubSpot",
+  "checks": {
+   "auth": {
+    "url": "https://developers.hubspot.com/docs/api-reference/auth-oauth-v3/guide",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.hubspot.com/docs/getting-started/account-types",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.hubspot.com/docs/api/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.hubspot.com/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 3,
+  "app": "Pipedrive",
+  "checks": {
+   "auth": {
+    "url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.pipedrive.com/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.pipedrive.com/docs/api/v1/Deals",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://www.pipedrive.com/en/features/mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 4,
+  "app": "Attio",
+  "checks": {
+   "auth": {
+    "url": "https://docs.attio.com/rest-api/guides/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.attio.com/rest-api/guides/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.attio.com/rest-api/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.attio.com/mcp/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 5,
+  "app": "Twenty",
+  "checks": {
+   "auth": {
+    "url": "https://docs.twenty.com/developers/extend/api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.twenty.com/developers/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.twenty.com/developers/extend/api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.twenty.com/developers/extend/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 6,
+  "app": "Podio",
+  "checks": {
+   "auth": {
+    "url": "https://developers.podio.com/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.podio.com/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.podio.com/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://www.progress.com/podio/documentation/using-podio/podio-mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 7,
+  "app": "Zoho CRM",
+  "checks": {
+   "auth": {
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.zoho.com/crm/developer/docs/api/v4/api-limits.html",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://www.zoho.com/crm/developer/docs/api/v8/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 8,
+  "app": "Close",
+  "checks": {
+   "auth": {
+    "url": "https://developer.close.com/topics/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.close.com/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.close.com/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.close.com/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 9,
+  "app": "Copper",
+  "checks": {
+   "auth": {
+    "url": "https://developer.copper.com/introduction/authentication.html",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://copper.com/free-trial",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.copper.com/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://www.copper.com/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 10,
+  "app": "DealCloud",
+  "checks": {
+   "auth": {
+    "url": "https://api.docs.dealcloud.com/docs/token",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://api.docs.dealcloud.com/docs/apikeys",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://api.docs.dealcloud.com",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://api.docs.dealcloud.com/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 11,
+  "app": "Zendesk",
+  "checks": {
+   "auth": {
+    "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.zendesk.com/register/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.zendesk.com/api-reference/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://support.zendesk.com/hc/en-us/articles/11398710406554",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 12,
+  "app": "Intercom",
+  "checks": {
+   "auth": {
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.intercom.com/docs/guides/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.intercom.com/docs/guides/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 13,
+  "app": "Freshdesk",
+  "checks": {
+   "auth": {
+    "url": "https://developers.freshdesk.com/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.freshdesk.com/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.freshdesk.com/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://partnersupport.freshworks.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "checks": {
+   "auth": {
+    "url": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://dev.frontapp.com/docs/welcome",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://dev.frontapp.com/reference/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://dev.frontapp.com/docs/mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 15,
+  "app": "Pylon",
+  "checks": {
+   "auth": {
+    "url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.usepylon.com/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.usepylon.com/pylon-docs/developer/api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 16,
+  "app": "LiveAgent",
+  "checks": {
+   "auth": {
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.liveagent.com/pricing/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://github.com/QualityUnit/LiveAgent-api-python",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:API key"
+  ]
+ },
+ {
+  "id": 17,
+  "app": "Plain",
+  "checks": {
+   "auth": {
+    "url": "https://www.plain.com/docs/graphql/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.plain.com/docs/graphql/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://www.plain.com/docs/graphql/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://www.plain.com/docs/agents/mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 18,
+  "app": "Help Scout",
+  "checks": {
+   "auth": {
+    "url": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.helpscout.com/mailbox-api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "checks": {
+   "auth": {
+    "url": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.gorgias.com/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.gorgias.com/reference/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 20,
+  "app": "Gladly",
+  "checks": {
+   "auth": {
+    "url": "https://developer.gladly.com/rest/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.gladly.com/rest/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.gladly.com/rest/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 21,
+  "app": "Slack",
+  "checks": {
+   "auth": {
+    "url": "https://docs.slack.dev/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.slack.dev/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.slack.dev/apis/web-api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.slack.dev/ai/mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 22,
+  "app": "Twilio",
+  "checks": {
+   "auth": {
+    "url": "https://www.twilio.com/docs/usage/requests-to-twilio",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://www.twilio.com/docs/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://www.twilio.com/docs/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 23,
+  "app": "Zoho Cliq",
+  "checks": {
+   "auth": {
+    "url": "https://www.zoho.com/cliq/help/restapi/v2/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.zoho.com/cliq/help/restapi/v2/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://www.zoho.com/cliq/help/restapi/v2/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "checks": {
+   "auth": {
+    "url": "https://github.com/larksuite/lark-openapi-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://github.com/larksuite/lark-openapi-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://open.larksuite.com/document/server-docs/api-call-guide/calling-process/get-access-token",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/larksuite/lark-openapi-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 25,
+  "app": "Pumble",
+  "checks": {
+   "auth": {
+    "url": "https://pumble.com/help/integrations/api-keys-integration",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://pumble.com/help/integrations/api-keys-integration",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://pumble.com/help/integrations/api-keys-integration",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://pumble.com/learn/?p=16174",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "id": 26,
+  "app": "Discord",
+  "checks": {
+   "auth": {
+    "url": "https://docs.discord.com/developers/topics/oauth2",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.discord.com/developers/topics/oauth2",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.discord.com/developers/topics/oauth2",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/SaseQ/discord-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 27,
+  "app": "Telegram",
+  "checks": {
+   "auth": {
+    "url": "https://core.telegram.org/bots/api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://core.telegram.org/bots/api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://core.telegram.org/bots/api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/chigwell/telegram-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "checks": {
+   "auth": {
+    "url": "https://developers.facebook.com/docs/whatsapp/access-tokens",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "id": 29,
+  "app": "Aircall",
+  "checks": {
+   "auth": {
+    "url": "https://developers.aircall.io/api-references/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.aircall.io/api-references/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.aircall.io/api-references/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.aircall.io/docs/mcp-faqs",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 30,
+  "app": "Vonage",
+  "checks": {
+   "auth": {
+    "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.vonage.com/en/mcp-server/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 31,
+  "app": "Google Ads",
+  "checks": {
+   "auth": {
+    "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "checks": {
+   "auth": {
+    "url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "checks": {
+   "auth": {
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://pypi.org/project/linkedin-ads-mcp/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 34,
+  "app": "GoHighLevel",
+  "checks": {
+   "auth": {
+    "url": "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxAccount.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://marketplace.gohighlevel.com/docs/other/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 35,
+  "app": "Mailchimp",
+  "checks": {
+   "auth": {
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://mailchimp.com/developer/marketing/build/ai-tools/mcp-server.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 36,
+  "app": "Klaviyo",
+  "checks": {
+   "auth": {
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.klaviyo.com/en/docs/authenticate_",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 37,
+  "app": "systeme.io",
+  "checks": {
+   "auth": {
+    "url": "https://developer.systeme.io/reference/api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://systeme.io/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.systeme.io/llms.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.systeme.io/docs/mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 38,
+  "app": "Pinterest",
+  "checks": {
+   "auth": {
+    "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.pinterest.com/about-pinterest-mcp/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "checks": {
+   "auth": {
+    "url": "https://developers.facebook.com/docs/threads/get-started",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.facebook.com/docs/threads/get-started",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.facebook.com/docs/threads/get-started",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.facebook.com/documentation/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 40,
+  "app": "SendGrid",
+  "checks": {
+   "auth": {
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.twilio.com/en-us/products/email-api/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/twilio-labs/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 41,
+  "app": "Shopify",
+  "checks": {
+   "auth": {
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://shopify.dev/docs/apps/build/authentication-authorization",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://shopify.dev/docs/apps/build/devmcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 42,
+  "app": "WooCommerce",
+  "checks": {
+   "auth": {
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.woocommerce.com/docs/features/mcp/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 43,
+  "app": "BigCommerce",
+  "checks": {
+   "auth": {
+    "url": "https://docs.bigcommerce.com/docs/start/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.bigcommerce.com/docs/start/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.bigcommerce.com/docs/start/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "checks": {
+   "auth": {
+    "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "checks": {
+   "auth": {
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.adobe.com/commerce/webapi/rest/authentication/server-to-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+    "status": null,
+    "ok": false,
+    "error": "ConnectTimeout"
+   },
+   "mcp": {
+    "url": "https://developer.adobe.com/commerce/extensibility/developer-agent/tools-overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "api-evidence-unreachable(ConnectTimeout)"
+  ]
+ },
+ {
+  "id": 46,
+  "app": "Squarespace",
+  "checks": {
+   "auth": {
+    "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.squarespace.com/mcp/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 47,
+  "app": "Ecwid",
+  "checks": {
+   "auth": {
+    "url": "https://docs.ecwid.com/llms-full.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.ecwid.com/llms-full.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.ecwid.com/llms-full.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 48,
+  "app": "Gumroad",
+  "checks": {
+   "auth": {
+    "url": "https://github.com/antiwork/gumroad/blob/main/app/javascript/components/ApiDocumentation/Introduction.tsx",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://gumroad.com/help/article/280-create-application-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://github.com/antiwork/gumroad/tree/main/app/javascript/components/ApiDocumentation/Endpoints",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://gumroad.com/claude",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:Bearer token"
+  ]
+ },
+ {
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "checks": {
+   "auth": {
+    "url": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer-docs.amazon/sp-api/docs/registering-as-a-developer",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/amzn/selling-partner-api-samples",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "checks": {
+   "auth": {
+    "url": "https://commas.com/enterprises",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://commas.com/enterprises",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://commas.com/enterprises",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://commas.com/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 51,
+  "app": "DataForSEO",
+  "checks": {
+   "auth": {
+    "url": "https://docs.dataforseo.com/v3/auth/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.dataforseo.com/v3/auth/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.dataforseo.com/v3/auth/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://dataforseo.com/model-context-protocol",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "checks": {
+   "auth": {
+    "url": "https://seranking.com/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://seranking.com/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://seranking.com/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://seranking.com/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 53,
+  "app": "Ahrefs",
+  "checks": {
+   "auth": {
+    "url": "https://docs.ahrefs.com/api/docs/api-keys-creation-and-management.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.ahrefs.com/mcp/docs/introduction.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "id": 54,
+  "app": "MrScraper",
+  "checks": {
+   "auth": {
+    "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://mrscraper.com/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.mrscraper.com",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/mrscraper-com/mrscraper-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 55,
+  "app": "Apify",
+  "checks": {
+   "auth": {
+    "url": "https://docs.apify.com/api/v2",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://apify.com/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.apify.com/api/v2",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.apify.com/platform/integrations/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 56,
+  "app": "Firecrawl",
+  "checks": {
+   "auth": {
+    "url": "https://docs.firecrawl.dev/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.firecrawl.dev/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.firecrawl.dev/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.firecrawl.dev/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 57,
+  "app": "Bright Data",
+  "checks": {
+   "auth": {
+    "url": "https://docs.brightdata.com/api-reference/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.brightdata.com/ai/mcp-server/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.brightdata.com/api-reference/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.brightdata.com/ai/mcp-server/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:Basic"
+  ]
+ },
+ {
+  "id": 58,
+  "app": "Sherlock",
+  "checks": {
+   "auth": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://github.com/sherlock-project/sherlock",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "checks": {
+   "auth": {
+    "url": "https://docs.waterfall.io/v1/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.waterfall.io/v1/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.waterfall.io/v1/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 60,
+  "app": "Clay",
+  "checks": {
+   "auth": {
+    "url": "https://developers.clay.com/public-api/authentication.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.clay.com/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.clay.com/llms.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://university.clay.com/docs/connect-to-clay-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "id": 61,
+  "app": "GitHub",
+  "checks": {
+   "auth": {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/github/github-mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 62,
+  "app": "Vercel",
+  "checks": {
+   "auth": {
+    "url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://vercel.com/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://vercel.com/docs/rest-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://vercel.com/docs/mcp/vercel-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 63,
+  "app": "Netlify",
+  "checks": {
+   "auth": {
+    "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.netlify.com/build/build-with-ai/netlify-mcp-server/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 64,
+  "app": "Cloudflare",
+  "checks": {
+   "auth": {
+    "url": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 65,
+  "app": "Supabase",
+  "checks": {
+   "auth": {
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://supabase.com/docs/reference/api/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://supabase.com/docs/guides/getting-started/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 66,
+  "app": "Neo4j",
+  "checks": {
+   "auth": {
+    "url": "https://neo4j.com/docs/aura/api/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://neo4j.com/docs/aura/api/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://neo4j.com/docs/aura/api/overview/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/neo4j/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 67,
+  "app": "Snowflake",
+  "checks": {
+   "auth": {
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "checks": {
+   "auth": {
+    "url": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://github.com/mongodb-js/mongodb-mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 69,
+  "app": "Datadog",
+  "checks": {
+   "auth": {
+    "url": "https://docs.datadoghq.com/api/latest/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.datadoghq.com/account_management/api-app-keys/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.datadoghq.com/api/latest/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.datadoghq.com/bits_ai/mcp_server/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 70,
+  "app": "Sentry",
+  "checks": {
+   "auth": {
+    "url": "https://docs.sentry.io/api/auth/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.sentry.io/api/auth/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.sentry.io/api/auth/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://mcp.sentry.dev/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 71,
+  "app": "Notion",
+  "checks": {
+   "auth": {
+    "url": "https://developers.notion.com/guides/get-started/authorization",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.notion.com/guides/get-started/authorization",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.notion.com/guides/get-started/authorization",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.notion.com/guides/mcp/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 72,
+  "app": "Airtable",
+  "checks": {
+   "auth": {
+    "url": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://airtable.com/developers/web/api/introduction",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 73,
+  "app": "Linear",
+  "checks": {
+   "auth": {
+    "url": "https://linear.app/developers/graphql",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://linear.app/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://linear.app/developers/graphql",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://linear.app/docs/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 74,
+  "app": "Jira",
+  "checks": {
+   "auth": {
+    "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 75,
+  "app": "Asana",
+  "checks": {
+   "auth": {
+    "url": "https://developers.asana.com/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.asana.com/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.asana.com/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.asana.com/docs/mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 76,
+  "app": "Monday.com",
+  "checks": {
+   "auth": {
+    "url": "https://developer.monday.com/api-reference/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.monday.com/api-reference/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.monday.com/api-reference/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.monday.com/apps/docs/mondaycom-mcp-integration",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 77,
+  "app": "ClickUp",
+  "checks": {
+   "auth": {
+    "url": "https://developer.clickup.com/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.clickup.com/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.clickup.com/docs/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 78,
+  "app": "Coda",
+  "checks": {
+   "auth": {
+    "url": "https://docs.superhuman.com/developers/apis/v1",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.superhuman.com/developers/apis/v1",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.superhuman.com/developers/apis/v1",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://coda.io/resources/guides/getting_started_with_coda_mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "id": 79,
+  "app": "Smartsheet",
+  "checks": {
+   "auth": {
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "checks": {
+   "auth": {
+    "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.getharvest.com/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+    "status": 403,
+    "ok": false,
+    "error": null
+   }
+  },
+  "flags": [
+   "mcp-evidence-unreachable(403)"
+  ]
+ },
+ {
+  "id": 81,
+  "app": "Stripe",
+  "checks": {
+   "auth": {
+    "url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.stripe.com/keys",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.stripe.com/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.stripe.com/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "checks": {
+   "auth": {
+    "url": "https://plaid.com/docs/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://plaid.com/docs/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://plaid.com/docs/api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://plaid.com/docs/resources/mcp/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 83,
+  "app": "Binance",
+  "checks": {
+   "auth": {
+    "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+    "status": 202,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+    "status": 202,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+    "status": 202,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic",
+    "status": 202,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "checks": {
+   "auth": {
+    "url": "https://docs.nmi.com/docs/quick-start",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.nmi.com/docs/quick-start",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.nmi.com/docs/quick-start",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "id": 85,
+  "app": "iPayX",
+  "checks": {
+   "auth": {
+    "url": "https://www.ipayx.ai/.well-known/mcp.json",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://www.ipayx.ai/developers",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://www.ipayx.ai/developers",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://www.ipayx.ai/.well-known/mcp.json",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 86,
+  "app": "QuickBooks",
+  "checks": {
+   "auth": {
+    "url": "https://raw.githubusercontent.com/intuit/quickbooks-online-mcp-server/main/README.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://raw.githubusercontent.com/intuit/quickbooks-online-mcp-server/main/README.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://raw.githubusercontent.com/intuit/quickbooks-online-mcp-server/main/README.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://raw.githubusercontent.com/intuit/quickbooks-online-mcp-server/main/README.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 87,
+  "app": "Xero",
+  "checks": {
+   "auth": {
+    "url": "https://raw.githubusercontent.com/XeroAPI/xero-mcp-server/HEAD/README.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.xero.com/pricing",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://raw.githubusercontent.com/XeroAPI/xero-mcp-server/HEAD/README.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://raw.githubusercontent.com/XeroAPI/xero-mcp-server/HEAD/README.md",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 88,
+  "app": "Brex",
+  "checks": {
+   "auth": {
+    "url": "https://developer.brex.com/guides/partner_authentication",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developer.brex.com/docs/authentication/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developer.brex.com/openapi/team_api/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developer.brex.com/docs/mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 89,
+  "app": "Ramp",
+  "checks": {
+   "auth": {
+    "url": "https://docs.ramp.com/llms-guides.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.ramp.com/llms-guides.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.ramp.com/llms-guides.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://agents.ramp.com/docs/mcp/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 90,
+  "app": "PitchBook",
+  "checks": {
+   "auth": {
+    "url": "https://pitchbook.com/help/pitchbook-api",
+    "status": 403,
+    "ok": false,
+    "error": null
+   },
+   "access": {
+    "url": "https://pitchbook.com/help/PitchBook-api",
+    "status": 403,
+    "ok": false,
+    "error": null
+   },
+   "api": {
+    "url": "https://pitchbook.com/help/pitchbook-api",
+    "status": 403,
+    "ok": false,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://premium.mcp.pitchbook.com/.well-known/oauth-protected-resource",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-evidence-unreachable(403)",
+   "access-evidence-unreachable(403)",
+   "api-evidence-unreachable(403)"
+  ]
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "checks": {
+   "auth": {
+    "url": "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.notebooks.audioOverviews/create",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.cloud.google.com/agentspace/notebooklm-enterprise/docs/api-notebooks",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.cloud.google.com/agentspace/notebooklm-enterprise/docs/api-notebooks",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://pypi.org/project/notebooklm-mcp-server/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 92,
+  "app": "Otter AI",
+  "checks": {
+   "auth": {
+    "url": "https://mcp.otter.ai/.well-known/oauth-protected-resource",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+    "status": 403,
+    "ok": false,
+    "error": null
+   },
+   "api": {
+    "url": "https://otter.ai/api/docs",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://mcp.otter.ai/.well-known/oauth-protected-resource",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "access-evidence-unreachable(403)",
+   "auth-claim-not-on-page:OAuth2",
+   "auth-claim-not-on-page:API key"
+  ]
+ },
+ {
+  "id": 93,
+  "app": "Fathom",
+  "checks": {
+   "auth": {
+    "url": "https://developers.fathom.ai/quickstart",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://developers.fathom.ai/quickstart",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://developers.fathom.ai/",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://developers.fathom.ai/mcp-docs",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 94,
+  "app": "Consensus",
+  "checks": {
+   "auth": {
+    "url": "https://consensus.app/llms-full.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://consensus.app/llms-full.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://consensus.app/llms-full.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://consensus.app/llms-full.txt",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 95,
+  "app": "Reducto",
+  "checks": {
+   "auth": {
+    "url": "https://docs.reducto.ai/quickstart",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.reducto.ai/quickstart",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.reducto.ai/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.reducto.ai/quickstart",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 96,
+  "app": "Devin",
+  "checks": {
+   "auth": {
+    "url": "https://docs.devin.ai/api-reference/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://docs.devin.ai/api-reference/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.devin.ai/api-reference/overview",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 97,
+  "app": "higgsfield",
+  "checks": {
+   "auth": {
+    "url": "https://docs.higgsfield.ai",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://docs.higgsfield.ai",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://higgsfield.ai/creator-hub/help-center/mcp-cli/what-is-higgsfield-mcp",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "id": 98,
+  "app": "Mermaid CLI",
+  "checks": {
+   "auth": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://github.com/mermaid-js/mermaid-cli",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 99,
+  "app": "YouTube Transcript",
+  "checks": {
+   "auth": {
+    "url": "https://transcriptapi.com",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://transcriptapi.com",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://transcriptapi.com",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://transcriptapi.com",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ },
+ {
+  "id": 100,
+  "app": "Grain",
+  "checks": {
+   "auth": {
+    "url": "https://support.grain.com/en/articles/15507288-grain-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "access": {
+    "url": "https://support.grain.com/en/articles/15507288-grain-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "api": {
+    "url": "https://support.grain.com/en/articles/15507288-grain-api",
+    "status": 200,
+    "ok": true,
+    "error": null
+   },
+   "mcp": {
+    "url": "https://support.grain.com/en/articles/14811968-how-to-use-the-grain-mcp-server",
+    "status": 200,
+    "ok": true,
+    "error": null
+   }
+  },
+  "flags": []
+ }
+]

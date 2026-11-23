@@ -1,0 +1,515 @@
+[
+ {
+  "record": {
+   "id": 3,
+   "app": "Pipedrive",
+   "category": "CRM",
+   "one_liner": "Sales CRM with a REST API (v1/v2) and a native hosted MCP server.",
+   "auth_methods": [
+    "OAuth2",
+    "API key"
+   ],
+   "auth_notes": "OAuth 2.0 for apps; personal API token sent in x-api-token header (one per user/company).",
+   "access": "self-serve-free",
+   "access_notes": "API token available from any account; a separate Developer Sandbox account can be requested (free status not stated on page). Trial accounts also give a token.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "~50 endpoint groups (Deals, Leads, Persons, Organizations, Activities, Projects, Webhooks); OpenAPI specs for v1 and v2.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.pipedrive.ai/mcp",
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+    "access": "https://developers.pipedrive.com/docs/api/v1",
+    "api": "https://developers.pipedrive.com/docs/api/v1/Deals",
+    "mcp": "https://www.pipedrive.com/en/features/mcp-server"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "flags": [
+   "auth-claim-not-on-page:API key"
+  ]
+ },
+ {
+  "record": {
+   "id": 14,
+   "app": "Front",
+   "category": "Customer support / shared inbox",
+   "one_liner": "Shared inbox and customer ops platform with a REST Core API.",
+   "auth_methods": [
+    "Bearer token",
+    "OAuth2"
+   ],
+   "auth_notes": "Admin-created company API tokens (Settings > Developers) sent as Bearer; OAuth authorization-code required for public integrations. MCP server scope not available to API tokens.",
+   "access": "self-serve-trial",
+   "access_notes": "Only admins can create tokens; no plan requirement stated; paid product with trial (trial not confirmed on opened pages).",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Core API for conversations, contacts, inboxes, rules, tags, teams, accounts (api2.frontapp.com) per search summary; token scope page confirms core resources.",
+   "mcp": "official",
+   "mcp_url": null,
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+    "access": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+    "api": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+    "mcp": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens"
+   },
+   "confidence": "low",
+   "needs_human": true,
+   "human_reason": "Front's token page references an 'MCP server' scope (implying an official MCP server) but I did not open an MCP doc page or find its URL; main API docs fetch returned 404."
+  },
+  "flags": [
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "record": {
+   "id": 19,
+   "app": "Gorgias",
+   "category": "E-commerce customer support",
+   "one_liner": "E-commerce help desk with a REST API and first-party hosted MCP (open beta).",
+   "auth_methods": [
+    "API key",
+    "OAuth2",
+    "Basic"
+   ],
+   "auth_notes": "Private apps use API key (Basic with email + key); public apps must use OAuth2.",
+   "access": "self-serve-trial",
+   "access_notes": "Credentials from account settings; docs fetched do not explain obtaining keys or plans (trial assumed). MCP works on any plan.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Resource-oriented JSON REST API with full reference; undocumented resources are internal.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.gorgias.com/mcp",
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://developers.gorgias.com/docs/authentication",
+    "access": "https://developers.gorgias.com/docs/authentication",
+    "api": "https://developers.gorgias.com/reference/introduction",
+    "mcp": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "flags": [
+   "auth-claim-not-on-page:Basic"
+  ]
+ },
+ {
+  "record": {
+   "id": 27,
+   "app": "Telegram",
+   "category": "Messaging",
+   "one_liner": "Bot API over HTTPS with BotFather tokens.",
+   "auth_methods": [
+    "Bearer token"
+   ],
+   "auth_notes": "Per-bot token from BotFather embedded in URL path.",
+   "access": "self-serve-free",
+   "access_notes": "Create bot via BotFather instantly; no approval.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Large method set: messaging, media, polls, payments, business, mini apps; updates via polling/webhook. User-account (TDLib) API not assessed.",
+   "mcp": "community",
+   "mcp_url": null,
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://core.telegram.org/bots/api",
+    "access": "https://core.telegram.org/bots/api",
+    "api": "https://core.telegram.org/bots/api",
+    "mcp": null
+   },
+   "confidence": "high",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "flags": [
+   "mcp-claim-without-evidence"
+  ]
+ },
+ {
+  "record": {
+   "id": 32,
+   "app": "Meta Ads",
+   "category": "Advertising",
+   "one_liner": "Meta Marketing API with official Meta Ads MCP.",
+   "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+   ],
+   "auth_notes": "OAuth scopes ads_read/ads_management; system-user tokens.",
+   "access": "self-serve-free",
+   "access_notes": "Apps start at Limited Access (dev only, rate-limited); Full Access needs App Review and 500 calls/<15% errors; managing others' accounts needs advanced access; business verification may be required.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Campaigns, ads, catalogs, insights via Graph/Marketing API.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.facebook.com/ads",
+   "buildability": "ready-with-friction",
+   "blocker": "App Review for Full/advanced access",
+   "evidence": {
+    "auth": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "access": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "api": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+    "mcp": "https://developers.facebook.com/documentation/mcp"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "flags": [
+   "auth-claim-not-on-page:Bearer token"
+  ]
+ },
+ {
+  "record": {
+   "id": 37,
+   "app": "systeme.io",
+   "category": "Funnel builder/marketing",
+   "one_liner": "All-in-one funnel/email platform with small public API and built-in MCP.",
+   "auth_methods": [
+    "API key"
+   ],
+   "auth_notes": "X-API-Key header; up to 3 keys created in Settings.",
+   "access": "self-serve-free",
+   "access_notes": "Key created under profile Settings > MCP & API keys; plan gating for API/MCP not stated in help docs.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "narrow",
+   "api_notes": "Contacts, tags, with some further operations; funnels not editable via MCP.",
+   "mcp": "official",
+   "mcp_url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+   "buildability": "ready-with-friction",
+   "blocker": "narrow API; plan gating unclear",
+   "evidence": {
+    "auth": "https://developer.systeme.io/reference/api",
+    "access": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+    "api": "https://developer.systeme.io/reference/api",
+    "mcp": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api"
+   },
+   "confidence": "low",
+   "needs_human": true,
+   "human_reason": "Plan requirements and full endpoint list not confirmed; MCP described only in help article."
+  },
+  "flags": [
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "record": {
+   "id": 44,
+   "app": "Salesforce Commerce Cloud",
+   "category": "E-commerce",
+   "one_liner": "Salesforce B2C Commerce enterprise storefront platform with SCAPI/OCAPI.",
+   "auth_methods": [
+    "OAuth2",
+    "JWT/signed"
+   ],
+   "auth_notes": "Account Manager API clients (client credentials, user sign-in, or JWT) for SCAPI Admin APIs; SLAS for shopper APIs.",
+   "access": "partner-gated",
+   "access_notes": "Requires an existing licensed B2C Commerce tenant/instance and an Account Manager admin to create API clients; no public free tier found. Salesforce docs returned 403 to fetch so this is from the open-source tooling guide and search snippets.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "SCAPI Admin and Shopper APIs plus legacy OCAPI; B2C DX MCP covers SCAPI Admin access.",
+   "mcp": "official",
+   "mcp_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+   "buildability": "ready-with-friction",
+   "blocker": "requires licensed enterprise tenant",
+   "evidence": {
+    "auth": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+    "access": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+    "api": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+    "mcp": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html"
+   },
+   "confidence": "low",
+   "needs_human": true,
+   "human_reason": "developer.salesforce.com docs returned 403; tenant licensing requirement and MCP status (developer preview) not confirmed from primary vendor page."
+  },
+  "flags": [
+   "mcp-evidence-unreachable(ConnectTimeout)",
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "record": {
+   "id": 50,
+   "app": "fanbasis",
+   "category": "Payments / Creator",
+   "one_liner": "Payments and checkout infrastructure for online entrepreneurs.",
+   "auth_methods": [
+    "Other"
+   ],
+   "auth_notes": "No public auth docs found.",
+   "access": "partner-gated",
+   "access_notes": "Enterprise page mentions SDKs, docs, sandbox and implementation engineer, implying sales-led onboarding; no public API reference found.",
+   "api_types": [
+    "None"
+   ],
+   "api_breadth": "none",
+   "api_notes": "No public API docs located.",
+   "mcp": "none",
+   "mcp_url": null,
+   "buildability": "blocked",
+   "blocker": "no public API docs",
+   "evidence": {
+    "auth": "https://fanbasis.com/enterprises",
+    "access": "https://fanbasis.com/enterprises",
+    "api": "https://fanbasis.com/enterprises",
+    "mcp": null
+   },
+   "confidence": "low",
+   "needs_human": true,
+   "human_reason": "fanbasis.com returned 403 on direct fetch; enterprise page seen only via search snippet; no developer docs found."
+  },
+  "flags": [
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "record": {
+   "id": 57,
+   "app": "Bright Data",
+   "category": "Web data / proxies",
+   "one_liner": "Proxy networks, Web Unlocker, SERP API, scrapers and datasets.",
+   "auth_methods": [
+    "API key",
+    "Basic"
+   ],
+   "auth_notes": "API key as Bearer for API access; proxy username/password for native access; admin-only key creation.",
+   "access": "self-serve-free",
+   "access_notes": "Account includes 5,000 free requests per month (MCP free tier note); default key auto-created.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Web Unlocker, SERP API, Browsers, Scrapers, Functions, Marketplace datasets, proxies.",
+   "mcp": "official",
+   "mcp_url": "https://github.com/brightdata/brightdata-mcp",
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://docs.brightdata.com/api-reference/authentication",
+    "access": "https://docs.brightdata.com/ai/mcp-server/overview",
+    "api": "https://docs.brightdata.com/api-reference/authentication",
+    "mcp": "https://docs.brightdata.com/ai/mcp-server/overview"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "flags": [
+   "auth-claim-not-on-page:Basic"
+  ]
+ },
+ {
+  "record": {
+   "id": 62,
+   "app": "Vercel",
+   "category": "Developer Tools / Hosting",
+   "one_liner": "Frontend cloud platform for deploying and hosting web projects.",
+   "auth_methods": [
+    "Bearer token",
+    "OAuth2"
+   ],
+   "auth_notes": "Access tokens created via account (endpoints under /v3/user/tokens) sent as Bearer; OAuth for integrations/Sign in with Vercel not confirmed on opened pages.",
+   "access": "self-serve-free",
+   "access_notes": "Free Hobby plan; account tokens self-created. Plan gating not stated on docs opened.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Large REST API (~470 endpoints listed): projects, deployments, domains, env vars, access groups, etc.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.vercel.com",
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://vercel.com/docs/rest-api/authentication",
+    "access": "https://vercel.com/docs/rest-api",
+    "api": "https://vercel.com/docs/rest-api",
+    "mcp": "https://vercel.com/docs/mcp/vercel-mcp"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "flags": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "record": {
+   "id": 80,
+   "app": "Harvest",
+   "category": "Time Tracking",
+   "one_liner": "Time tracking and invoicing software.",
+   "auth_methods": [
+    "Bearer token",
+    "OAuth2"
+   ],
+   "auth_notes": "Personal access tokens (plus Harvest-Account-Id header) or OAuth2 apps via Harvest ID.",
+   "access": "self-serve-free",
+   "access_notes": "PAT created in Harvest ID developers section; plan requirement not stated (a free plan exists).",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "REST API v2: time entries, projects, clients, invoices, expenses, reports.",
+   "mcp": "official",
+   "mcp_url": "https://api.harvestapp.com/mcp",
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "access": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "api": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "mcp": null
+   },
+   "confidence": "medium",
+   "needs_human": true,
+   "human_reason": "Official MCP endpoint (api.harvestapp.com/mcp) seen only in search snippet; help-center page returned 403 so not opened."
+  },
+  "flags": [
+   "agent-asked-for-human"
+  ]
+ },
+ {
+  "record": {
+   "id": 84,
+   "app": "Paygent Connect",
+   "category": "Payments",
+   "one_liner": "Payment product named Paygent Connect (hint says NMI-powered); could not be identified.",
+   "auth_methods": [
+    "API key"
+   ],
+   "auth_notes": "Only the underlying NMI gateway auth is documented (API keys); no Paygent Connect-specific docs found.",
+   "access": "partner-gated",
+   "access_notes": "NMI gateway access is via partner/merchant onboarding; Paygent Connect itself not found.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "moderate",
+   "api_notes": "Inferred from NMI REST/v5 payment API; unverified for Paygent Connect.",
+   "mcp": "none",
+   "mcp_url": null,
+   "buildability": "blocked",
+   "blocker": "product unidentified, no public docs",
+   "evidence": {
+    "auth": "https://docs.nmi.com/docs/quick-start",
+    "access": "https://docs.nmi.com/docs/quick-start",
+    "api": "https://docs.nmi.com/docs/quick-start",
+    "mcp": null
+   },
+   "confidence": "low",
+   "needs_human": true,
+   "human_reason": "No page found for 'Paygent Connect'; searches returned unrelated products (Paygent Japan, Paya, PayGentic). Cannot confirm any link to NMI."
+  },
+  "flags": [
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "record": {
+   "id": 90,
+   "app": "PitchBook",
+   "category": "Financial Data / Research",
+   "one_liner": "Private-market and VC/PE data and research platform.",
+   "auth_methods": [
+    "API key",
+    "Bearer token"
+   ],
+   "auth_notes": "Per third-party summaries, API key/token issued by PitchBook team after contract; official docs 403 to fetcher.",
+   "access": "partner-gated",
+   "access_notes": "API is a separate offering requiring standalone contract; no self-serve signup (secondary sources).",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Public API v2 reportedly documented on Postman; not verified.",
+   "mcp": "official",
+   "mcp_url": "https://premium.mcp.pitchbook.com/mcp",
+   "buildability": "blocked",
+   "blocker": "enterprise contract required",
+   "evidence": {
+    "auth": "https://pitchbook.com/help/pitchbook-api",
+    "access": "https://pitchbook.com/help/pitchbook-api",
+    "api": "https://pitchbook.com/help/pitchbook-api",
+    "mcp": null
+   },
+   "confidence": "low",
+   "needs_human": true,
+   "human_reason": "PitchBook help page returned 403 and MCP directory 403; details come from search snippets only (MCP URL/official status unverified)."
+  },
+  "flags": [
+   "auth-evidence-unreachable(403)",
+   "access-evidence-unreachable(403)",
+   "api-evidence-unreachable(403)",
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "record": {
+   "id": 97,
+   "app": "higgsfield",
+   "category": "AI Image/Video Generation",
+   "one_liner": "AI image/video generation platform with 35+ models, exposed via CLI and MCP.",
+   "auth_methods": [
+    "OAuth2",
+    "Other"
+   ],
+   "auth_notes": "Browser sign-in (higgsfield auth login) and MCP account sign-in; no API keys.",
+   "access": "paid-plan",
+   "access_notes": "Uses platform credits from existing plan; free-tier details not stated.",
+   "api_types": [
+    "CLI"
+   ],
+   "api_breadth": "narrow",
+   "api_notes": "No public REST API documented on the page; integration is via CLI and MCP.",
+   "mcp": "official",
+   "mcp_url": "https://higgsfield.ai/cli",
+   "buildability": "blocked",
+   "blocker": "no documented public API; CLI/MCP only",
+   "evidence": {
+    "auth": "https://higgsfield.ai/cli",
+    "access": "https://higgsfield.ai/cli",
+    "api": "https://higgsfield.ai/cli",
+    "mcp": "https://higgsfield.ai/cli"
+   },
+   "confidence": "low",
+   "needs_human": true,
+   "human_reason": "Only the CLI marketing page was found; no developer docs, REST API, or pricing/free-tier details verified."
+  },
+  "flags": [
+   "auth-claim-not-on-page:OAuth2",
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ }
+]

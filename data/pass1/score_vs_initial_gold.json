@@ -1,0 +1,86 @@
+{
+ "n_apps": 20,
+ "per_field": {
+  "auth": 0.95,
+  "access": 0.9,
+  "mcp": 0.85,
+  "buildability": 0.95
+ },
+ "overall": 0.9125,
+ "all_fields_right": 14,
+ "misses": [
+  {
+   "id": 6,
+   "app": "Podio",
+   "field": "mcp",
+   "predicted": "official",
+   "expected": [
+    "none",
+    "community"
+   ]
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "field": "mcp",
+   "predicted": "official",
+   "expected": [
+    "none",
+    "community"
+   ]
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "field": "mcp",
+   "predicted": "official",
+   "expected": [
+    "community",
+    "none"
+   ]
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "field": "access",
+   "predicted": "paid-plan",
+   "expected": [
+    "self-serve-free"
+   ]
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "field": "buildability",
+   "predicted": "ready-with-friction",
+   "expected": [
+    "ready"
+   ]
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "field": "auth",
+   "predicted": [
+    "Other"
+   ],
+   "expected": [
+    [
+     "API key"
+    ],
+    [
+     "Other"
+    ]
+   ]
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "field": "access",
+   "predicted": "paid-plan",
+   "expected": [
+    "self-serve-free"
+   ]
+  }
+ ]
+}

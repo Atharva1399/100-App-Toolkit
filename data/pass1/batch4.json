@@ -1,0 +1,624 @@
+[
+ {
+  "id": 61,
+  "app": "GitHub",
+  "category": "Developer Tools",
+  "one_liner": "Code hosting and collaboration platform with repos, issues, PRs and Actions.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token",
+   "JWT/signed"
+  ],
+  "auth_notes": "Fine-grained/classic PATs, OAuth app tokens, GitHub App (JWT -> installation tokens), GITHUB_TOKEN in Actions.",
+  "access": "self-serve-free",
+  "access_notes": "Free account; PATs and OAuth/GitHub Apps created in Developer settings.",
+  "api_types": [
+   "REST",
+   "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Extensive REST and GraphQL APIs covering repos, issues, PRs, Actions, security.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/github/github-mcp-server",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+   "access": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+   "api": "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+   "mcp": "https://github.com/github/github-mcp-server"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 62,
+  "app": "Vercel",
+  "category": "Developer Tools / Hosting",
+  "one_liner": "Frontend cloud platform for deploying and hosting web projects.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Access tokens created via account (endpoints under /v3/user/tokens) sent as Bearer; OAuth for integrations/Sign in with Vercel not confirmed on opened pages.",
+  "access": "self-serve-free",
+  "access_notes": "Free Hobby plan; account tokens self-created. Plan gating not stated on docs opened.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Large REST API (~470 endpoints listed): projects, deployments, domains, env vars, access groups, etc.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.vercel.com",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://vercel.com/docs/rest-api/authentication",
+   "access": "https://vercel.com/docs/rest-api",
+   "api": "https://vercel.com/docs/rest-api",
+   "mcp": "https://vercel.com/docs/mcp/vercel-mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 63,
+  "app": "Netlify",
+  "category": "Developer Tools / Hosting",
+  "one_liner": "Web hosting and deployment platform for static and serverless sites.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Personal access tokens or OAuth2 apps; token sent as Bearer.",
+  "access": "self-serve-free",
+  "access_notes": "PAT generated in user settings; OAuth app registered in user settings.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API at api.netlify.com/api/v1 with OpenAPI spec: sites, deploys, forms, DNS, etc.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.netlify.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "access": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "api": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api/",
+   "mcp": "https://docs.netlify.com/build/build-with-ai/netlify-mcp-server/"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 64,
+  "app": "Cloudflare",
+  "category": "Infrastructure / CDN & Security",
+  "one_liner": "Global network providing CDN, DNS, security and edge compute.",
+  "auth_methods": [
+   "API key",
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Scoped API tokens (recommended, Bearer), legacy Global API key, Origin CA keys; OAuth supported for the MCP server.",
+  "access": "self-serve-free",
+  "access_notes": "Free account can create API tokens (free plan not explicitly stated on page opened).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Full REST API across zones, DNS, Workers, R2, security, etc.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.cloudflare.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+   "access": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+   "api": "https://developers.cloudflare.com/fundamentals/api/get-started/",
+   "mcp": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 65,
+  "app": "Supabase",
+  "category": "Database / Backend-as-a-Service",
+  "one_liner": "Open-source Postgres backend platform with auth, storage and edge functions.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Management API: scoped or classic personal access tokens, or OAuth2 for integrations.",
+  "access": "self-serve-free",
+  "access_notes": "PATs created in dashboard; OAuth apps via organization settings. Free tier exists.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Management API covers projects, orgs, database/migrations/SQL, auth, storage, edge functions, branches, billing.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.supabase.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://supabase.com/docs/reference/api/introduction",
+   "access": "https://supabase.com/docs/reference/api/introduction",
+   "api": "https://supabase.com/docs/reference/api/introduction",
+   "mcp": "https://supabase.com/docs/guides/getting-started/mcp"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 66,
+  "app": "Neo4j",
+  "category": "Database / Graph",
+  "one_liner": "Graph database with managed cloud service (Aura).",
+  "auth_methods": [
+   "OAuth2",
+   "Basic"
+  ],
+  "auth_notes": "Aura API: client-credentials OAuth2 tokens (1h); database itself uses username/password.",
+  "access": "self-serve-free",
+  "access_notes": "All Aura tiers (including Free) can create API credentials.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Aura management API (instances etc.) plus Query API for Cypher over HTTP; Bolt drivers for data access.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/neo4j/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://neo4j.com/docs/aura/api/authentication/",
+   "access": "https://neo4j.com/docs/aura/api/authentication/",
+   "api": "https://neo4j.com/docs/aura/api/overview/",
+   "mcp": "https://github.com/neo4j/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 67,
+  "app": "Snowflake",
+  "category": "Data Warehouse",
+  "one_liner": "Cloud data platform for warehousing, analytics and AI.",
+  "auth_methods": [
+   "OAuth2",
+   "JWT/signed",
+   "Bearer token"
+  ],
+  "auth_notes": "REST APIs accept key-pair JWT, OAuth, programmatic access tokens, workload identity federation.",
+  "access": "self-serve-trial",
+  "access_notes": "Snowflake account needed; free trial exists (not confirmed on pages opened); credentials set up by account admin/user.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "SQL API and many REST APIs (Cortex etc.); resources are account-level plus SQL.",
+  "mcp": "official",
+  "mcp_url": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp",
+  "buildability": "ready-with-friction",
+  "blocker": "trial-only free access; per-account auth setup",
+  "evidence": {
+   "auth": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+   "access": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+   "api": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+   "mcp": "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-agents-mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 68,
+  "app": "MongoDB Atlas",
+  "category": "Database / Cloud",
+  "one_liner": "Managed MongoDB cloud database service.",
+  "auth_methods": [
+   "OAuth2",
+   "API key"
+  ],
+  "auth_notes": "Admin API: service accounts (OAuth2 client credentials, recommended) or legacy API keys with HTTP Digest.",
+  "access": "self-serve-free",
+  "access_notes": "Service accounts/API keys created in org settings; free-tier availability for Admin API not stated on page.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Atlas Administration API manages clusters, projects, users; does not read/write database data.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/mongodb-js/mongodb-mcp-server",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+   "access": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+   "api": "https://www.mongodb.com/docs/atlas/api/api-authentication/",
+   "mcp": "https://github.com/mongodb-js/mongodb-mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 69,
+  "app": "Datadog",
+  "category": "Observability / Monitoring",
+  "one_liner": "Monitoring and security platform for cloud applications.",
+  "auth_methods": [
+   "API key"
+  ],
+  "auth_notes": "API key plus application key (both needed for reads); OAuth not mentioned on opened pages.",
+  "access": "self-serve-trial",
+  "access_notes": "Keys created in Organization Settings; needs a Datadog org (trial/paid; plan gating not stated on pages opened).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Large REST API: metrics, monitors, logs, dashboards, incidents, etc.",
+  "mcp": "official",
+  "mcp_url": "https://docs.datadoghq.com/bits_ai/mcp_server/",
+  "buildability": "ready-with-friction",
+  "blocker": "trial/paid account required",
+  "evidence": {
+   "auth": "https://docs.datadoghq.com/api/latest/authentication/",
+   "access": "https://docs.datadoghq.com/account_management/api-app-keys/",
+   "api": "https://docs.datadoghq.com/api/latest/authentication/",
+   "mcp": "https://docs.datadoghq.com/bits_ai/mcp_server/"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 70,
+  "app": "Sentry",
+  "category": "Observability / Error Tracking",
+  "one_liner": "Error and performance monitoring for applications.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Auth tokens (internal integrations/personal tokens) as Bearer; OAuth2 auth code and device flow; legacy API keys disabled for new accounts.",
+  "access": "self-serve-free",
+  "access_notes": "Tokens created in settings; plan not stated on page (free developer plan exists).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API for orgs, projects, issues, events, releases, etc.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.sentry.dev/",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.sentry.io/api/auth/",
+   "access": "https://docs.sentry.io/api/auth/",
+   "api": "https://docs.sentry.io/api/auth/",
+   "mcp": "https://mcp.sentry.dev/"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 71,
+  "app": "Notion",
+  "category": "Productivity / Docs",
+  "one_liner": "Workspace for notes, docs, wikis and databases.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Internal connection token (Bearer), personal access tokens, or OAuth 2.0 (public integrations).",
+  "access": "self-serve-free",
+  "access_notes": "Internal connections need workspace owner to create; OAuth integration creatable in Developer portal; paid plan not stated.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API: pages, databases, blocks, users, comments, search.",
+  "mcp": "official",
+  "mcp_url": "https://developers.notion.com/guides/mcp/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.notion.com/guides/get-started/authorization",
+   "access": "https://developers.notion.com/guides/get-started/authorization",
+   "api": "https://developers.notion.com/guides/get-started/authorization",
+   "mcp": "https://developers.notion.com/guides/mcp/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 72,
+  "app": "Airtable",
+  "category": "Productivity / Database",
+  "one_liner": "Spreadsheet-database hybrid for building apps and workflows.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Personal access tokens or OAuth (from MCP support article; developer docs page opened did not cover auth).",
+  "access": "self-serve-free",
+  "access_notes": "Free account can create PATs/OAuth integrations; plan gating not confirmed from opened pages.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST API with JSON: bases, tables, records, schema, webhooks.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.airtable.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+   "access": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+   "api": "https://airtable.com/developers/web/api/introduction",
+   "mcp": "https://support.airtable.com/docs/using-the-airtable-mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 73,
+  "app": "Linear",
+  "category": "Project Management",
+  "one_liner": "Issue tracking and project management for software teams.",
+  "auth_methods": [
+   "OAuth2",
+   "API key"
+  ],
+  "auth_notes": "OAuth2 (auth code and client credentials, Bearer); personal API keys (confirmed via MCP page, not auth page).",
+  "access": "self-serve-free",
+  "access_notes": "OAuth apps created in workspace settings; API keys by users; plan gating not stated.",
+  "api_types": [
+   "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "GraphQL API at api.linear.app/graphql plus SDK.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.linear.app/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://linear.app/developers/oauth-2-0-authentication",
+   "access": "https://linear.app/developers/oauth-2-0-authentication",
+   "api": "https://linear.app/developers/oauth-2-0-authentication",
+   "mcp": "https://linear.app/docs/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 74,
+  "app": "Jira",
+  "category": "Project Management",
+  "one_liner": "Atlassian issue and project tracking for software and business teams.",
+  "auth_methods": [
+   "Basic",
+   "OAuth2"
+  ],
+  "auth_notes": "Email + API token via Basic auth; OAuth 2.0 (3LO) via developer console.",
+  "access": "self-serve-free",
+  "access_notes": "API token self-generated from Atlassian account; free Jira plan existence not stated on page.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Jira Cloud REST API: issues, projects, workflows, users, etc.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.atlassian.com/v2/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+   "access": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+   "api": "https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/",
+   "mcp": "https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 75,
+  "app": "Asana",
+  "category": "Project Management",
+  "one_liner": "Work management platform for tasks and projects.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Personal access token (Bearer), OAuth for multi-user apps, Enterprise service accounts.",
+  "access": "self-serve-free",
+  "access_notes": "PAT created in developer console; only service accounts require Enterprise.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API across tasks, projects, workspaces, users, etc.",
+  "mcp": "official",
+  "mcp_url": "https://developers.asana.com/docs/mcp-server",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.asana.com/docs/authentication",
+   "access": "https://developers.asana.com/docs/authentication",
+   "api": "https://developers.asana.com/docs/authentication",
+   "mcp": "https://developers.asana.com/docs/mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 76,
+  "app": "Monday.com",
+  "category": "Project Management",
+  "one_liner": "Work OS for managing projects, CRM and workflows.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "Personal V2 API token in Authorization header; OAuth for apps (not detailed on page opened).",
+  "access": "self-serve-free",
+  "access_notes": "Free developer account provides a token; account plans may limit API usage.",
+  "api_types": [
+   "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Single /v2 endpoint with JSON query body (GraphQL): boards, items, columns, users.",
+  "mcp": "official",
+  "mcp_url": "https://developer.monday.com/apps/docs/mondaycom-mcp-integration",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developer.monday.com/api-reference/docs/authentication",
+   "access": "https://developer.monday.com/api-reference/docs/authentication",
+   "api": "https://developer.monday.com/api-reference/docs/authentication",
+   "mcp": "https://developer.monday.com/apps/docs/mondaycom-mcp-integration"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 77,
+  "app": "ClickUp",
+  "category": "Project Management",
+  "one_liner": "Productivity platform for tasks, docs and goals.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "Personal API token (pk_, sent raw in Authorization); OAuth2 auth code (Bearer).",
+  "access": "self-serve-free",
+  "access_notes": "Token generated in Settings > Apps; no plan requirement stated.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API v2: tasks, lists, spaces, goals, time tracking, etc.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.clickup.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developer.clickup.com/docs/authentication",
+   "access": "https://developer.clickup.com/docs/authentication",
+   "api": "https://developer.clickup.com/docs/authentication",
+   "mcp": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 78,
+  "app": "Coda",
+  "category": "Productivity / Docs",
+  "one_liner": "Collaborative docs with tables and automations (now Superhuman Docs).",
+  "auth_methods": [
+   "Bearer token"
+  ],
+  "auth_notes": "API token sent as Bearer; how to create token not on opened page.",
+  "access": "self-serve-free",
+  "access_notes": "API free in free and paid workspaces; some endpoints depend on owner role.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API: docs, pages, tables, rows, formulas, permissions, automations.",
+  "mcp": "official",
+  "mcp_url": "https://docs.superhuman.com/apis/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.superhuman.com/developers/apis/v1",
+   "access": "https://docs.superhuman.com/developers/apis/v1",
+   "api": "https://docs.superhuman.com/developers/apis/v1",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": true,
+  "human_reason": "Official hosted MCP (docs.superhuman.com/apis/mcp) seen only in search results; the page returned 401 so not opened."
+ },
+ {
+  "id": 79,
+  "app": "Smartsheet",
+  "category": "Project Management / Spreadsheets",
+  "one_liner": "Work management platform with sheet-based collaboration.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Access tokens generated in UI (Bearer); OAuth 2.0 three-legged.",
+  "access": "self-serve-trial",
+  "access_notes": "Token generated in UI; API/MCP plan requirement (Business+ for MCP) and trial availability not confirmed for the REST API.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API: sheets, rows, workspaces, reports, users.",
+  "mcp": "official",
+  "mcp_url": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server",
+  "buildability": "ready-with-friction",
+  "blocker": "paid plan likely needed",
+  "evidence": {
+   "auth": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+   "access": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+   "api": "https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication",
+   "mcp": "https://developers.smartsheet.com/ai-mcp/smartsheet/mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 80,
+  "app": "Harvest",
+  "category": "Time Tracking",
+  "one_liner": "Time tracking and invoicing software.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Personal access tokens (plus Harvest-Account-Id header) or OAuth2 apps via Harvest ID.",
+  "access": "self-serve-free",
+  "access_notes": "PAT created in Harvest ID developers section; plan requirement not stated (a free plan exists).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API v2: time entries, projects, clients, invoices, expenses, reports.",
+  "mcp": "official",
+  "mcp_url": "https://api.harvestapp.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+   "access": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+   "api": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": true,
+  "human_reason": "Official MCP endpoint (api.harvestapp.com/mcp) seen only in search snippet; help-center page returned 403 so not opened."
+ }
+]

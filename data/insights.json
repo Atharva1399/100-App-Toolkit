@@ -1,0 +1,132 @@
+{
+ "thesis": "<b>{ready} of 100 apps can become an agent toolkit today</b>, {friction} more with friction, {blocked} are blocked. The gate is almost never technical: it is <b>who hands out credentials</b>. Self-serve developer access is the norm ({selfserve}/100); the hard cases cluster in ads, commerce, finance and enterprise-sold tools, where app review or a sales contract stands between Composio and a test key ({human_gate} of {nonready} non-ready apps).",
+ "kpis": [
+  [
+   "{ready}",
+   "ready today"
+  ],
+  [
+   "{friction}",
+   "ready with friction"
+  ],
+  [
+   "{blocked}",
+   "blocked"
+  ],
+  [
+   "{oauth}",
+   "support OAuth2"
+  ],
+  [
+   "{mcp_official}",
+   "ship an official MCP"
+  ],
+  [
+   "{acc1_raw}% → {acc2}%",
+   "sample accuracy, first pass → verified"
+  ]
+ ],
+ "findings": [
+  {
+   "big": "{oauth}/100",
+   "title": "OAuth2 dominates, but rarely alone",
+   "body": "{oauth} apps offer OAuth2 and {static} offer a static credential (API key, bearer/PAT or Basic). <b>{both} offer both</b>, so a toolkit can ship an API-key path for single-tenant users and OAuth for multi-tenant installs. Only {oauth_only} are OAuth-only."
+  },
+  {
+   "big": "{selfserve}/100",
+   "title": "Self-serve is the default; gating clusters by segment",
+   "body": "Dev infra and productivity tools are near-universally free to build on ({devprod_free}/20 free tier or sandbox). Gates concentrate in <b>Marketing & ads</b> (Google/Meta/LinkedIn app review), <b>E-commerce</b> (paid stores, seller registration) and <b>Finance</b> (production approval, customer-only accounts). Two quieter patterns: <b>support desks are trial-only</b> ({support_trial}/10: credentials expire with the trial), and <b>AI tools charge first</b> ({ai_paid}/10 need a paid plan)."
+  },
+  {
+   "big": "{mcp_official}/100",
+   "title": "Official MCP is now table stakes",
+   "body": "{mcp_official} vendors already publish an official MCP server (many launched in 2025-26; several are docs-search-only or beta). Existence of an MCP is no longer the differentiator. Managed auth, multi-tenant credentials, and consistent tool quality across apps are."
+  },
+  {
+   "big": "{human_gate}/{nonready}",
+   "title": "Most blockers are a person, not a missing API",
+   "body": "Of the {nonready} apps that are not ready today, <b>{human_gate} wait on a human gate</b> (app review, developer-token approval, partner program or a sales contract). {paid_gate} need a paid plan and only {no_api} lack a hosted API. This is an outreach problem more than an engineering one: start partner conversations in parallel with building."
+  }
+ ],
+ "ver_lede": "Pass 1 was checked three ways: a deterministic link-and-claim checker over all {urls1} evidence URLs, independent adversarial verifier agents told to <i>refute</i> every flagged record, and a blind sample of 20 apps labelled from vendor pages in a real browser before any agent output was read. Accuracy on the sample went from <b>{acc1_raw}%</b> (pass 1 vs the original labels) to <b>{acc2}%</b> after the loops; {perfect2}/20 apps are now right on every field.",
+ "acc_note": "Grey = pass 1, green = final. Sample: random.Random(2026), 2 apps per block of 10, labelled before any agent output was read. Scored fields: auth (set match), access tier, MCP status, buildability verdict. Pass 1 against the corrected labels was {acc1}%. Remaining miss: Clay buildability. Verifiers found its free API is narrow (~15 endpoints, 100 results / 30 days), which the prompt's own rules class as friction; the gold said ready. Left as a miss rather than re-labelled.",
+ "funnel": [
+  [
+   "100",
+   "apps researched by 5 parallel agents"
+  ],
+  [
+   "{urls1_ok}/{urls1}",
+   "evidence URLs resolved (loop 1)"
+  ],
+  [
+   "{flagged1}",
+   "apps flagged: claim not on cited page, low confidence, or agent asked for help"
+  ],
+  [
+   "{changes_agent}",
+   "finding-level corrections by adversarial verifiers (loop 2)"
+  ],
+  [
+   "{evidence_upgrades}",
+   "evidence / notes upgrades (weak citation replaced by a vendor page)"
+  ],
+  [
+   "{browser_checked}",
+   "apps re-checked in a real browser where agents got 403 / JS-only pages (loop 3; {changes_browser} further changes)"
+  ],
+  [
+   "{needs_human}",
+   "apps still marked for human review"
+  ]
+ ],
+ "pipeline": [
+  {
+   "k": "Input",
+   "t": "100 apps + hints",
+   "d": "Scraped from the brief's virtualized Notion table in a real browser (a plain fetch returned an empty shell)."
+  },
+  {
+   "k": "Spec",
+   "t": "One prompt + enum schema",
+   "d": "<span class='mono'>prompt.md</span> fixes the vocabulary (6 access tiers, 3 verdicts) so 100 answers are comparable and machine-checkable."
+  },
+  {
+   "k": "Pass 1",
+   "t": "Research agents",
+   "d": "5 parallel agents × 20 apps, web search + fetch, vendor docs first, JSON per app with evidence URLs and confidence. Headless version: <span class='mono'>agent/research.py</span>."
+  },
+  {
+   "k": "Loop 1",
+   "t": "Deterministic checker",
+   "d": "Fetches every evidence URL, checks it resolves and that the page actually mentions the claimed auth method / MCP. No LLM."
+  },
+  {
+   "k": "Loop 2",
+   "t": "Adversarial verifiers",
+   "d": "A stronger model re-researches only flagged records with the instruction to refute, and must cite a vendor URL for every change."
+  },
+  {
+   "k": "Loop 3",
+   "t": "Browser + human",
+   "human": true,
+   "d": "Pages agents could not load (403 / JS-rendered: Salesforce, Otter, Lark docs) were opened in a real browser. Rows still ambiguous keep a 'human' badge for a person to sign off."
+  },
+  {
+   "k": "Gold",
+   "t": "Blind sample",
+   "human": true,
+   "d": "20 seeded-random apps labelled from vendor pages in a browser before any agent output was read; disagreements re-adjudicated against vendor pages, all changes logged."
+  },
+  {
+   "k": "Output",
+   "t": "Score + build",
+   "d": "<span class='mono'>score.py</span> reports per-field accuracy; <span class='mono'>build.py</span> merges loops, buckets blockers, renders this page, JSON and CSV."
+  }
+ ],
+ "run": {
+  "lede": "Everything after pass 1 runs offline with no API key. The research stage runs headless against an LLM API (Anthropic SDK); the verify, score and build stages are plain Python. 21 offline tests cover the schema, scorer, link flags and the research runner (malformed JSON repair, pause-turn resume, fail-closed fallback, cache reuse).",
+  "cmds": "pip install -r requirements.txt\n\n# pass 1: headless research agent (needs ANTHROPIC_API_KEY or `ant auth login`)\npython -m agent.research data/apps.json data/pass1/results.json --limit 5   # smoke test\n\n# loop 1: deterministic evidence + claim checker (no key)\npython -m agent.verify_links data/pass1/results.json data/pass1/link_report.json\n\n# accuracy on the blind sample\npython -m agent.score data/pass1/results.json data/final/results.json\n\n# merge loops, compute patterns, render site/index.html + results.json/csv\npython -m agent.build\n\npython -m pytest -q tests",
+  "limits": "Honest limits: in this submission, pass 1 and loop 2 were run as interactive AI research agents (Anthropic models, operated by the author) using the same prompt and schema as <span class='mono'>research.py</span>; the headless script is unit-tested against a fake client but was not run against the live API (no API key in the build environment). Gold labels were taken from vendor pages in a real browser; the <span class='mono'>human_confirmed</span> flag on each row of <span class='mono'>data/gold.json</span> records the author's own re-check. 20 apps × 4 fields is a small sample, so treat ±5 pts as noise. Access tiers change often (several free plans were retired in 2025-26); every row carries its evidence URL so it can be re-checked."
+ }
+}

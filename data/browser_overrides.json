@@ -1,0 +1,75 @@
+[
+ {
+  "id": 1,
+  "set": {
+   "mcp": "official"
+  },
+  "evidence_field": "mcp",
+  "evidence_url": "https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available",
+  "reason": "Browser loop: developer.salesforce.com 403s automated fetchers; in a real browser the vendor blog confirms Salesforce Hosted MCP Servers are GA (Apr 2026). Pass-1 cited only an archived CLI repo.",
+  "needs_human": true,
+  "human_reason": "Free Developer Edition is the historical self-serve path, but developer.salesforce.com/signup returned 404 in a real browser on 2026-11-23; confirm the current free sign-up route.",
+  "confidence": "medium"
+ },
+ {
+  "id": 90,
+  "set": {
+   "access": "partner-gated",
+   "buildability": "blocked"
+  },
+  "evidence_field": "access",
+  "evidence_url": "https://pitchbook.com/help/PitchBook-api",
+  "reason": "Browser loop: vendor help page (403 to agents) states the API 'requires a standalone contract agreement' via the Direct Data team.",
+  "needs_human": false,
+  "human_reason": null,
+  "confidence": "high"
+ },
+ {
+  "id": 92,
+  "set": {
+   "access": "partner-gated",
+   "buildability": "blocked"
+  },
+  "evidence_field": "access",
+  "evidence_url": "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API",
+  "reason": "Browser loop: vendor article (403 to agents) states the Public API is 'available for all Enterprise workspaces'; Bearer API keys. Official MCP exists separately.",
+  "needs_human": false,
+  "human_reason": null,
+  "confidence": "high"
+ },
+ {
+  "id": 44,
+  "set": {
+   "access": "partner-gated",
+   "buildability": "blocked"
+  },
+  "evidence_field": "access",
+  "evidence_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+  "reason": "Browser loop: vendor page (403 to agents) says sandboxes require purchased credits — 'Contact your Account Executive'. Licensed-tenant gate confirmed.",
+  "needs_human": false,
+  "human_reason": null,
+  "confidence": "high"
+ },
+ {
+  "id": 50,
+  "set": {
+   "access": "partner-gated",
+   "buildability": "blocked",
+   "mcp": "official"
+  },
+  "evidence_field": "access",
+  "evidence_url": "https://commas.com/enterprises",
+  "reason": "Browser loop: fanbasis rebranded to Commas; APIs/SDKs are listed under 'Enterprise & APIs' behind Contact Us; vendor-run MCP is in beta.",
+  "needs_human": false,
+  "human_reason": null,
+  "confidence": "medium"
+ },
+ {
+  "id": 84,
+  "set": {},
+  "reason": "Browser loop: no public page for 'Paygent Connect' found; likely a reseller product on the NMI gateway (support.nmi.com).",
+  "needs_human": true,
+  "human_reason": "Product not identifiable on the public web; ask the requester which vendor/URL 'Paygent Connect (NMI-powered)' refers to.",
+  "confidence": "low"
+ }
+]

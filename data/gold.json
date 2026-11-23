@@ -1,0 +1,549 @@
+{
+ "_meta": {
+  "purpose": "Blind hand-labelled ground truth for a seeded random sample (random.Random(2026), 2 apps per block of 10 = 20 apps). Labelled from vendor docs in a real browser BEFORE any pass-1 output was read.",
+  "labeller": "Atharva Gaikwad — labels taken from vendor pages in a real browser (AI-assisted lookup). Each row's human_confirmed flag records the author's own final re-check.",
+  "scoring": "auth: correct iff required ⊆ predicted ⊆ required ∪ allowed. Other fields: correct iff predicted ∈ accept list. A field with accept=null is unscorable (excluded).",
+  "date": "2026-11-23",
+  "adjudication": "After pass-1 scoring, every disagreement was re-opened in the browser. Gold changed ONLY where a vendor URL proved the gold wrong or the docs are self-contradictory; all changes logged in data/gold_adjudication.json."
+ },
+ "rows": [
+  {
+   "id": 2,
+   "app": "HubSpot",
+   "auth_required": [
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "Bearer token",
+    "API key"
+   ],
+   "access": [
+    "self-serve-free"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+    "https://developers.hubspot.com/ai-tools/mcp"
+   ],
+   "human_confirmed": false
+  },
+  {
+   "id": 6,
+   "app": "Podio",
+   "auth_required": [
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "Basic",
+    "Other"
+   ],
+   "access": [
+    "self-serve-free",
+    "self-serve-trial"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://developers.podio.com/authentication",
+    "https://www.progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide"
+   ],
+   "note": "Pricing page no longer shows a free tier; API client registration is self-serve.",
+   "human_confirmed": false
+  },
+  {
+   "id": 19,
+   "app": "Gorgias",
+   "auth_required": [
+    "API key",
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "Basic"
+   ],
+   "access": [
+    "self-serve-trial",
+    "paid-plan"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready",
+    "ready-with-friction"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://developers.gorgias.com/reference/authentication",
+    "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta"
+   ],
+   "note": "Private app = API key over Basic (email:key); public app = OAuth2 mandatory.",
+   "human_confirmed": false
+  },
+  {
+   "id": 20,
+   "app": "Gladly",
+   "auth_required": [
+    "Basic"
+   ],
+   "auth_allowed": [
+    "API key",
+    "Bearer token"
+   ],
+   "access": [
+    "partner-gated"
+   ],
+   "mcp": [
+    "none",
+    "community"
+   ],
+   "buildability": [
+    "blocked"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://developer.gladly.com/rest/"
+   ],
+   "note": "Token-based Basic auth; tokens created by an admin-granted API User inside a customer org; no self-serve sign-up.",
+   "human_confirmed": false
+  },
+  {
+   "id": 22,
+   "app": "Twilio",
+   "auth_required": [
+    "Basic"
+   ],
+   "auth_allowed": [
+    "API key",
+    "Bearer token",
+    "JWT/signed"
+   ],
+   "access": [
+    "self-serve-trial",
+    "self-serve-free"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://github.com/twilio-labs/mcp",
+    "https://www.twilio.com/docs/usage/api"
+   ],
+   "human_confirmed": false
+  },
+  {
+   "id": 24,
+   "app": "Lark (Larksuite)",
+   "auth_required": [
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "Bearer token",
+    "Other",
+    "API key"
+   ],
+   "access": [
+    "self-serve-free"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://github.com/larksuite/lark-openapi-mcp"
+   ],
+   "human_confirmed": false
+  },
+  {
+   "id": 39,
+   "app": "Threads (Meta)",
+   "auth_required": [
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "Bearer token"
+   ],
+   "access": [
+    "self-serve-free",
+    "approval"
+   ],
+   "mcp": [
+    "none",
+    "community"
+   ],
+   "buildability": [
+    "ready-with-friction"
+   ],
+   "method": "known-docs",
+   "evidence": [
+    "https://developers.facebook.com/docs/threads"
+   ],
+   "note": "Dev-mode app works for app roles; App Review needed for other users.",
+   "human_confirmed": false
+  },
+  {
+   "id": 40,
+   "app": "SendGrid",
+   "auth_required": [
+    "API key"
+   ],
+   "auth_allowed": [
+    "Bearer token"
+   ],
+   "access": [
+    "self-serve-trial",
+    "self-serve-free"
+   ],
+   "mcp": [
+    "none",
+    "community"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://www.twilio.com/en-us/sendgrid"
+   ],
+   "note": "Pricing URL redirects; marketing page shows 'Free trial' / 'Start for free'.",
+   "human_confirmed": false
+  },
+  {
+   "id": 47,
+   "app": "Ecwid",
+   "auth_required": [
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "Bearer token",
+    "API key"
+   ],
+   "access": [
+    "paid-plan",
+    "approval"
+   ],
+   "mcp": [
+    "none",
+    "community"
+   ],
+   "buildability": [
+    "ready-with-friction"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://docs.ecwid.com/get-started/set-up-your-dev-environment-in-ecwid"
+   ],
+   "note": "'Only stores on paid plans can access API' — free dev upgrade on request by email.",
+   "human_confirmed": false
+  },
+  {
+   "id": 49,
+   "app": "Amazon Selling Partner",
+   "auth_required": [
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "JWT/signed",
+    "Other"
+   ],
+   "access": [
+    "approval",
+    "paid-plan"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready-with-friction",
+    "blocked"
+   ],
+   "method": "browser+known-docs",
+   "evidence": [
+    "https://developer-docs.amazon.com/sp-api",
+    "https://github.com/amzn/selling-partner-api-samples"
+   ],
+   "note": "LWA OAuth; developer registration review + Professional seller account. Only third-party MCPs found.",
+   "human_confirmed": false
+  },
+  {
+   "id": 58,
+   "app": "Sherlock",
+   "auth_required": [
+    "None"
+   ],
+   "auth_allowed": [],
+   "access": [
+    "n/a"
+   ],
+   "mcp": [
+    "community",
+    "none"
+   ],
+   "buildability": [
+    "blocked"
+   ],
+   "method": "known-docs",
+   "evidence": [
+    "https://github.com/sherlock-project/sherlock"
+   ],
+   "note": "Local OSS CLI, no hosted API.",
+   "human_confirmed": false
+  },
+  {
+   "id": 60,
+   "app": "Clay",
+   "auth_required": [
+    "API key"
+   ],
+   "auth_allowed": [
+    "OAuth2"
+   ],
+   "access": [
+    "self-serve-free"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://university.clay.com/docs/clay-api-cli",
+    "https://developers.clay.com/public-api/authentication.md"
+   ],
+   "note": "'The developer platform is available across all Clay plans, including free' — reverses the common belief that Clay API is Enterprise-only.",
+   "human_confirmed": false
+  },
+  {
+   "id": 61,
+   "app": "GitHub",
+   "auth_required": [
+    "OAuth2",
+    "Bearer token"
+   ],
+   "auth_allowed": [
+    "JWT/signed",
+    "Basic"
+   ],
+   "access": [
+    "self-serve-free"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "known-docs",
+   "evidence": [
+    "https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api",
+    "https://github.com/github/github-mcp-server"
+   ],
+   "human_confirmed": false
+  },
+  {
+   "id": 64,
+   "app": "Cloudflare",
+   "auth_required": [
+    "Bearer token"
+   ],
+   "auth_allowed": [
+    "API key",
+    "OAuth2"
+   ],
+   "access": [
+    "self-serve-free"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "known-docs",
+   "evidence": [
+    "https://developers.cloudflare.com/fundamentals/api/get-started/create-token/",
+    "https://github.com/cloudflare/mcp-server-cloudflare"
+   ],
+   "human_confirmed": false
+  },
+  {
+   "id": 72,
+   "app": "Airtable",
+   "auth_required": [
+    "Bearer token",
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "API key"
+   ],
+   "access": [
+    "self-serve-free"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://support.airtable.com/articles/9897799762-using-the-airtable-mcp-server"
+   ],
+   "note": "Official MCP, 'Plan availability: All plans'.",
+   "human_confirmed": false
+  },
+  {
+   "id": 80,
+   "app": "Harvest",
+   "auth_required": [
+    "Bearer token",
+    "OAuth2"
+   ],
+   "auth_allowed": [
+    "API key"
+   ],
+   "access": [
+    "self-serve-free"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+    "https://www.getharvest.com/pricing"
+   ],
+   "note": "PAT + OAuth2; Free plan exists; getharvest.com hosts a 'Harvest MCP' page (seen via site-restricted search).",
+   "human_confirmed": false
+  },
+  {
+   "id": 82,
+   "app": "Plaid",
+   "auth_required": [],
+   "auth_allowed": [
+    "API key",
+    "Other"
+   ],
+   "access": [
+    "self-serve-free",
+    "approval"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready",
+    "ready-with-friction"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://plaid.com/docs/resources/mcp/",
+    "https://plaid.com/docs/api/"
+   ],
+   "note": "client_id+secret; free Sandbox; Production needs approval. Two official MCPs (Dashboard + local toolkit).",
+   "human_confirmed": false
+  },
+  {
+   "id": 85,
+   "app": "iPayX",
+   "auth_required": [
+    "API key"
+   ],
+   "auth_allowed": [
+    "Bearer token"
+   ],
+   "access": [
+    "self-serve-free",
+    "paid-plan"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "ready",
+    "ready-with-friction"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://www.ipayx.ai/developers",
+    "https://www.ipayx.ai/pricing"
+   ],
+   "note": "Given hint ipayx.ai/docs returns 404; real docs at /developers. Free allowance of 3 audits/month. Narrow API.",
+   "human_confirmed": false
+  },
+  {
+   "id": 92,
+   "app": "Otter AI",
+   "auth_required": [
+    "API key"
+   ],
+   "auth_allowed": [
+    "Bearer token",
+    "OAuth2"
+   ],
+   "access": [
+    "partner-gated",
+    "paid-plan"
+   ],
+   "mcp": [
+    "official"
+   ],
+   "buildability": [
+    "blocked",
+    "ready-with-friction"
+   ],
+   "method": "browser",
+   "evidence": [
+    "https://help.otter.ai/hc/en-us/articles/36130822688279-Otter-ai-Public-API"
+   ],
+   "note": "Public API 'available for all Enterprise workspaces'; Bearer API key. WebFetch got 403 on this page; the browser did not.",
+   "human_confirmed": false
+  },
+  {
+   "id": 98,
+   "app": "Mermaid CLI",
+   "auth_required": [
+    "None"
+   ],
+   "auth_allowed": [],
+   "access": [
+    "n/a"
+   ],
+   "mcp": [
+    "community",
+    "none"
+   ],
+   "buildability": [
+    "blocked"
+   ],
+   "method": "known-docs",
+   "evidence": [
+    "https://github.com/mermaid-js/mermaid-cli"
+   ],
+   "note": "Local CLI, no hosted API (could be wrapped as a local tool, not a hosted toolkit).",
+   "human_confirmed": false
+  }
+ ]
+}

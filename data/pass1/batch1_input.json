@@ -1,0 +1,102 @@
+[
+ {
+  "id": 1,
+  "app": "Salesforce",
+  "hint": "salesforce.com"
+ },
+ {
+  "id": 2,
+  "app": "HubSpot",
+  "hint": "hubspot.com"
+ },
+ {
+  "id": 3,
+  "app": "Pipedrive",
+  "hint": "pipedrive.com"
+ },
+ {
+  "id": 4,
+  "app": "Attio",
+  "hint": "attio.com"
+ },
+ {
+  "id": 5,
+  "app": "Twenty",
+  "hint": "twenty.com (open-source CRM)"
+ },
+ {
+  "id": 6,
+  "app": "Podio",
+  "hint": "podio.com"
+ },
+ {
+  "id": 7,
+  "app": "Zoho CRM",
+  "hint": "zoho.com/crm"
+ },
+ {
+  "id": 8,
+  "app": "Close",
+  "hint": "close.com"
+ },
+ {
+  "id": 9,
+  "app": "Copper",
+  "hint": "copper.com"
+ },
+ {
+  "id": 10,
+  "app": "DealCloud",
+  "hint": "api.docs.dealcloud.com"
+ },
+ {
+  "id": 11,
+  "app": "Zendesk",
+  "hint": "zendesk.com"
+ },
+ {
+  "id": 12,
+  "app": "Intercom",
+  "hint": "intercom.com"
+ },
+ {
+  "id": 13,
+  "app": "Freshdesk",
+  "hint": "freshdesk.com"
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "hint": "front.com"
+ },
+ {
+  "id": 15,
+  "app": "Pylon",
+  "hint": "usepylon.com"
+ },
+ {
+  "id": 16,
+  "app": "LiveAgent",
+  "hint": "liveagent.com"
+ },
+ {
+  "id": 17,
+  "app": "Plain",
+  "hint": "plain.com"
+ },
+ {
+  "id": 18,
+  "app": "Help Scout",
+  "hint": "helpscout.com"
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "hint": "gorgias.com"
+ },
+ {
+  "id": 20,
+  "app": "Gladly",
+  "hint": "gladly.com"
+ }
+]

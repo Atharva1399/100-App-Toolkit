@@ -1,0 +1,1129 @@
+[
+  {
+    "id": 3,
+    "app": "Pipedrive",
+    "record": {
+      "id": 3,
+      "app": "Pipedrive",
+      "category": "CRM",
+      "one_liner": "Sales CRM with a REST API (v1/v2) and a native hosted MCP server.",
+      "auth_methods": [
+        "OAuth2",
+        "Bearer token"
+      ],
+      "auth_notes": "OAuth 2.0 for apps; personal 'API token' (not called API key) sent in x-api-token header, one per user per company.",
+      "access": "self-serve-free",
+      "access_notes": "No free CRM plan; developer portal offers self-serve Sandbox Account sign-up ('Sign up for a Sandbox Account today to begin experimenting and developing in a risk free environment'); cost not stated on vendor page; inactive sandboxes deleted (no app within 45 days). Pricing page 403 to fetcher.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "~50 endpoint groups (Deals, Leads, Persons, Organizations, Activities, Projects, Webhooks); OpenAPI specs for v1 and v2.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.pipedrive.ai/mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+        "access": "https://developers.pipedrive.com/",
+        "api": "https://developers.pipedrive.com/docs/api/v1/Deals",
+        "mcp": "https://www.pipedrive.com/en/features/mcp-server"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_methods",
+        "old": [
+          "OAuth2",
+          "API key"
+        ],
+        "new": [
+          "OAuth2",
+          "Bearer token"
+        ],
+        "reason": "Auth page names only OAuth 2.0 and an 'API token' sent in the x-api-token header; the vendor never calls it an API key, so per the enum it is a Bearer token (static personal token).",
+        "evidence_url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication"
+      },
+      {
+        "field": "auth_notes",
+        "old": "OAuth 2.0 for apps; personal API token sent in x-api-token header (one per user/company).",
+        "new": "OAuth 2.0 for apps; personal 'API token' (not called API key) sent in x-api-token header, one per user per company.",
+        "reason": "Clarified vendor wording.",
+        "evidence_url": "https://pipedrive.readme.io/docs/core-api-concepts-authentication"
+      },
+      {
+        "field": "access_notes",
+        "old": "API token available from any account; a separate Developer Sandbox account can be requested (free status not stated on page). Trial accounts also give a token.",
+        "new": "No free CRM plan; developer portal offers self-serve Sandbox Account sign-up ('Sign up for a Sandbox Account today to begin experimenting and developing in a risk free environment'); cost not stated on vendor page; inactive sandboxes deleted (no app within 45 days). Pricing page 403 to fetcher.",
+        "reason": "Adversarial check: sandbox is a self-serve sign-up form but vendor page does not explicitly say free; access kept as self-serve-free.",
+        "evidence_url": "https://developers.pipedrive.com/"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://developers.pipedrive.com/docs/api/v1",
+        "new": "https://developers.pipedrive.com/",
+        "reason": "Stronger primary evidence for sandbox sign-up.",
+        "evidence_url": "https://developers.pipedrive.com/"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:API key"
+    ]
+  },
+  {
+    "id": 14,
+    "app": "Front",
+    "record": {
+      "id": 14,
+      "app": "Front",
+      "category": "Customer support / shared inbox",
+      "one_liner": "Shared inbox and customer ops platform with a REST Core API.",
+      "auth_methods": [
+        "Bearer token",
+        "OAuth2"
+      ],
+      "auth_notes": "Admin-created company API tokens (Settings > Developers) sent as Bearer; OAuth authorization-code required for public integrations. MCP server scope not available to API tokens.",
+      "access": "self-serve-free",
+      "access_notes": "Free developer environment via developer sign-up (front.com/signup?affiliate=developers); customer plans are paid with a 14-day free trial. Only admins can create API tokens.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Core API for conversations, contacts, inboxes, rules, tags, teams, accounts (api2.frontapp.com) per search summary; token scope page confirms core resources.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.frontapp.com/mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+        "access": "https://dev.frontapp.com/docs/welcome",
+        "api": "https://dev.frontapp.com/reference/introduction",
+        "mcp": "https://dev.frontapp.com/docs/mcp-server"
+      },
+      "confidence": "high",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "access",
+        "old": "self-serve-trial",
+        "new": "self-serve-free",
+        "reason": "Front developer docs: 'You'll get access to a free developer environment that will provide everything you need to begin building with our APIs' via developer sign-up.",
+        "evidence_url": "https://dev.frontapp.com/docs/welcome"
+      },
+      {
+        "field": "access_notes",
+        "old": "Only admins can create tokens; no plan requirement stated; paid product with trial (trial not confirmed on opened pages).",
+        "new": "Free developer environment via developer sign-up (front.com/signup?affiliate=developers); customer plans are paid with a 14-day free trial. Only admins can create API tokens.",
+        "reason": "Replaced unconfirmed trial claim with vendor quote.",
+        "evidence_url": "https://dev.frontapp.com/docs/welcome"
+      },
+      {
+        "field": "mcp_url",
+        "old": null,
+        "new": "https://mcp.frontapp.com/mcp",
+        "reason": "Front MCP Server doc gives endpoint https://mcp.frontapp.com/mcp (OAuth 2.1, client credentials from a developer app).",
+        "evidence_url": "https://dev.frontapp.com/docs/mcp-server"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+        "new": "https://dev.frontapp.com/docs/mcp-server",
+        "reason": "Vendor MCP doc page found.",
+        "evidence_url": "https://dev.frontapp.com/docs/mcp-server"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+        "new": "https://dev.frontapp.com/docs/welcome",
+        "reason": "Vendor page stating free developer environment.",
+        "evidence_url": "https://dev.frontapp.com/docs/welcome"
+      },
+      {
+        "field": "evidence.api",
+        "old": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+        "new": "https://dev.frontapp.com/reference/introduction",
+        "reason": "Core API reference intro (OAuth 2.0 and API tokens; control over all entities).",
+        "evidence_url": "https://dev.frontapp.com/reference/introduction"
+      },
+      {
+        "field": "confidence",
+        "old": "low",
+        "new": "high",
+        "reason": "All fields now confirmed on vendor pages.",
+        "evidence_url": "https://dev.frontapp.com/docs/mcp-server"
+      },
+      {
+        "field": "needs_human",
+        "old": true,
+        "new": false,
+        "reason": "MCP doc and access path found on vendor docs.",
+        "evidence_url": "https://dev.frontapp.com/docs/mcp-server"
+      },
+      {
+        "field": "human_reason",
+        "old": "Front's token page references an 'MCP server' scope (implying an official MCP server) but I did not open an MCP doc page or find its URL; main API docs fetch returned 404.",
+        "new": null,
+        "reason": "Resolved.",
+        "evidence_url": "https://dev.frontapp.com/docs/mcp-server"
+      }
+    ],
+    "flags_resolved": [
+      "agent-asked-for-human",
+      "low-confidence"
+    ]
+  },
+  {
+    "id": 19,
+    "app": "Gorgias",
+    "record": {
+      "id": 19,
+      "app": "Gorgias",
+      "category": "E-commerce customer support",
+      "one_liner": "E-commerce help desk with a REST API and first-party hosted MCP (open beta).",
+      "auth_methods": [
+        "API key",
+        "OAuth2",
+        "Basic"
+      ],
+      "auth_notes": "Private apps: HTTP Basic auth with USERNAME (account email) : API key, base64 encoded ('the USERNAME:API_KEY pair has to be a base64 encoded string'); public apps must use OAuth2.",
+      "access": "self-serve-trial",
+      "access_notes": "No free plan (Starter from $10/mo); pricing FAQ: 'The Gorgias trial period lasts 7 days', no payment details needed. Owner/admins create API keys in Settings > REST API.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Resource-oriented JSON REST API with full reference; undocumented resources are internal.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.gorgias.com/mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+        "access": "https://www.gorgias.com/pricing",
+        "api": "https://developers.gorgias.com/reference/introduction",
+        "mcp": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_notes",
+        "old": "Private apps use API key (Basic with email + key); public apps must use OAuth2.",
+        "new": "Private apps: HTTP Basic auth with USERNAME (account email) : API key, base64 encoded ('the USERNAME:API_KEY pair has to be a base64 encoded string'); public apps must use OAuth2.",
+        "reason": "Basic confirmed on vendor API keys page.",
+        "evidence_url": "https://developers.gorgias.com/docs/access-tokens-api-keys"
+      },
+      {
+        "field": "evidence.auth",
+        "old": "https://developers.gorgias.com/docs/authentication",
+        "new": "https://developers.gorgias.com/docs/access-tokens-api-keys",
+        "reason": "Page explicitly describes HTTP Basic Authentication with USERNAME:API_KEY.",
+        "evidence_url": "https://developers.gorgias.com/docs/access-tokens-api-keys"
+      },
+      {
+        "field": "access_notes",
+        "old": "Credentials from account settings; docs fetched do not explain obtaining keys or plans (trial assumed). MCP works on any plan.",
+        "new": "No free plan (Starter from $10/mo); pricing FAQ: 'The Gorgias trial period lasts 7 days', no payment details needed. Owner/admins create API keys in Settings > REST API.",
+        "reason": "Trial confirmed on vendor pricing page.",
+        "evidence_url": "https://www.gorgias.com/pricing"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://developers.gorgias.com/docs/authentication",
+        "new": "https://www.gorgias.com/pricing",
+        "reason": "Vendor pricing page confirms 7-day trial, no free plan.",
+        "evidence_url": "https://www.gorgias.com/pricing"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:Basic"
+    ]
+  },
+  {
+    "id": 27,
+    "app": "Telegram",
+    "record": {
+      "id": 27,
+      "app": "Telegram",
+      "category": "Messaging",
+      "one_liner": "Bot API over HTTPS with BotFather tokens.",
+      "auth_methods": [
+        "Bearer token"
+      ],
+      "auth_notes": "Per-bot token from BotFather embedded in URL path.",
+      "access": "self-serve-free",
+      "access_notes": "Create bot via BotFather instantly; no approval.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Large method set: messaging, media, polls, payments, business, mini apps; updates via polling/webhook. User-account (TDLib) API not assessed.",
+      "mcp": "community",
+      "mcp_url": "https://github.com/chigwell/telegram-mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://core.telegram.org/bots/api",
+        "access": "https://core.telegram.org/bots/api",
+        "api": "https://core.telegram.org/bots/api",
+        "mcp": "https://github.com/chigwell/telegram-mcp"
+      },
+      "confidence": "high",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "evidence.mcp",
+        "old": null,
+        "new": "https://github.com/chigwell/telegram-mcp",
+        "reason": "Community MCP evidence: Telethon-based server maintained by individuals (chigwell, l1v0n1), not Telegram; no Telegram-published MCP found.",
+        "evidence_url": "https://github.com/chigwell/telegram-mcp"
+      },
+      {
+        "field": "mcp_url",
+        "old": null,
+        "new": "https://github.com/chigwell/telegram-mcp",
+        "reason": "Representative community server.",
+        "evidence_url": "https://github.com/chigwell/telegram-mcp"
+      }
+    ],
+    "flags_resolved": [
+      "mcp-claim-without-evidence"
+    ]
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "record": {
+      "id": 32,
+      "app": "Meta Ads",
+      "category": "Advertising",
+      "one_liner": "Meta Marketing API with official Meta Ads MCP.",
+      "auth_methods": [
+        "OAuth2",
+        "Bearer token"
+      ],
+      "auth_notes": "OAuth (Facebook Login for Business) with ads_read/ads_management scopes yields user access tokens; system user access tokens (non-expiring, server-to-server) sent as Authorization: Bearer / access_token.",
+      "access": "self-serve-free",
+      "access_notes": "Apps start at Limited Access (dev only, rate-limited); Full Access needs App Review and 500 calls/<15% errors; managing others' accounts needs advanced access; business verification may be required.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Campaigns, ads, catalogs, insights via Graph/Marketing API.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.facebook.com/ads",
+      "buildability": "ready-with-friction",
+      "blocker": "App Review for Full/advanced access",
+      "evidence": {
+        "auth": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication.md",
+        "access": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+        "api": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+        "mcp": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_notes",
+        "old": "OAuth scopes ads_read/ads_management; system-user tokens.",
+        "new": "OAuth (Facebook Login for Business) with ads_read/ads_management scopes yields user access tokens; system user access tokens (non-expiring, server-to-server) sent as Authorization: Bearer / access_token.",
+        "reason": "Bearer/system-user token confirmed on Marketing API authentication page.",
+        "evidence_url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication.md"
+      },
+      {
+        "field": "evidence.auth",
+        "old": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+        "new": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication.md",
+        "reason": "Page documents user and system user access tokens ('it does not expire').",
+        "evidence_url": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/get-started/authentication.md"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://developers.facebook.com/documentation/mcp",
+        "new": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview",
+        "reason": "Vendor page: 'a Meta-hosted Model Context Protocol server' at https://mcp.facebook.com/ads.",
+        "evidence_url": "https://developers.facebook.com/documentation/ads-commerce/ads-ai-connectors/ads-mcp-server/ads-mcp-server-overview"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:Bearer token"
+    ]
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "record": {
+      "id": 37,
+      "app": "systeme.io",
+      "category": "Funnel builder/marketing",
+      "one_liner": "All-in-one funnel/email platform with small public API and built-in MCP.",
+      "auth_methods": [
+        "API key"
+      ],
+      "auth_notes": "X-API-Key header; up to 3 keys created in Settings.",
+      "access": "self-serve-free",
+      "access_notes": "Free plan 'never expires and does not require a credit card'; systeme.io MCP page: 'The MCP server is a powerful feature included in all systeme.io plans' (incl. Free). API and MCP keys are created in the same Settings > 'MCP & API keys' section; pricing table does not render plan-level API values.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST API at api.systeme.io with broad CRUD (contacts, tags, fields, automation rules, bookings, communities, funnels, newsletters/campaigns, coupons/price plans/products, files, domains) plus webhooks.",
+      "mcp": "official",
+      "mcp_url": "https://developer.systeme.io/docs/mcp-server",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://developer.systeme.io/reference/api",
+        "access": "https://systeme.io/mcp",
+        "api": "https://developer.systeme.io/llms.txt",
+        "mcp": "https://developer.systeme.io/docs/mcp-server"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "api_breadth",
+        "old": "narrow",
+        "new": "broad",
+        "reason": "Vendor docs index lists CRUD across many resources: contacts, tags, contact fields, automation rules, booking calendar, communities, funnels, mailing (newsletters, campaigns), coupons, price plans, digital products, files, domains, page editor.",
+        "evidence_url": "https://developer.systeme.io/llms.txt"
+      },
+      {
+        "field": "api_notes",
+        "old": "Contacts, tags, with some further operations; funnels not editable via MCP.",
+        "new": "REST API at api.systeme.io with broad CRUD (contacts, tags, fields, automation rules, bookings, communities, funnels, newsletters/campaigns, coupons/price plans/products, files, domains) plus webhooks.",
+        "reason": "Full endpoint list located.",
+        "evidence_url": "https://developer.systeme.io/llms.txt"
+      },
+      {
+        "field": "evidence.api",
+        "old": "https://developer.systeme.io/reference/api",
+        "new": "https://developer.systeme.io/llms.txt",
+        "reason": "Vendor docs index enumerating endpoints.",
+        "evidence_url": "https://developer.systeme.io/llms.txt"
+      },
+      {
+        "field": "mcp_url",
+        "old": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+        "new": "https://developer.systeme.io/docs/mcp-server",
+        "reason": "Vendor MCP docs page (auth via X-MCP-Key header or mcpKey param; contacts/tags/newsletter tools). Endpoint URL itself not published on the page.",
+        "evidence_url": "https://developer.systeme.io/docs/mcp-server"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+        "new": "https://developer.systeme.io/docs/mcp-server",
+        "reason": "Primary MCP doc replaces help article.",
+        "evidence_url": "https://developer.systeme.io/docs/mcp-server"
+      },
+      {
+        "field": "access_notes",
+        "old": "Key created under profile Settings > MCP & API keys; plan gating for API/MCP not stated in help docs.",
+        "new": "Free plan 'never expires and does not require a credit card'; systeme.io MCP page: 'The MCP server is a powerful feature included in all systeme.io plans' (incl. Free). API and MCP keys are created in the same Settings > 'MCP & API keys' section; pricing table does not render plan-level API values.",
+        "reason": "Plan gating resolved for MCP on the free plan; API key lives in the same settings section.",
+        "evidence_url": "https://systeme.io/mcp"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+        "new": "https://systeme.io/mcp",
+        "reason": "Vendor page states MCP included in all plans including Free.",
+        "evidence_url": "https://systeme.io/mcp"
+      },
+      {
+        "field": "buildability",
+        "old": "ready-with-friction",
+        "new": "ready",
+        "reason": "Free plan, self-serve API key, broad documented REST API.",
+        "evidence_url": "https://developer.systeme.io/llms.txt"
+      },
+      {
+        "field": "blocker",
+        "old": "narrow API; plan gating unclear",
+        "new": "none",
+        "reason": "No blocker after breadth correction.",
+        "evidence_url": "https://developer.systeme.io/llms.txt"
+      },
+      {
+        "field": "confidence",
+        "old": "low",
+        "new": "medium",
+        "reason": "Free-plan API-key availability inferred from shared keys settings, not stated explicitly.",
+        "evidence_url": "https://systeme.io/mcp"
+      },
+      {
+        "field": "needs_human",
+        "old": true,
+        "new": false,
+        "reason": "Plan and endpoint questions resolved from vendor pages.",
+        "evidence_url": "https://systeme.io/mcp"
+      },
+      {
+        "field": "human_reason",
+        "old": "Plan requirements and full endpoint list not confirmed; MCP described only in help article.",
+        "new": null,
+        "reason": "Resolved.",
+        "evidence_url": "https://systeme.io/mcp"
+      }
+    ],
+    "flags_resolved": [
+      "agent-asked-for-human",
+      "low-confidence"
+    ]
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "record": {
+      "id": 44,
+      "app": "Salesforce Commerce Cloud",
+      "category": "E-commerce",
+      "one_liner": "Salesforce B2C Commerce enterprise storefront platform with SCAPI/OCAPI.",
+      "auth_methods": [
+        "OAuth2",
+        "JWT/signed"
+      ],
+      "auth_notes": "Account Manager API clients (client credentials, user sign-in, or JWT) for SCAPI Admin APIs; SLAS for shopper APIs.",
+      "access": "partner-gated",
+      "access_notes": "Requires an existing licensed B2C Commerce tenant/instance and an Account Manager admin to create API clients; no public free tier found. Salesforce docs returned 403 to fetch so this is from the open-source tooling guide and search snippets.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "SCAPI Admin and Shopper APIs plus legacy OCAPI; B2C DX MCP covers SCAPI Admin access.",
+      "mcp": "official",
+      "mcp_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+      "buildability": "blocked",
+      "blocker": "requires licensed B2C Commerce realm (sales-led)",
+      "evidence": {
+        "auth": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+        "access": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+        "api": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+        "mcp": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp"
+      },
+      "confidence": "low",
+      "needs_human": true,
+      "human_reason": "needs-browser: https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html"
+    },
+    "changes": [
+      {
+        "field": "mcp_url",
+        "old": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+        "new": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+        "reason": "Salesforce-published @salesforce/b2c-dx-mcp (repo SalesforceCommerceCloud/b2c-developer-tooling, (c) Salesforce, Inc.); page now reachable.",
+        "evidence_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+        "new": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp",
+        "reason": "MCP page reachable and confirms vendor publisher.",
+        "evidence_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/mcp"
+      },
+      {
+        "field": "buildability",
+        "old": "ready-with-friction",
+        "new": "blocked",
+        "reason": "Access is partner-gated (licensed B2C Commerce realm; on-demand sandboxes need credits purchased via Account Executive per search snippet of vendor doc); per definitions a sales gate is 'blocked', not ready-with-friction.",
+        "evidence_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html"
+      },
+      {
+        "field": "blocker",
+        "old": "requires licensed enterprise tenant",
+        "new": "requires licensed B2C Commerce realm (sales-led)",
+        "reason": "Consistent with partner-gated access.",
+        "evidence_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html"
+      },
+      {
+        "field": "human_reason",
+        "old": "developer.salesforce.com docs returned 403; tenant licensing requirement and MCP status (developer preview) not confirmed from primary vendor page.",
+        "new": "needs-browser: https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html",
+        "reason": "MCP flag resolved; licensing/sandbox-credit requirement is decisive and the vendor page returns 403 to fetchers.",
+        "evidence_url": "https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-get-started-sandboxes.html"
+      }
+    ],
+    "flags_resolved": [
+      "mcp-evidence-unreachable(ConnectTimeout)"
+    ]
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "record": {
+      "id": 50,
+      "app": "fanbasis",
+      "category": "Payments / Creator",
+      "one_liner": "Payments/checkout platform for online sellers; FanBasis rebranded as Commas on 2026-07-14.",
+      "auth_methods": [
+        "Other"
+      ],
+      "auth_notes": "No public auth docs found.",
+      "access": "partner-gated",
+      "access_notes": "fanbasis.com redirects to commas.com. Enterprise page: 'APIs and embeddable components' with 'a dedicated implementation engineer'; no public API reference; docs.* / developers.* subdomains redirect to the marketing homepage.",
+      "api_types": [
+        "None"
+      ],
+      "api_breadth": "none",
+      "api_notes": "No public API docs located.",
+      "mcp": "official",
+      "mcp_url": null,
+      "buildability": "blocked",
+      "blocker": "no public API docs",
+      "evidence": {
+        "auth": "https://commas.com/enterprises",
+        "access": "https://commas.com/enterprises",
+        "api": "https://commas.com/enterprises",
+        "mcp": "https://commas.com/"
+      },
+      "confidence": "low",
+      "needs_human": true,
+      "human_reason": "needs-browser: https://commas.com/login (API and MCP-beta docs/endpoint not public; likely only inside the logged-in dashboard)"
+    },
+    "changes": [
+      {
+        "field": "one_liner",
+        "old": "Payments and checkout infrastructure for online entrepreneurs.",
+        "new": "Payments/checkout platform for online sellers; FanBasis rebranded as Commas on 2026-07-14.",
+        "reason": "Vendor rename page.",
+        "evidence_url": "https://commas.com/fanbasis-is-now-commas"
+      },
+      {
+        "field": "mcp",
+        "old": "none",
+        "new": "official",
+        "reason": "Vendor homepage advertises an MCP beta: 'Run Commas from your AI assistant. Create checkout links, issue refunds and pull your numbers' (vendor-run).",
+        "evidence_url": "https://commas.com/"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": null,
+        "new": "https://commas.com/",
+        "reason": "Vendor homepage MCP beta card.",
+        "evidence_url": "https://commas.com/"
+      },
+      {
+        "field": "access_notes",
+        "old": "Enterprise page mentions SDKs, docs, sandbox and implementation engineer, implying sales-led onboarding; no public API reference found.",
+        "new": "fanbasis.com redirects to commas.com. Enterprise page: 'APIs and embeddable components' with 'a dedicated implementation engineer'; no public API reference; docs.* / developers.* subdomains redirect to the marketing homepage.",
+        "reason": "Re-checked with direct fetch (no longer 403).",
+        "evidence_url": "https://commas.com/enterprises"
+      },
+      {
+        "field": "evidence.auth",
+        "old": "https://fanbasis.com/enterprises",
+        "new": "https://commas.com/enterprises",
+        "reason": "Domain moved.",
+        "evidence_url": "https://commas.com/enterprises"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://fanbasis.com/enterprises",
+        "new": "https://commas.com/enterprises",
+        "reason": "Domain moved.",
+        "evidence_url": "https://commas.com/enterprises"
+      },
+      {
+        "field": "evidence.api",
+        "old": "https://fanbasis.com/enterprises",
+        "new": "https://commas.com/enterprises",
+        "reason": "Domain moved.",
+        "evidence_url": "https://commas.com/enterprises"
+      },
+      {
+        "field": "human_reason",
+        "old": "fanbasis.com returned 403 on direct fetch; enterprise page seen only via search snippet; no developer docs found.",
+        "new": "needs-browser: https://commas.com/login (API and MCP-beta docs/endpoint not public; likely only inside the logged-in dashboard)",
+        "reason": "Site now reachable; remaining gap is login-walled docs.",
+        "evidence_url": "https://commas.com/"
+      }
+    ],
+    "flags_resolved": []
+  },
+  {
+    "id": 57,
+    "app": "Bright Data",
+    "record": {
+      "id": 57,
+      "app": "Bright Data",
+      "category": "Web data / proxies",
+      "one_liner": "Proxy networks, Web Unlocker, SERP API, scrapers and datasets.",
+      "auth_methods": [
+        "API key",
+        "Basic"
+      ],
+      "auth_notes": "API Access: API key sent as Authorization: Bearer. Native (proxy) Access: proxy username:password credentials (HTTP proxy Basic scheme). Admin-only key creation.",
+      "access": "self-serve-free",
+      "access_notes": "MCP overview: 'Every new account includes 5,000 free requests per month' (shared account-level free tier); pricing page only notes a Scraper Studio free tier.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Web Unlocker, SERP API, Browsers, Scrapers, Functions, Marketplace datasets, proxies.",
+      "mcp": "official",
+      "mcp_url": "https://github.com/brightdata/brightdata-mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://docs.brightdata.com/api-reference/authentication",
+        "access": "https://docs.brightdata.com/ai/mcp-server/overview",
+        "api": "https://docs.brightdata.com/api-reference/authentication",
+        "mcp": "https://docs.brightdata.com/ai/mcp-server/overview"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_notes",
+        "old": "API key as Bearer for API access; proxy username/password for native access; admin-only key creation.",
+        "new": "API Access: API key sent as Authorization: Bearer. Native (proxy) Access: proxy username:password credentials (HTTP proxy Basic scheme). Admin-only key creation.",
+        "reason": "Auth page lists Native Access using proxy 'username:password'; Basic kept for that path.",
+        "evidence_url": "https://docs.brightdata.com/api-reference/authentication"
+      },
+      {
+        "field": "access_notes",
+        "old": "Account includes 5,000 free requests per month (MCP free tier note); default key auto-created.",
+        "new": "MCP overview: 'Every new account includes 5,000 free requests per month' (shared account-level free tier); pricing page only notes a Scraper Studio free tier.",
+        "reason": "Quoted vendor text.",
+        "evidence_url": "https://docs.brightdata.com/ai/mcp-server/overview"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:Basic"
+    ]
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "record": {
+      "id": 62,
+      "app": "Vercel",
+      "category": "Developer Tools / Hosting",
+      "one_liner": "Frontend cloud platform for deploying and hosting web projects.",
+      "auth_methods": [
+        "Bearer token",
+        "OAuth2"
+      ],
+      "auth_notes": "Access tokens (account/team/project scoped) sent as Authorization: Bearer; OAuth2 authorization-code exchange for integrations (POST https://api.vercel.com/v2/oauth/access_token, plus client_credentials short-lived tokens) and Sign in with Vercel.",
+      "access": "self-serve-free",
+      "access_notes": "Free Hobby plan ('$0/mo', 'Hobby is free'); no REST API/token restriction stated for Hobby (only billing scope limited to Pro/Enterprise).",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Large REST API (~470 endpoints listed): projects, deployments, domains, env vars, access groups, etc.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.vercel.com",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+        "access": "https://vercel.com/pricing",
+        "api": "https://vercel.com/docs/rest-api",
+        "mcp": "https://vercel.com/docs/mcp/vercel-mcp"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_notes",
+        "old": "Access tokens created via account (endpoints under /v3/user/tokens) sent as Bearer; OAuth for integrations/Sign in with Vercel not confirmed on opened pages.",
+        "new": "Access tokens (account/team/project scoped) sent as Authorization: Bearer; OAuth2 authorization-code exchange for integrations (POST https://api.vercel.com/v2/oauth/access_token, plus client_credentials short-lived tokens) and Sign in with Vercel.",
+        "reason": "OAuth2 confirmed on integrations docs.",
+        "evidence_url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations"
+      },
+      {
+        "field": "evidence.auth",
+        "old": "https://vercel.com/docs/rest-api/authentication",
+        "new": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations",
+        "reason": "Documents OAuth code exchange returning a Bearer token.",
+        "evidence_url": "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations"
+      },
+      {
+        "field": "access_notes",
+        "old": "Free Hobby plan; account tokens self-created. Plan gating not stated on docs opened.",
+        "new": "Free Hobby plan ('$0/mo', 'Hobby is free'); no REST API/token restriction stated for Hobby (only billing scope limited to Pro/Enterprise).",
+        "reason": "Quoted vendor pricing page.",
+        "evidence_url": "https://vercel.com/pricing"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://vercel.com/docs/rest-api",
+        "new": "https://vercel.com/pricing",
+        "reason": "Vendor pricing page confirms free plan.",
+        "evidence_url": "https://vercel.com/pricing"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:OAuth2"
+    ]
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "record": {
+      "id": 80,
+      "app": "Harvest",
+      "category": "Time Tracking",
+      "one_liner": "Time tracking and invoicing software.",
+      "auth_methods": [
+        "Bearer token",
+        "OAuth2"
+      ],
+      "auth_notes": "Personal access tokens (plus Harvest-Account-Id header) or OAuth2 apps via Harvest ID.",
+      "access": "self-serve-free",
+      "access_notes": "Free plan '$0 forever' (1 seat, 2 projects); PATs created in Harvest ID developers section; auth docs state no plan requirement.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST API v2: time entries, projects, clients, invoices, expenses, reports.",
+      "mcp": "official",
+      "mcp_url": "https://api.harvestapp.com/mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+        "access": "https://www.getharvest.com/pricing",
+        "api": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+        "mcp": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+      },
+      "confidence": "high",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "evidence.mcp",
+        "old": null,
+        "new": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP",
+        "reason": "Vendor help article: 'Set the Remote MCP server URL to: https://api.harvestapp.com/mcp', sign in to Harvest and authorise (OAuth via id.getharvest.com per the endpoint's protected-resource metadata).",
+        "evidence_url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+      },
+      {
+        "field": "access_notes",
+        "old": "PAT created in Harvest ID developers section; plan requirement not stated (a free plan exists).",
+        "new": "Free plan '$0 forever' (1 seat, 2 projects); PATs created in Harvest ID developers section; auth docs state no plan requirement.",
+        "reason": "Quoted vendor pricing page.",
+        "evidence_url": "https://www.getharvest.com/pricing"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/",
+        "new": "https://www.getharvest.com/pricing",
+        "reason": "Vendor pricing page confirms free plan.",
+        "evidence_url": "https://www.getharvest.com/pricing"
+      },
+      {
+        "field": "confidence",
+        "old": "medium",
+        "new": "high",
+        "reason": "All fields confirmed on vendor pages.",
+        "evidence_url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+      },
+      {
+        "field": "needs_human",
+        "old": true,
+        "new": false,
+        "reason": "MCP endpoint confirmed on vendor help article (fetched via direct HTTP).",
+        "evidence_url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+      },
+      {
+        "field": "human_reason",
+        "old": "Official MCP endpoint (api.harvestapp.com/mcp) seen only in search snippet; help-center page returned 403 so not opened.",
+        "new": null,
+        "reason": "Resolved.",
+        "evidence_url": "https://support.getharvest.com/hc/en-us/articles/46293697226381-Harvest-MCP"
+      }
+    ],
+    "flags_resolved": [
+      "agent-asked-for-human"
+    ]
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "record": {
+      "id": 84,
+      "app": "Paygent Connect",
+      "category": "Payments",
+      "one_liner": "Payment product named Paygent Connect (hint says NMI-powered); could not be identified.",
+      "auth_methods": [
+        "API key"
+      ],
+      "auth_notes": "Only the underlying NMI gateway auth is documented (API keys); no Paygent Connect-specific docs found.",
+      "access": "partner-gated",
+      "access_notes": "NMI gateway access is via partner/merchant onboarding; Paygent Connect itself not found.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "Inferred from NMI REST/v5 payment API; unverified for Paygent Connect.",
+      "mcp": "none",
+      "mcp_url": null,
+      "buildability": "blocked",
+      "blocker": "product unidentified, no public docs",
+      "evidence": {
+        "auth": "https://docs.nmi.com/docs/quick-start",
+        "access": "https://docs.nmi.com/docs/quick-start",
+        "api": "https://docs.nmi.com/docs/quick-start",
+        "mcp": null
+      },
+      "confidence": "low",
+      "needs_human": true,
+      "human_reason": "needs-browser: https://paygent.com (JS-only page, no text served; product and its NMI relationship cannot be identified without a browser)"
+    },
+    "changes": [
+      {
+        "field": "human_reason",
+        "old": "No page found for 'Paygent Connect'; searches returned unrelated products (Paygent Japan, Paya, PayGentic). Cannot confirm any link to NMI.",
+        "new": "needs-browser: https://paygent.com (JS-only page, no text served; product and its NMI relationship cannot be identified without a browser)",
+        "reason": "Re-searched; no Paygent Connect docs found; the candidate vendor site is JS-only.",
+        "evidence_url": "https://paygent.com"
+      }
+    ],
+    "flags_resolved": []
+  },
+  {
+    "id": 90,
+    "app": "PitchBook",
+    "record": {
+      "id": 90,
+      "app": "PitchBook",
+      "category": "Financial Data / Research",
+      "one_liner": "Private-market and VC/PE data and research platform.",
+      "auth_methods": [
+        "API key",
+        "Bearer token",
+        "OAuth2"
+      ],
+      "auth_notes": "Per third-party summaries, API key/token issued by PitchBook team after contract; official docs 403 to fetcher.",
+      "access": "partner-gated",
+      "access_notes": "API is a separate offering requiring standalone contract; no self-serve signup (secondary sources).",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Public API v2 reportedly documented on Postman; not verified.",
+      "mcp": "official",
+      "mcp_url": "https://premium.mcp.pitchbook.com/mcp",
+      "buildability": "blocked",
+      "blocker": "enterprise contract required",
+      "evidence": {
+        "auth": "https://pitchbook.com/help/pitchbook-api",
+        "access": "https://pitchbook.com/help/pitchbook-api",
+        "api": "https://pitchbook.com/help/pitchbook-api",
+        "mcp": "https://premium.mcp.pitchbook.com/.well-known/oauth-protected-resource"
+      },
+      "confidence": "low",
+      "needs_human": true,
+      "human_reason": "needs-browser: https://pitchbook.com/help/pitchbook-api"
+    },
+    "changes": [
+      {
+        "field": "auth_methods",
+        "old": [
+          "API key",
+          "Bearer token"
+        ],
+        "new": [
+          "API key",
+          "Bearer token",
+          "OAuth2"
+        ],
+        "reason": "Official MCP endpoint's protected-resource metadata lists OAuth authorization server https://mcp.pitchbook.com (bearer in header); MCP returns 401 without a token.",
+        "evidence_url": "https://premium.mcp.pitchbook.com/.well-known/oauth-protected-resource"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": null,
+        "new": "https://premium.mcp.pitchbook.com/.well-known/oauth-protected-resource",
+        "reason": "Vendor-domain MCP endpoint confirmed live (OAuth metadata, auth server on mcp.pitchbook.com).",
+        "evidence_url": "https://premium.mcp.pitchbook.com/.well-known/oauth-protected-resource"
+      },
+      {
+        "field": "human_reason",
+        "old": "PitchBook help page returned 403 and MCP directory 403; details come from search snippets only (MCP URL/official status unverified).",
+        "new": "needs-browser: https://pitchbook.com/help/pitchbook-api",
+        "reason": "MCP now verified on vendor domain; API contract/auth details still only on the 403 help page.",
+        "evidence_url": "https://pitchbook.com/help/pitchbook-api"
+      }
+    ],
+    "flags_resolved": []
+  },
+  {
+    "id": 97,
+    "app": "higgsfield",
+    "record": {
+      "id": 97,
+      "app": "higgsfield",
+      "category": "AI Image/Video Generation",
+      "one_liner": "AI image/video generation platform with 35+ models, exposed via CLI and MCP.",
+      "auth_methods": [
+        "API key",
+        "OAuth2"
+      ],
+      "auth_notes": "Higgsfield API: API key ID + secret in 'Authorization: Key id:secret' header, created in Higgsfield console. Hosted MCP: OAuth sign-in to the Higgsfield account. CLI uses browser login.",
+      "access": "paid-plan",
+      "access_notes": "API: sign up, register payment method, fund balance (min $5 top-up), generate key; billed per generation. MCP draws on account plan credits.",
+      "api_types": [
+        "REST",
+        "CLI"
+      ],
+      "api_breadth": "narrow",
+      "api_notes": "Async REST API: POST per-model generation endpoints (image/video models), poll status or webhook, cancel; file upload to Higgsfield storage. Narrow resource set (generate/status/cancel/upload) across many models.",
+      "mcp": "official",
+      "mcp_url": "https://mcp.higgsfield.ai/mcp",
+      "buildability": "ready-with-friction",
+      "blocker": "prepaid paid balance required",
+      "evidence": {
+        "auth": "https://docs.higgsfield.ai",
+        "access": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+        "api": "https://docs.higgsfield.ai",
+        "mcp": "https://higgsfield.ai/creator-hub/help-center/mcp-cli/what-is-higgsfield-mcp"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_methods",
+        "old": [
+          "OAuth2",
+          "Other"
+        ],
+        "new": [
+          "API key",
+          "OAuth2"
+        ],
+        "reason": "Docs: REST API auth 'Authorization: Key ${HF_API_KEY_ID}:${HF_API_KEY_SECRET}' (API keys from console); MCP help: 'MCP connects through OAuth authorization, no API key is needed'. Previous 'no API keys' claim refuted.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "auth_notes",
+        "old": "Browser sign-in (higgsfield auth login) and MCP account sign-in; no API keys.",
+        "new": "Higgsfield API: API key ID + secret in 'Authorization: Key id:secret' header, created in Higgsfield console. Hosted MCP: OAuth sign-in to the Higgsfield account. CLI uses browser login.",
+        "reason": "Corrected.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "access_notes",
+        "old": "Uses platform credits from existing plan; free-tier details not stated.",
+        "new": "API: sign up, register payment method, fund balance (min $5 top-up), generate key; billed per generation. MCP draws on account plan credits.",
+        "reason": "Vendor help article.",
+        "evidence_url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api"
+      },
+      {
+        "field": "api_types",
+        "old": [
+          "CLI"
+        ],
+        "new": [
+          "REST",
+          "CLI"
+        ],
+        "reason": "Documented HTTP/JSON async API at api.higgsfield.ai (per-model POST endpoints, /requests/{id}/status, /cancel, webhooks) in addition to the CLI.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "api_notes",
+        "old": "No public REST API documented on the page; integration is via CLI and MCP.",
+        "new": "Async REST API: POST per-model generation endpoints (image/video models), poll status or webhook, cancel; file upload to Higgsfield storage. Narrow resource set (generate/status/cancel/upload) across many models.",
+        "reason": "Corrected.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "mcp_url",
+        "old": "https://higgsfield.ai/cli",
+        "new": "https://mcp.higgsfield.ai/mcp",
+        "reason": "Vendor help article gives MCP URL https://mcp.higgsfield.ai/mcp (OAuth).",
+        "evidence_url": "https://higgsfield.ai/creator-hub/help-center/mcp-cli/what-is-higgsfield-mcp"
+      },
+      {
+        "field": "buildability",
+        "old": "blocked",
+        "new": "ready-with-friction",
+        "reason": "Self-serve API keys and documented REST API exist; paid prepaid balance slows it.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "blocker",
+        "old": "no documented public API; CLI/MCP only",
+        "new": "prepaid paid balance required",
+        "reason": "Paid-plan gate is the main friction.",
+        "evidence_url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api"
+      },
+      {
+        "field": "evidence.auth",
+        "old": "https://higgsfield.ai/cli",
+        "new": "https://docs.higgsfield.ai",
+        "reason": "Primary API docs.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://higgsfield.ai/cli",
+        "new": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api",
+        "reason": "Vendor billing/credential steps.",
+        "evidence_url": "https://higgsfield.ai/creator-hub/help-center/integrations/what-is-the-higgsfield-api"
+      },
+      {
+        "field": "evidence.api",
+        "old": "https://higgsfield.ai/cli",
+        "new": "https://docs.higgsfield.ai",
+        "reason": "Primary API docs.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://higgsfield.ai/cli",
+        "new": "https://higgsfield.ai/creator-hub/help-center/mcp-cli/what-is-higgsfield-mcp",
+        "reason": "Vendor MCP help article.",
+        "evidence_url": "https://higgsfield.ai/creator-hub/help-center/mcp-cli/what-is-higgsfield-mcp"
+      },
+      {
+        "field": "confidence",
+        "old": "low",
+        "new": "medium",
+        "reason": "API, auth, access, MCP confirmed on vendor pages; breadth judgment approximate.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "needs_human",
+        "old": true,
+        "new": false,
+        "reason": "Developer docs and pricing path found.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      },
+      {
+        "field": "human_reason",
+        "old": "Only the CLI marketing page was found; no developer docs, REST API, or pricing/free-tier details verified.",
+        "new": null,
+        "reason": "Resolved.",
+        "evidence_url": "https://docs.higgsfield.ai"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:OAuth2",
+      "agent-asked-for-human",
+      "low-confidence"
+    ]
+  }
+]

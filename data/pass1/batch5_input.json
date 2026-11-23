@@ -1,0 +1,102 @@
+[
+ {
+  "id": 81,
+  "app": "Stripe",
+  "hint": "stripe.com/docs/api"
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "hint": "plaid.com/docs"
+ },
+ {
+  "id": 83,
+  "app": "Binance",
+  "hint": "binance-docs.github.io"
+ },
+ {
+  "id": 84,
+  "app": "Paygent Connect",
+  "hint": "paygent (NMI-powered)"
+ },
+ {
+  "id": 85,
+  "app": "iPayX",
+  "hint": "ipayx.ai/docs"
+ },
+ {
+  "id": 86,
+  "app": "QuickBooks",
+  "hint": "developer.intuit.com"
+ },
+ {
+  "id": 87,
+  "app": "Xero",
+  "hint": "developer.xero.com"
+ },
+ {
+  "id": 88,
+  "app": "Brex",
+  "hint": "developer.brex.com"
+ },
+ {
+  "id": 89,
+  "app": "Ramp",
+  "hint": "docs.ramp.com"
+ },
+ {
+  "id": 90,
+  "app": "PitchBook",
+  "hint": "pitchbook.com (research API)"
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "hint": "cloud.google.com/gemini (Enterprise API)"
+ },
+ {
+  "id": 92,
+  "app": "Otter AI",
+  "hint": "help.otter.ai (MCP server)"
+ },
+ {
+  "id": 93,
+  "app": "Fathom",
+  "hint": "fathom.video"
+ },
+ {
+  "id": 94,
+  "app": "Consensus",
+  "hint": "consensus.app (OAuth requested)"
+ },
+ {
+  "id": 95,
+  "app": "Reducto",
+  "hint": "reducto.ai (document parsing)"
+ },
+ {
+  "id": 96,
+  "app": "Devin",
+  "hint": "docs.devin.ai (MCP)"
+ },
+ {
+  "id": 97,
+  "app": "higgsfield",
+  "hint": "higgsfield.ai/cli (content suite)"
+ },
+ {
+  "id": 98,
+  "app": "Mermaid CLI",
+  "hint": "github.com/mermaid-js/mermaid-cli"
+ },
+ {
+  "id": 99,
+  "app": "YouTube Transcript",
+  "hint": "transcriptapi.com"
+ },
+ {
+  "id": 100,
+  "app": "Grain",
+  "hint": "grain.com (meeting notes)"
+ }
+]

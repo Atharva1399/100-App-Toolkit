@@ -1,0 +1,623 @@
+[
+ {
+  "id": 41,
+  "app": "Shopify",
+  "category": "E-commerce",
+  "one_liner": "Hosted commerce platform for online stores; apps use the Admin/Storefront APIs.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "Token exchange, authorization code grant and client credentials grant (store-in-your-org) issue access tokens sent in X-Shopify-Access-Token; client ID/secret issued when an app is created.",
+  "access": "self-serve-free",
+  "access_notes": "Create an app in a Shopify developer account/dev store to get client ID/secret; public distribution requires app review but dev/custom apps do not. The fetched page did not state whether the developer account is free (known from general knowledge).",
+  "api_types": [
+   "GraphQL",
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "GraphQL Admin API is the primary API (products, orders, customers, inventory, etc.); Storefront and Customer Account APIs are separate.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/Shopify/dev-mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://shopify.dev/docs/apps/build/authentication-authorization",
+   "access": "https://shopify.dev/docs/apps/build/authentication-authorization",
+   "api": "https://shopify.dev/docs/apps/build/authentication-authorization",
+   "mcp": "https://shopify.dev/docs/apps/build/devmcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 42,
+  "app": "WooCommerce",
+  "category": "E-commerce",
+  "one_liner": "Open-source WordPress e-commerce plugin with a REST API exposed per self-hosted store.",
+  "auth_methods": [
+   "Basic",
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "Consumer key/secret via HTTPS Basic auth, OAuth 1.0a over HTTP (not OAuth2), plus an /wc-auth/v1/authorize flow that hands keys to a callback; MCP path uses WordPress Application Passwords.",
+  "access": "self-serve-free",
+  "access_notes": "Keys are generated in each store's admin (WooCommerce > Settings > Advanced > REST API); no central vendor account, every store is self-hosted so the toolkit needs per-store URL.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "wc/v3 covers products, orders, customers, coupons, refunds, shipping, taxes, webhooks, settings, reports.",
+  "mcp": "official",
+  "mcp_url": "https://developer.woocommerce.com/docs/features/mcp/",
+  "buildability": "ready-with-friction",
+  "blocker": "per-store self-hosted URL and keys, no central OAuth2",
+  "evidence": {
+   "auth": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+   "access": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+   "api": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+   "mcp": "https://developer.woocommerce.com/docs/features/mcp/"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 43,
+  "app": "BigCommerce",
+  "category": "E-commerce",
+  "one_liner": "SaaS e-commerce platform with REST and GraphQL APIs.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token",
+   "JWT/signed"
+  ],
+  "auth_notes": "Static X-Auth-Token access tokens from store-level/account-level API accounts, app-level OAuth grant-code flow via Developer Portal, plus JWTs for storefront APIs.",
+  "access": "self-serve-trial",
+  "access_notes": "Store-level API accounts require a BigCommerce store (free trial or paid); app-level via Developer Portal. Page did not describe sandbox or trial terms.",
+  "api_types": [
+   "REST",
+   "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST Store Management, GraphQL Admin/Storefront, B2B, Payments APIs.",
+  "mcp": "official",
+  "mcp_url": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.bigcommerce.com/docs/start/authentication",
+   "access": "https://docs.bigcommerce.com/docs/start/authentication",
+   "api": "https://docs.bigcommerce.com/docs/start/authentication",
+   "mcp": "https://docs.bigcommerce.com/developer/api-reference/mcp/overview"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "category": "E-commerce",
+  "one_liner": "Salesforce B2C Commerce enterprise storefront platform with SCAPI/OCAPI.",
+  "auth_methods": [
+   "OAuth2",
+   "JWT/signed"
+  ],
+  "auth_notes": "Account Manager API clients (client credentials, user sign-in, or JWT) for SCAPI Admin APIs; SLAS for shopper APIs.",
+  "access": "partner-gated",
+  "access_notes": "Requires an existing licensed B2C Commerce tenant/instance and an Account Manager admin to create API clients; no public free tier found. Salesforce docs returned 403 to fetch so this is from the open-source tooling guide and search snippets.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "SCAPI Admin and Shopper APIs plus legacy OCAPI; B2C DX MCP covers SCAPI Admin access.",
+  "mcp": "official",
+  "mcp_url": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+  "buildability": "ready-with-friction",
+  "blocker": "requires licensed enterprise tenant",
+  "evidence": {
+   "auth": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+   "access": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+   "api": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html",
+   "mcp": "https://salesforcecommercecloud.github.io/b2c-developer-tooling/guide/authentication.html"
+  },
+  "confidence": "low",
+  "needs_human": true,
+  "human_reason": "developer.salesforce.com docs returned 403; tenant licensing requirement and MCP status (developer preview) not confirmed from primary vendor page."
+ },
+ {
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "category": "E-commerce",
+  "one_liner": "Adobe Commerce/Magento platform (self-hosted PaaS and SaaS) with REST and GraphQL APIs.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token",
+   "Basic"
+  ],
+  "auth_notes": "PaaS: admin/customer token auth, OAuth 1.0a integrations, session; SaaS: IMS OAuth2 server-to-server (client credentials, commerce.accs scope) via Adobe Developer Console.",
+  "access": "paid-plan",
+  "access_notes": "Each deployment is licensed/self-hosted per merchant (Adobe Commerce or open-source Magento); credentials created per instance in admin or Adobe Developer Console with org admin.",
+  "api_types": [
+   "REST",
+   "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST /V1 resources for catalog, customers, orders, etc.; GraphQL storefront; the fetched page did not mention GraphQL.",
+  "mcp": "none",
+  "mcp_url": null,
+  "buildability": "ready-with-friction",
+  "blocker": "per-instance deployment and two auth models",
+  "evidence": {
+   "auth": "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+   "access": "https://developer.adobe.com/commerce/webapi/rest/authentication/server-to-server",
+   "api": "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 46,
+  "app": "Squarespace",
+  "category": "Website builder / E-commerce",
+  "one_liner": "Website and commerce platform with Commerce APIs for orders, products, inventory.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "API keys for custom apps on one's own site; OAuth client required for extensions/commercial apps.",
+  "access": "paid-plan",
+  "access_notes": "API keys need a Commerce Advanced plan; OAuth client registration requires Squarespace review/approval.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Products, Orders, Inventory, Contacts, Discounts, Transactions, Forms, Webhooks; orders mostly read-only in MCP.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.squarespace.com/mcp",
+  "buildability": "ready-with-friction",
+  "blocker": "paid plan or OAuth client approval",
+  "evidence": {
+   "auth": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+   "access": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+   "api": "https://developers.squarespace.com/commerce-apis/authentication-and-permissions",
+   "mcp": "https://developers.squarespace.com/mcp/overview"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 47,
+  "app": "Ecwid",
+  "category": "E-commerce",
+  "one_liner": "Embeddable e-commerce widget/platform (Lightspeed) with REST API.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "Secret/public tokens (Bearer) from a custom app, OAuth2 for public apps with client ID/secret.",
+  "access": "paid-plan",
+  "access_notes": "Docs: only stores on paid plans can access API; free upgrade can be requested from support for qualifying developers.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Products, orders, customers, categories, discounts, etc. via store-ID-scoped REST.",
+  "mcp": "none",
+  "mcp_url": null,
+  "buildability": "ready-with-friction",
+  "blocker": "API requires paid plan",
+  "evidence": {
+   "auth": "https://docs.ecwid.com/llms-full.txt",
+   "access": "https://docs.ecwid.com/llms-full.txt",
+   "api": "https://docs.ecwid.com/llms-full.txt",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 48,
+  "app": "Gumroad",
+  "category": "E-commerce / Creator",
+  "one_liner": "Platform for creators to sell digital products.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "OAuth2 for third-party apps; personal access token generated in app settings.",
+  "access": "self-serve-free",
+  "access_notes": "Create an application in account Advanced settings and generate a non-expiring access token (per search results/help center; article body not retrievable).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "gumroad.com/api lists OAuth2, access tokens, endpoints/resources and MCP topics; resource detail from search results (products, sales, subscribers, licenses).",
+  "mcp": "official",
+  "mcp_url": "https://gumroad.com/claude/v1/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://gumroad.com/api",
+   "access": "https://gumroad.com/help/article/280-create-application-api",
+   "api": "https://gumroad.com/api",
+   "mcp": "https://gumroad.com/claude"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "category": "E-commerce / Marketplace",
+  "one_liner": "Amazon SP-API for sellers and vendors (orders, listings, inventory, reports).",
+  "auth_methods": [
+   "OAuth2",
+   "JWT/signed"
+  ],
+  "auth_notes": "Login with Amazon OAuth2 for public apps, self-authorization for private apps; some calls need Restricted Data Tokens.",
+  "access": "approval",
+  "access_notes": "Must register as an SP-API developer (primary account user), need professional seller account for private apps; public apps go through Appstore listing; restricted roles need approval.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Orders, catalog, listings, FBA inventory, reports, feeds, finances, plus Data Kiosk (GraphQL-style).",
+  "mcp": "official",
+  "mcp_url": "https://github.com/amzn/selling-partner-api-samples",
+  "buildability": "ready-with-friction",
+  "blocker": "developer registration/role approval",
+  "evidence": {
+   "auth": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications",
+   "access": "https://developer-docs.amazon/sp-api/docs/registering-as-a-developer",
+   "api": "https://developer-docs.amazon/sp-api/docs/authorizing-selling-partner-api-applications",
+   "mcp": "https://github.com/amzn/selling-partner-api-samples"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "category": "Payments / Creator",
+  "one_liner": "Payments and checkout infrastructure for online entrepreneurs.",
+  "auth_methods": [
+   "Other"
+  ],
+  "auth_notes": "No public auth docs found.",
+  "access": "partner-gated",
+  "access_notes": "Enterprise page mentions SDKs, docs, sandbox and implementation engineer, implying sales-led onboarding; no public API reference found.",
+  "api_types": [
+   "None"
+  ],
+  "api_breadth": "none",
+  "api_notes": "No public API docs located.",
+  "mcp": "none",
+  "mcp_url": null,
+  "buildability": "blocked",
+  "blocker": "no public API docs",
+  "evidence": {
+   "auth": "https://fanbasis.com/enterprises",
+   "access": "https://fanbasis.com/enterprises",
+   "api": "https://fanbasis.com/enterprises",
+   "mcp": null
+  },
+  "confidence": "low",
+  "needs_human": true,
+  "human_reason": "fanbasis.com returned 403 on direct fetch; enterprise page seen only via search snippet; no developer docs found."
+ },
+ {
+  "id": 51,
+  "app": "DataForSEO",
+  "category": "SEO data API",
+  "one_liner": "Pay-as-you-go SEO data APIs (SERP, keywords, backlinks, on-page, labs).",
+  "auth_methods": [
+   "Basic"
+  ],
+  "auth_notes": "HTTP Basic with API login and auto-generated API password, no separate auth call.",
+  "access": "self-serve-free",
+  "access_notes": "Create a free account to get API credentials; a Sandbox exists per the docs appendix and the MCP page advertises a free trial.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Many product families: SERP, Keywords Data, Labs, Backlinks, OnPage, Content Analysis, Merchant, App Data, Business Data.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/dataforseo/mcp-server-typescript",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.dataforseo.com/v3/auth/",
+   "access": "https://docs.dataforseo.com/v3/auth/",
+   "api": "https://docs.dataforseo.com/v3/auth/",
+   "mcp": "https://dataforseo.com/model-context-protocol"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "category": "SEO",
+  "one_liner": "SEO platform with Data API and Project API.",
+  "auth_methods": [
+   "API key"
+  ],
+  "auth_notes": "API key copied from account Settings > API.",
+  "access": "self-serve-trial",
+  "access_notes": "API access in every plan and in the no-card free trial; pay-as-you-go from $50 deposit and API add-on from $149/mo.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Data API (keywords, backlinks, SERP, audits, AI visibility) and Project API (rank tracking etc.), JSON, no first-party SDKs.",
+  "mcp": "official",
+  "mcp_url": null,
+  "buildability": "ready-with-friction",
+  "blocker": "trial then paid plan",
+  "evidence": {
+   "auth": "https://seranking.com/api/",
+   "access": "https://seranking.com/api/",
+   "api": "https://seranking.com/api/",
+   "mcp": "https://seranking.com/api/"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 53,
+  "app": "Ahrefs",
+  "category": "SEO",
+  "one_liner": "SEO toolset with API v3 and hosted MCP.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "API v3 uses API key as Bearer token; hosted MCP uses OAuth consent that mints a separate MCP-scoped key (per search results).",
+  "access": "paid-plan",
+  "access_notes": "API v3 and MCP require Lite or higher subscription; custom endpoints Enterprise only; units are metered.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "API v3 over site explorer, keywords, rank tracker, etc.; some endpoints free; v2 deprecated.",
+  "mcp": "official",
+  "mcp_url": "https://api.ahrefs.com/mcp/mcp",
+  "buildability": "ready-with-friction",
+  "blocker": "paid subscription required",
+  "evidence": {
+   "auth": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+   "access": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+   "api": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+   "mcp": "https://help.ahrefs.com/en/articles/6559232-about-api-v3"
+  },
+  "confidence": "medium",
+  "needs_human": true,
+  "human_reason": "docs.ahrefs.com pages returned 404; auth and MCP endpoint details come from search snippets, not an opened primary page."
+ },
+ {
+  "id": 54,
+  "app": "MrScraper",
+  "category": "Web scraping",
+  "one_liner": "Scraping API with scraper, web search, workflow and residential proxy products.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "API token (Bearer) from dashboard; hosted MCP supports OAuth 2.1.",
+  "access": "self-serve-free",
+  "access_notes": "Sign up via Dashboard; docs do not mention free credits or trial terms.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Scraper API, Web Search, Workflow API, proxy; MCP exposes seven services.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/mrscraper-com/mrscraper-mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.mrscraper.com",
+   "access": "https://docs.mrscraper.com",
+   "api": "https://docs.mrscraper.com",
+   "mcp": "https://github.com/mrscraper-com/mrscraper-mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 55,
+  "app": "Apify",
+  "category": "Web scraping platform",
+  "one_liner": "Platform for running scraping/automation Actors with datasets and storage.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "API token as Bearer header; MCP supports OAuth.",
+  "access": "self-serve-free",
+  "access_notes": "Free plan with $5 monthly platform usage; page did not explicitly confirm API access on free.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "API v2: Actors, builds, runs, tasks, schedules, webhooks, datasets, key-value stores, request queues, usage.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.apify.com",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.apify.com/api/v2",
+   "access": "https://apify.com/pricing",
+   "api": "https://docs.apify.com/api/v2",
+   "mcp": "https://docs.apify.com/platform/integrations/mcp"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 56,
+  "app": "Firecrawl",
+  "category": "Web scraping",
+  "one_liner": "Search/scrape/crawl API returning LLM-ready markdown.",
+  "auth_methods": [
+   "API key"
+  ],
+  "auth_notes": "Bearer API key; basic requests also work keyless.",
+  "access": "self-serve-free",
+  "access_notes": "Free account gives API access with limits; quota numbers not on page.",
+  "api_types": [
+   "REST",
+   "SDK-only"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Search, Scrape, Interact, Agent, Browser Sandbox, Parse, Map, Crawl, Webhooks; Python/Node SDKs and CLI.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.firecrawl.dev/v2/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.firecrawl.dev/introduction",
+   "access": "https://docs.firecrawl.dev/introduction",
+   "api": "https://docs.firecrawl.dev/introduction",
+   "mcp": "https://docs.firecrawl.dev/introduction"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 57,
+  "app": "Bright Data",
+  "category": "Web data / proxies",
+  "one_liner": "Proxy networks, Web Unlocker, SERP API, scrapers and datasets.",
+  "auth_methods": [
+   "API key",
+   "Basic"
+  ],
+  "auth_notes": "API key as Bearer for API access; proxy username/password for native access; admin-only key creation.",
+  "access": "self-serve-free",
+  "access_notes": "Account includes 5,000 free requests per month (MCP free tier note); default key auto-created.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Web Unlocker, SERP API, Browsers, Scrapers, Functions, Marketplace datasets, proxies.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/brightdata/brightdata-mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.brightdata.com/api-reference/authentication",
+   "access": "https://docs.brightdata.com/ai/mcp-server/overview",
+   "api": "https://docs.brightdata.com/api-reference/authentication",
+   "mcp": "https://docs.brightdata.com/ai/mcp-server/overview"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 58,
+  "app": "Sherlock",
+  "category": "OSINT / CLI tool",
+  "one_liner": "Open-source CLI that hunts usernames across social sites.",
+  "auth_methods": [
+   "None"
+  ],
+  "auth_notes": "No auth; local tool.",
+  "access": "n/a",
+  "access_notes": "MIT-licensed local install via pipx/pip/Docker; no hosted service.",
+  "api_types": [
+   "CLI"
+  ],
+  "api_breadth": "none",
+  "api_notes": "Command-line flags only; no API.",
+  "mcp": "none",
+  "mcp_url": null,
+  "buildability": "blocked",
+  "blocker": "not a hosted service",
+  "evidence": {
+   "auth": "https://github.com/sherlock-project/sherlock",
+   "access": "https://github.com/sherlock-project/sherlock",
+   "api": "https://github.com/sherlock-project/sherlock",
+   "mcp": null
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "category": "B2B data enrichment",
+  "one_liner": "Aggregates 30+ data vendors for contact, phone and company enrichment.",
+  "auth_methods": [
+   "API key"
+  ],
+  "auth_notes": "API key in x-api-key header (site shows two header names).",
+  "access": "partner-gated",
+  "access_notes": "Docs do not say how to obtain a key; site funnels to Book a Call with founders; no free trial mentioned.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Prospector, contact/phone/company enrichment, search, email verification, job change, reporting.",
+  "mcp": "none",
+  "mcp_url": null,
+  "buildability": "blocked",
+  "blocker": "key issuance via sales call",
+  "evidence": {
+   "auth": "https://docs.waterfall.io/v1/introduction",
+   "access": "https://waterfall.io",
+   "api": "https://docs.waterfall.io/v1/introduction",
+   "mcp": null
+  },
+  "confidence": "low",
+  "needs_human": true,
+  "human_reason": "No documented self-serve key path; pricing/sign-up not confirmed; no MCP found in the pages opened."
+ },
+ {
+  "id": 60,
+  "app": "Clay",
+  "category": "Sales data enrichment",
+  "one_liner": "GTM data enrichment/workflow platform with a Public API and hosted MCP.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "Public API uses clay-api-key header; hosted MCP uses OAuth (per search results).",
+  "access": "paid-plan",
+  "access_notes": "Sources conflict on plan gating (Enterprise vs all plans); quickstart does not state plans.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Public API for calling Clay from apps; endpoint list not in quickstart; structured queries need Enterprise table sync (per Clay University via search).",
+  "mcp": "official",
+  "mcp_url": "https://api.clay.com/v3/mcp",
+  "buildability": "ready-with-friction",
+  "blocker": "plan gating unclear",
+  "evidence": {
+   "auth": "https://developers.clay.com/quickstart.md",
+   "access": "https://developers.clay.com/quickstart.md",
+   "api": "https://developers.clay.com/quickstart.md",
+   "mcp": "https://university.clay.com/docs/http-api-integration-overview"
+  },
+  "confidence": "low",
+  "needs_human": true,
+  "human_reason": "Plan requirements for API access conflict between sources; MCP page developers.clay.com/concepts/mcp.md returned 404."
+ }
+]

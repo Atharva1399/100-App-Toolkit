@@ -1,0 +1,617 @@
+[
+ {
+  "id": 21,
+  "app": "Slack",
+  "category": "Team messaging",
+  "one_liner": "Workplace chat platform with a broad Web API.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "OAuth 2.0 installs yield user, bot and app tokens (sent as Bearer).",
+  "access": "self-serve-free",
+  "access_notes": "Register an app at api.slack.com/apps; free workspace suffices for dev. Marketplace listing only needed for public distribution/MCP.",
+  "api_types": [
+   "REST",
+   "WebSocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Web API has 200+ HTTP methods; Socket Mode/Events not confirmed on fetched page.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.slack.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.slack.dev/authentication",
+   "access": "https://docs.slack.dev/authentication",
+   "api": "https://docs.slack.dev/apis/web-api/",
+   "mcp": "https://docs.slack.dev/ai/mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 22,
+  "app": "Twilio",
+  "category": "CPaaS (SMS/voice)",
+  "one_liner": "Programmable messaging, voice and email APIs.",
+  "auth_methods": [
+   "Basic"
+  ],
+  "auth_notes": "HTTP Basic with API key SID/secret (recommended) or Account SID/Auth Token.",
+  "access": "self-serve-trial",
+  "access_notes": "Free trial (30 days) gives same Account SID/Auth Token; limited to verified recipients/templates; paid upgrade for production.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "1,800+ endpoints across 30+ products per MCP docs.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.twilio.com/docs",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://www.twilio.com/docs/usage/requests-to-twilio",
+   "access": "https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account",
+   "api": "https://www.twilio.com/docs/mcp",
+   "mcp": "https://www.twilio.com/docs/mcp"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 23,
+  "app": "Zoho Cliq",
+  "category": "Team messaging",
+  "one_liner": "Zoho's team chat with REST API and official MCP.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "Zoho OAuth 2.0; register client in Zoho developer console; scopes ZohoCliq.<Module>.<ACTION>.",
+  "access": "self-serve-free",
+  "access_notes": "Client registration in Zoho API console is self-serve; free-plan availability not confirmed on fetched pages.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Users, chats, channels, messages, bots, files, calls, events, DB; 5-30 req/min per endpoint.",
+  "mcp": "official",
+  "mcp_url": "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://www.zoho.com/cliq/help/restapi/v2/",
+   "access": "https://www.zoho.com/cliq/help/restapi/v2/",
+   "api": "https://www.zoho.com/cliq/help/restapi/v2/",
+   "mcp": "https://www.zoho.com/cliq/help/platform/zoho-cliq-mcp.html"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "category": "Team messaging/suite",
+  "one_liner": "Lark Open Platform with IM, calendar, docs APIs and official MCP.",
+  "auth_methods": [
+   "OAuth2",
+   "Other"
+  ],
+  "auth_notes": "tenant/app access tokens from app ID+secret; user_access_token via OAuth 2.0 (per MCP README). Docs site is JS-rendered; details from GitHub README.",
+  "access": "self-serve-free",
+  "access_notes": "Create app on open.larksuite.com for App ID/Secret; needs a Lark tenant. Intl vs Feishu apps not interchangeable.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Large OpenAPI surface (IM, calendar, docs, etc.); exact endpoint docs not readable via fetch.",
+  "mcp": "official",
+  "mcp_url": "https://github.com/larksuite/lark-openapi-mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://github.com/larksuite/lark-openapi-mcp",
+   "access": "https://github.com/larksuite/lark-openapi-mcp",
+   "api": "https://open.larksuite.com/document/server-docs/api-call-guide/calling-process/get-access-token",
+   "mcp": "https://github.com/larksuite/lark-openapi-mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 25,
+  "app": "Pumble",
+  "category": "Team messaging",
+  "one_liner": "Free Slack-like chat with API-key add-on and OAuth app SDK.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "API-key add-on (all plans) or OAuth2 for apps (client ID/secret from app manifest).",
+  "access": "self-serve-free",
+  "access_notes": "Install API add-on and generate key; available on all plans for Owner/Admin/Member.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Send/reply/delete messages, reactions, create channels, list channels/messages; 1000 req/min.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.pumble.com/mcp",
+  "buildability": "ready-with-friction",
+  "blocker": "narrow API",
+  "evidence": {
+   "auth": "https://cake-com.github.io/pumble-node-sdk/authorization.html",
+   "access": "https://pumble.com/help/integrations/api-keys-integration",
+   "api": "https://pumble.com/help/integrations/api-keys-integration",
+   "mcp": "https://pumble.com/learn/?p=16174"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 26,
+  "app": "Discord",
+  "category": "Community chat",
+  "one_liner": "Chat platform with bot and OAuth2 REST API plus Gateway.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "Bot token from developer portal; OAuth2 code/client-credentials grants.",
+  "access": "self-serve-free",
+  "access_notes": "Create app in Developer Portal. Some scopes (dm_channels.read, voice, rpc) partner-only; privileged intents need verification at scale.",
+  "api_types": [
+   "REST",
+   "WebSocket"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST routes plus real-time Gateway.",
+  "mcp": "community",
+  "mcp_url": null,
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.discord.com/developers/topics/oauth2",
+   "access": "https://docs.discord.com/developers/topics/oauth2",
+   "api": "https://docs.discord.com/developers/topics/oauth2",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 27,
+  "app": "Telegram",
+  "category": "Messaging",
+  "one_liner": "Bot API over HTTPS with BotFather tokens.",
+  "auth_methods": [
+   "Bearer token"
+  ],
+  "auth_notes": "Per-bot token from BotFather embedded in URL path.",
+  "access": "self-serve-free",
+  "access_notes": "Create bot via BotFather instantly; no approval.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Large method set: messaging, media, polls, payments, business, mini apps; updates via polling/webhook. User-account (TDLib) API not assessed.",
+  "mcp": "community",
+  "mcp_url": null,
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://core.telegram.org/bots/api",
+   "access": "https://core.telegram.org/bots/api",
+   "api": "https://core.telegram.org/bots/api",
+   "mcp": null
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "category": "Messaging",
+  "one_liner": "Meta WhatsApp Business Cloud API.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "Access tokens; permanent system-user token with whatsapp_business_messaging/management permissions.",
+  "access": "self-serve-free",
+  "access_notes": "Meta developer account + app + test number is free; production use needs business portfolio, number registration, and app review/business verification for others' accounts; conversation pricing applies.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Messaging, templates, phone numbers, webhooks, media.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.facebook.com/whatsapp_business_tools",
+  "buildability": "ready-with-friction",
+  "blocker": "Meta app review/business verification for production",
+  "evidence": {
+   "auth": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+   "access": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+   "api": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+   "mcp": "https://developers.facebook.com/documentation/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 29,
+  "app": "Aircall",
+  "category": "Cloud phone/call center",
+  "one_liner": "Cloud phone system with public REST API.",
+  "auth_methods": [
+   "Basic",
+   "OAuth2"
+  ],
+  "auth_notes": "Basic (api_id/api_token) for own account; OAuth2 only for listed Technology Partners.",
+  "access": "paid-plan",
+  "access_notes": "API key created by company admin in dashboard (needs Aircall account; no free tier confirmed). Third-party OAuth requires marketplace partnership.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Users, calls, conversations, numbers, contacts, messaging, dialer, AI agents, webhooks; 120 req/min.",
+  "mcp": "community",
+  "mcp_url": null,
+  "buildability": "ready-with-friction",
+  "blocker": "paid account; OAuth partner-only",
+  "evidence": {
+   "auth": "https://developers.aircall.io/api-references/",
+   "access": "https://developers.aircall.io/api-references/",
+   "api": "https://developers.aircall.io/api-references/",
+   "mcp": "https://developer.aircall.io/docs/mcp-faqs"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 30,
+  "app": "Vonage",
+  "category": "CPaaS (SMS/voice)",
+  "one_liner": "Programmable communications APIs with official MCP servers.",
+  "auth_methods": [
+   "Basic",
+   "JWT/signed"
+  ],
+  "auth_notes": "API key/secret (Basic), RS256 JWT from application private key, signature secret.",
+  "access": "self-serve-free",
+  "access_notes": "Signup gives API key/secret in dashboard; free trial credit not confirmed on fetched pages.",
+  "api_types": [
+   "REST",
+   "SDK-only"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "SMS, voice, verify, numbers, applications, reports.",
+  "mcp": "official",
+  "mcp_url": "https://developer.vonage.com/en/mcp-server/overview",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+   "access": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+   "api": "https://developer.vonage.com/en/getting-started/concepts/authentication",
+   "mcp": "https://developer.vonage.com/en/mcp-server/overview"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 31,
+  "app": "Google Ads",
+  "category": "Advertising",
+  "one_liner": "Google Ads API (gRPC/REST) with official MCP server.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "OAuth 2.0 (service account or user flows). Developer tokens sunset Sept 9 2026 and are ignored.",
+  "access": "approval",
+  "access_notes": "New Cloud project gets Test access (test accounts only); production needs Explorer/Basic/Standard access via brand verification and review (Basic automated, Standard manual).",
+  "api_types": [
+   "REST",
+   "gRPC"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Full campaign/ads/reporting management.",
+  "mcp": "official",
+  "mcp_url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+  "buildability": "ready-with-friction",
+  "blocker": "access-level approval/brand verification",
+  "evidence": {
+   "auth": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+   "access": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+   "api": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+   "mcp": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "category": "Advertising",
+  "one_liner": "Meta Marketing API with official Meta Ads MCP.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "OAuth scopes ads_read/ads_management; system-user tokens.",
+  "access": "self-serve-free",
+  "access_notes": "Apps start at Limited Access (dev only, rate-limited); Full Access needs App Review and 500 calls/<15% errors; managing others' accounts needs advanced access; business verification may be required.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Campaigns, ads, catalogs, insights via Graph/Marketing API.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.facebook.com/ads",
+  "buildability": "ready-with-friction",
+  "blocker": "App Review for Full/advanced access",
+  "evidence": {
+   "auth": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+   "access": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+   "api": "https://developers.facebook.com/docs/marketing-api/overview/authorization",
+   "mcp": "https://developers.facebook.com/documentation/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "category": "Advertising",
+  "one_liner": "LinkedIn Marketing/Advertising API.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "3-legged OAuth only; scopes r_ads, rw_ads, r_ads_reporting; no client credentials for marketing.",
+  "access": "approval",
+  "access_notes": "Advertising API product must be approved for the developer app (Development Tier, up to 5 ad accounts); further tiers need review.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Ad accounts, campaigns, creatives, reporting, organizations.",
+  "mcp": "community",
+  "mcp_url": null,
+  "buildability": "ready-with-friction",
+  "blocker": "Advertising API program approval",
+  "evidence": {
+   "auth": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+   "access": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+   "api": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 34,
+  "app": "GoHighLevel",
+  "category": "CRM/marketing automation",
+  "one_liner": "HighLevel CRM with OAuth marketplace apps and official MCP.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "OAuth 2.0 auth-code via Marketplace app (agency/location tokens). Private Integration Tokens exist but fetched page was empty.",
+  "access": "self-serve-trial",
+  "access_notes": "Free developer account to create marketplace apps; installing/testing needs a HighLevel account/sub-account; plan requirements not stated in fetched docs.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Contacts, conversations, calendars, opportunities, payments, locations etc.",
+  "mcp": "official",
+  "mcp_url": "https://marketplace.gohighlevel.com/docs/other/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0",
+   "access": "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0",
+   "api": "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0",
+   "mcp": "https://marketplace.gohighlevel.com/docs/other/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": true,
+  "human_reason": "Plan/trial requirement for test accounts and Private Integration Token details not confirmed from primary docs."
+ },
+ {
+  "id": 35,
+  "app": "Mailchimp",
+  "category": "Email marketing",
+  "one_liner": "Marketing API with API key and OAuth2.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "API key via basic auth; OAuth2 for registered apps.",
+  "access": "self-serve-free",
+  "access_notes": "Mailchimp account required; free-tier API access not stated on fetched pages. Register app in account for OAuth.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Marketing API: audiences, campaigns, automations, reports; client SDKs. Official MCP at mailchimp.com/developer/_mcp/server is docs-search only (no account access).",
+  "mcp": "community",
+  "mcp_url": null,
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+   "access": "https://mailchimp.com/developer/marketing/guides/access-user-data-oauth-2/",
+   "api": "https://mailchimp.com/developer/marketing/guides/quick-start/",
+   "mcp": "https://mailchimp.com/developer/marketing/build/ai-tools/mcp-server.md"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 36,
+  "app": "Klaviyo",
+  "category": "Email/SMS marketing",
+  "one_liner": "Klaviyo REST API with official remote MCP.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "Private API key (pk_, scoped) in Authorization header; OAuth for app-marketplace partners.",
+  "access": "self-serve-free",
+  "access_notes": "Account owner/admin/manager creates keys; free plan/plan gating not stated on fetched page.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Profiles, lists, campaigns, flows, events, catalogs, etc.",
+  "mcp": "official",
+  "mcp_url": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "access": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "api": "https://developers.klaviyo.com/en/docs/authenticate_",
+   "mcp": "https://developers.klaviyo.com/en/docs/klaviyo_mcp_server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 37,
+  "app": "systeme.io",
+  "category": "Funnel builder/marketing",
+  "one_liner": "All-in-one funnel/email platform with small public API and built-in MCP.",
+  "auth_methods": [
+   "API key"
+  ],
+  "auth_notes": "X-API-Key header; up to 3 keys created in Settings.",
+  "access": "self-serve-free",
+  "access_notes": "Key created under profile Settings > MCP & API keys; plan gating for API/MCP not stated in help docs.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "narrow",
+  "api_notes": "Contacts, tags, with some further operations; funnels not editable via MCP.",
+  "mcp": "official",
+  "mcp_url": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+  "buildability": "ready-with-friction",
+  "blocker": "narrow API; plan gating unclear",
+  "evidence": {
+   "auth": "https://developer.systeme.io/reference/api",
+   "access": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api",
+   "api": "https://developer.systeme.io/reference/api",
+   "mcp": "https://help.systeme.io/article/2323-how-to-use-systeme-io-public-api"
+  },
+  "confidence": "low",
+  "needs_human": true,
+  "human_reason": "Plan requirements and full endpoint list not confirmed; MCP described only in help article."
+ },
+ {
+  "id": 38,
+  "app": "Pinterest",
+  "category": "Social media",
+  "one_liner": "Pinterest API v5 with OAuth2 and newly announced MCP.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "OAuth 2.0 authorization code; trial tokens expire in 24h.",
+  "access": "approval",
+  "access_notes": "Business account; app request reviewed for Trial access, then Standard access upgrade review for production.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Pins, boards, ads, analytics, catalogs (v5).",
+  "mcp": "official",
+  "mcp_url": "https://api.pinterest.com/mcp",
+  "buildability": "ready-with-friction",
+  "blocker": "trial/standard access review",
+  "evidence": {
+   "auth": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+   "access": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+   "api": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+   "mcp": "https://community.pinterest.biz/t/introducing-the-pinterest-mcp-server/51358.md"
+  },
+  "confidence": "low",
+  "needs_human": true,
+  "human_reason": "MCP availability/URL from third-party blog; Pinterest announcement page gave no details; GA status unclear."
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "category": "Social media",
+  "one_liner": "Threads API for publishing, replies, insights.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "OAuth 2.0 short-lived (1h) then long-lived (60d) tokens; scopes threads_basic, threads_content_publish, etc.",
+  "access": "self-serve-free",
+  "access_notes": "Meta app with Threads use case; Threads testers can grant permissions without review; other users need App Review and published app.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Publish, reply management, read replies, insights.",
+  "mcp": "none",
+  "mcp_url": null,
+  "buildability": "ready-with-friction",
+  "blocker": "App Review for non-tester users",
+  "evidence": {
+   "auth": "https://developers.facebook.com/docs/threads/get-started",
+   "access": "https://developers.facebook.com/docs/threads/get-started",
+   "api": "https://developers.facebook.com/docs/threads/get-started",
+   "mcp": "https://developers.facebook.com/documentation/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 40,
+  "app": "SendGrid",
+  "category": "Transactional email",
+  "one_liner": "Twilio SendGrid v3 email API.",
+  "auth_methods": [
+   "API key"
+  ],
+  "auth_notes": "API key as Bearer token with per-key permissions.",
+  "access": "self-serve-trial",
+  "access_notes": "Free plan retired (May 2025); new accounts get a trial per secondary sources; paid plans otherwise. Trial terms not on primary pages.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Mail send, templates, contacts, marketing, stats, suppression.",
+  "mcp": "community",
+  "mcp_url": null,
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "access": "https://www.twilio.com/en-us/changelog/sendgrid-free-plan",
+   "api": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ }
+]

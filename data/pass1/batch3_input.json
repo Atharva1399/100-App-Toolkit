@@ -1,0 +1,102 @@
+[
+ {
+  "id": 41,
+  "app": "Shopify",
+  "hint": "shopify.dev"
+ },
+ {
+  "id": 42,
+  "app": "WooCommerce",
+  "hint": "woocommerce.com/document/woocommerce-rest-api"
+ },
+ {
+  "id": 43,
+  "app": "BigCommerce",
+  "hint": "developer.bigcommerce.com"
+ },
+ {
+  "id": 44,
+  "app": "Salesforce Commerce Cloud",
+  "hint": "developer.salesforce.com/docs/commerce"
+ },
+ {
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "hint": "developer.adobe.com/commerce"
+ },
+ {
+  "id": 46,
+  "app": "Squarespace",
+  "hint": "developers.squarespace.com"
+ },
+ {
+  "id": 47,
+  "app": "Ecwid",
+  "hint": "api-docs.ecwid.com"
+ },
+ {
+  "id": 48,
+  "app": "Gumroad",
+  "hint": "gumroad.com/api"
+ },
+ {
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "hint": "developer-docs.amazon.com/sp-api"
+ },
+ {
+  "id": 50,
+  "app": "fanbasis",
+  "hint": "fanbasis.com"
+ },
+ {
+  "id": 51,
+  "app": "DataForSEO",
+  "hint": "docs.dataforseo.com"
+ },
+ {
+  "id": 52,
+  "app": "SE Ranking",
+  "hint": "seranking.com/api"
+ },
+ {
+  "id": 53,
+  "app": "Ahrefs",
+  "hint": "ahrefs.com/api"
+ },
+ {
+  "id": 54,
+  "app": "MrScraper",
+  "hint": "docs.mrscraper.com"
+ },
+ {
+  "id": 55,
+  "app": "Apify",
+  "hint": "docs.apify.com"
+ },
+ {
+  "id": 56,
+  "app": "Firecrawl",
+  "hint": "firecrawl.dev"
+ },
+ {
+  "id": 57,
+  "app": "Bright Data",
+  "hint": "brightdata.com"
+ },
+ {
+  "id": 58,
+  "app": "Sherlock",
+  "hint": "github.com/sherlock-project/sherlock"
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "hint": "waterfall.io (contact/company intel)"
+ },
+ {
+  "id": 60,
+  "app": "Clay",
+  "hint": "clay.com"
+ }
+]

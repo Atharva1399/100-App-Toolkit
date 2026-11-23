@@ -1,0 +1,1094 @@
+[
+  {
+    "id": 1,
+    "app": "Salesforce",
+    "record": {
+      "id": 1,
+      "app": "Salesforce",
+      "category": "CRM",
+      "one_liner": "Enterprise CRM platform with a very broad REST/SOAP/Bulk API surface.",
+      "auth_methods": [
+        "OAuth2"
+      ],
+      "auth_notes": "OAuth 2.0 only, via an External Client App (connected app creation restricted since Spring '26), multiple flows incl. JWT bearer and client credentials. Hosted MCP accepts ECA OAuth only (forcedotcom/mcp-hosted FAQ). The REST auth page itself is 403 to fetch; confirmed by search excerpts of vendor docs.",
+      "access": "self-serve-free",
+      "access_notes": "Free Developer Edition org gives working API access (per Salesforce docs search snippet; page not fetchable).",
+      "api_types": [
+        "REST",
+        "SOAP",
+        "GraphQL"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST, SOAP, Bulk, Metadata, UI GraphQL APIs covering essentially all standard and custom objects (from prior knowledge; docs 403).",
+      "mcp": "official",
+      "mcp_url": "https://github.com/forcedotcom/mcp-hosted",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://raw.githubusercontent.com/wiki/forcedotcom/mcp-hosted/FAQ.md",
+        "access": "https://github.com/salesforcecli/mcp",
+        "api": "https://github.com/salesforcecli/mcp",
+        "mcp": "https://github.com/forcedotcom/mcp-hosted"
+      },
+      "confidence": "medium",
+      "needs_human": true,
+      "human_reason": "needs-browser: https://developer.salesforce.com/signup ; needs-browser: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest_compatible_editions.htm"
+    },
+    "changes": [
+      {
+        "field": "evidence.auth",
+        "old": "https://github.com/salesforcecli/mcp",
+        "new": "https://raw.githubusercontent.com/wiki/forcedotcom/mcp-hosted/FAQ.md",
+        "reason": "Vendor (forcedotcom) wiki confirms OAuth via External Client Apps (scopes mcp_api, refresh_token); the old evidence (salesforcecli/mcp README) did not support OAuth. The REST OAuth page on developer.salesforce.com is 403 to fetch; search excerpts of it say REST access requires an external client app or connected app plus an OAuth 2.0 flow.",
+        "evidence_url": "https://raw.githubusercontent.com/wiki/forcedotcom/mcp-hosted/FAQ.md"
+      },
+      {
+        "field": "auth_notes",
+        "old": "REST API requires OAuth 2.0 via an external client app (new) or connected app (creation restricted since Spring '26); multiple flows incl. client credentials. Per search snippets; developer.salesforce.com docs returned HTTP 403 to fetch.",
+        "new": "OAuth 2.0 only, via an External Client App (connected app creation restricted since Spring '26), multiple flows incl. JWT bearer and client credentials. Hosted MCP accepts ECA OAuth only (forcedotcom/mcp-hosted FAQ). The REST auth page itself is 403 to fetch; confirmed by search excerpts of vendor docs.",
+        "reason": "Rewritten to cite the vendor source that was actually opened.",
+        "evidence_url": "https://raw.githubusercontent.com/wiki/forcedotcom/mcp-hosted/FAQ.md"
+      },
+      {
+        "field": "mcp_url",
+        "old": "https://github.com/salesforcecli/mcp",
+        "new": "https://github.com/forcedotcom/mcp-hosted",
+        "reason": "salesforcecli/mcp is archived/EOL; vendor repo forcedotcom/mcp-hosted states \"Hosted MCP servers are now generally available (GA)\". Search excerpts of vendor docs say hosted MCP is Enterprise Edition+ with Flex Credits (not verified, docs 403).",
+        "evidence_url": "https://github.com/forcedotcom/mcp-hosted"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://github.com/salesforcecli/mcp",
+        "new": "https://github.com/forcedotcom/mcp-hosted",
+        "reason": "Point to the current vendor-published hosted MCP repo instead of the archived CLI one.",
+        "evidence_url": "https://github.com/forcedotcom/mcp-hosted"
+      },
+      {
+        "field": "confidence",
+        "old": "low",
+        "new": "medium",
+        "reason": "OAuth and official MCP now confirmed from vendor GitHub; access (free Developer Edition with API enabled) still rests on search excerpts of vendor docs.",
+        "evidence_url": "https://github.com/forcedotcom/mcp-hosted"
+      },
+      {
+        "field": "human_reason",
+        "old": "developer.salesforce.com docs (OAuth, signup, hosted MCP) all returned HTTP 403; auth/access/API fields rest on search snippets and the archived salesforcecli/mcp repo (which also says EOL Nov 2 2026 in favor of hosted MCP servers).",
+        "new": "needs-browser: https://developer.salesforce.com/signup ; needs-browser: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest_compatible_editions.htm",
+        "reason": "developer.salesforce.com returns 403 to fetch; these pages decide the free Developer Edition and its API access. Fields kept as-is.",
+        "evidence_url": "https://developer.salesforce.com/signup"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:OAuth2",
+      "low-confidence"
+    ]
+  },
+  {
+    "id": 11,
+    "app": "Zendesk",
+    "record": {
+      "id": 11,
+      "app": "Zendesk",
+      "category": "Customer support",
+      "one_liner": "Help desk / service platform with a very broad REST API across Support, Help Center, Sell and more.",
+      "auth_methods": [
+        "OAuth2",
+        "Basic"
+      ],
+      "auth_notes": "OAuth access tokens (recommended; Bearer header). A global OAuth client is required for apps used by multiple customers and must be requested from and approved by Zendesk (developers cannot self-create). Legacy API tokens via Basic (email/token:api_token) are deprecated; end-user email/password possible in closed instances.",
+      "access": "self-serve-trial",
+      "access_notes": "No free plan: register page says \"Start your free 14-day trial\". Marketplace partners can request a non-expiring sponsored d3v- account. Multi-customer OAuth needs a Zendesk-approved global OAuth client.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Ticketing, Help Center, Messaging, Voice, Custom Data, Sell CRM, Apps and more APIs.",
+      "mcp": "official",
+      "mcp_url": "https://support.zendesk.com/hc/en-us/articles/11398710406554",
+      "buildability": "ready-with-friction",
+      "blocker": "global OAuth client requires Zendesk approval",
+      "evidence": {
+        "auth": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+        "access": "https://www.zendesk.com/register/",
+        "api": "https://developer.zendesk.com/api-reference/",
+        "mcp": "https://support.zendesk.com/hc/en-us/articles/11398710406554"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_methods",
+        "old": [
+          "OAuth2",
+          "API key",
+          "Basic"
+        ],
+        "new": [
+          "OAuth2",
+          "Basic"
+        ],
+        "reason": "Vendor auth page lists OAuth access tokens and \"API token (deprecated)\" sent via Basic (email/token:api_token). The vendor never calls it an API key, so it maps to Basic, not API key.",
+        "evidence_url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/"
+      },
+      {
+        "field": "auth_notes",
+        "old": "OAuth access tokens (recommended; global OAuth client for multi-customer apps); API tokens via Basic auth (email/token:token) are marked deprecated.",
+        "new": "OAuth access tokens (recommended; Bearer header). A global OAuth client is required for apps used by multiple customers and must be requested from and approved by Zendesk (developers cannot self-create). Legacy API tokens via Basic (email/token:api_token) are deprecated; end-user email/password possible in closed instances.",
+        "reason": "Added the global OAuth approval gate and the exact token mechanism.",
+        "evidence_url": "https://developer.zendesk.com/documentation/marketplace/building-a-marketplace-app/set-up-a-global-oauth-client/"
+      },
+      {
+        "field": "access_notes",
+        "old": "14-day free trial; API tokens created in Admin Center > APIs; OAuth clients created by admins. Plan requirements not stated.",
+        "new": "No free plan: register page says \"Start your free 14-day trial\". Marketplace partners can request a non-expiring sponsored d3v- account. Multi-customer OAuth needs a Zendesk-approved global OAuth client.",
+        "reason": "Quoted vendor register page; added partner sandbox and global OAuth gate.",
+        "evidence_url": "https://www.zendesk.com/register/"
+      },
+      {
+        "field": "mcp",
+        "old": "community",
+        "new": "official",
+        "reason": "Zendesk help center documents the Zendesk MCP Server behind Zendesk Bridge (EAP, free during EAP, OAuth 2.1, Claude/ChatGPT/Copilot/Gemini clients; Team+ Suite plans). It is vendor-run, so it counts as official (early access).",
+        "evidence_url": "https://support.zendesk.com/hc/en-us/articles/11398710406554"
+      },
+      {
+        "field": "mcp_url",
+        "old": null,
+        "new": "https://support.zendesk.com/hc/en-us/articles/11398710406554",
+        "reason": "Vendor doc for the Zendesk MCP Server / Bridge (no public endpoint URL listed).",
+        "evidence_url": "https://support.zendesk.com/hc/en-us/articles/11398710406554"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://www.geckoboard.com/blog/zendesk-mcp-the-different-options-compared-2026/",
+        "new": "https://support.zendesk.com/hc/en-us/articles/11398710406554",
+        "reason": "Replaced third-party blog with the vendor help-center article.",
+        "evidence_url": "https://support.zendesk.com/hc/en-us/articles/11398710406554"
+      },
+      {
+        "field": "buildability",
+        "old": "ready",
+        "new": "ready-with-friction",
+        "reason": "Only trial credentials are self-serve, and a toolkit used across customers needs a global OAuth client that Zendesk must approve.",
+        "evidence_url": "https://developer.zendesk.com/documentation/marketplace/building-a-marketplace-app/set-up-a-global-oauth-client/"
+      },
+      {
+        "field": "blocker",
+        "old": "none",
+        "new": "global OAuth client requires Zendesk approval",
+        "reason": "Follows from the buildability change.",
+        "evidence_url": "https://developer.zendesk.com/documentation/marketplace/building-a-marketplace-app/set-up-a-global-oauth-client/"
+      },
+      {
+        "field": "needs_human",
+        "old": true,
+        "new": false,
+        "reason": "MCP status resolved from the vendor help center.",
+        "evidence_url": "https://support.zendesk.com/hc/en-us/articles/11398710406554"
+      },
+      {
+        "field": "human_reason",
+        "old": "Zendesk's own MCP server status is contradictory: an opened Oct 2026 article says announced but no public docs; search results claim early access opened Nov 10 2026 (not verifiable on developer.zendesk.com). Marked community pending confirmation.",
+        "new": null,
+        "reason": "Resolved.",
+        "evidence_url": "https://support.zendesk.com/hc/en-us/articles/11398710406554"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:API key",
+      "agent-asked-for-human"
+    ]
+  },
+  {
+    "id": 16,
+    "app": "LiveAgent",
+    "record": {
+      "id": 16,
+      "app": "LiveAgent",
+      "category": "Customer support",
+      "one_liner": "Help desk platform with API v3 (key-based) and an official MCP integration.",
+      "auth_methods": [
+        "API key",
+        "OAuth2",
+        "Bearer token"
+      ],
+      "auth_notes": "REST API v3: API key in an `apikey` request header, created by an admin under Configuration > System > API with per-key permissions (support.liveagent.com/741982-API-key). Hosted MCP (https://<domain>/api/mcp) supports OAuth 2.1 (auth code + PKCE) or a Bearer token (max 10 per account, 2-year expiry).",
+      "access": "self-serve-trial",
+      "access_notes": "No free plan. Pricing FAQ: \"Every plan starts with a 30-day free trial, and no credit card is required.\" All plans include API keys (Starter 1, Team 5, Business 10, Enterprise unlimited).",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "API v3 REST with Swagger descriptor (in-account docs at <domain>/docs/api/v3/). 39 resource groups / ~240 endpoints covering tickets, chats, messages, calls, contacts, companies, agents, departments, tags, SLAs.",
+      "mcp": "official",
+      "mcp_url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+        "access": "https://www.liveagent.com/pricing/",
+        "api": "https://github.com/QualityUnit/LiveAgent-api-python",
+        "mcp": "https://support.liveagent.com/647358-MCP-Integration-for-Agents"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_notes",
+        "old": "API v3 uses an apikey parameter; MCP supports OAuth 2.1 or Bearer token (up to 10 tokens, 2-year expiry).",
+        "new": "REST API v3: API key in an `apikey` request header, created by an admin under Configuration > System > API with per-key permissions (support.liveagent.com/741982-API-key). Hosted MCP (https://<domain>/api/mcp) supports OAuth 2.1 (auth code + PKCE) or a Bearer token (max 10 per account, 2-year expiry).",
+        "reason": "The old evidence page was the v1 PHP sample (apikey parameter). The v3 key page and MCP page now back each method.",
+        "evidence_url": "https://support.liveagent.com/741982-API-key"
+      },
+      {
+        "field": "evidence.auth",
+        "old": "https://support.liveagent.com/061754-How-to-make-requests-with-API-v3",
+        "new": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+        "reason": "This vendor page documents both OAuth 2.1 and Bearer token. API key is documented at support.liveagent.com/741982-API-key.",
+        "evidence_url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents"
+      },
+      {
+        "field": "access_notes",
+        "old": "Key created in agent panel; docs opened do not state plan requirements or trial terms (trial assumed from prior knowledge).",
+        "new": "No free plan. Pricing FAQ: \"Every plan starts with a 30-day free trial, and no credit card is required.\" All plans include API keys (Starter 1, Team 5, Business 10, Enterprise unlimited).",
+        "reason": "Trial was assumed, now quoted from the vendor pricing page.",
+        "evidence_url": "https://www.liveagent.com/pricing/"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://support.liveagent.com/061754-How-to-make-requests-with-API-v3",
+        "new": "https://www.liveagent.com/pricing/",
+        "reason": "Vendor pricing page.",
+        "evidence_url": "https://www.liveagent.com/pricing/"
+      },
+      {
+        "field": "api_breadth",
+        "old": "moderate",
+        "new": "broad",
+        "reason": "The vendor (Quality Unit) Swagger-generated client has 39 resource groups (~240 endpoints): tickets, chats, calls, contacts, companies, agents, departments, tags, etc.",
+        "evidence_url": "https://github.com/QualityUnit/LiveAgent-api-python"
+      },
+      {
+        "field": "api_notes",
+        "old": "API v3 with scoped keys; breadth not confirmed from opened pages.",
+        "new": "API v3 REST with Swagger descriptor (in-account docs at <domain>/docs/api/v3/). 39 resource groups / ~240 endpoints covering tickets, chats, messages, calls, contacts, companies, agents, departments, tags, SLAs.",
+        "reason": "Breadth confirmed from the vendor GitHub client.",
+        "evidence_url": "https://github.com/QualityUnit/LiveAgent-api-python"
+      },
+      {
+        "field": "evidence.api",
+        "old": "https://support.liveagent.com/061754-How-to-make-requests-with-API-v3",
+        "new": "https://github.com/QualityUnit/LiveAgent-api-python",
+        "reason": "Vendor-org repo generated from the v3 Swagger spec.",
+        "evidence_url": "https://github.com/QualityUnit/LiveAgent-api-python"
+      },
+      {
+        "field": "confidence",
+        "old": "low",
+        "new": "medium",
+        "reason": "Every field now has primary vendor evidence. The v3 reference itself is inside the account.",
+        "evidence_url": "https://support.liveagent.com/567924-Documentation"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:OAuth2",
+      "auth-claim-not-on-page:Bearer token",
+      "low-confidence"
+    ]
+  },
+  {
+    "id": 26,
+    "app": "Discord",
+    "record": {
+      "id": 26,
+      "app": "Discord",
+      "category": "Community chat",
+      "one_liner": "Chat platform with bot and OAuth2 REST API plus Gateway.",
+      "auth_methods": [
+        "OAuth2",
+        "Bearer token"
+      ],
+      "auth_notes": "Bot token from developer portal; OAuth2 code/client-credentials grants.",
+      "access": "self-serve-free",
+      "access_notes": "Create app in Developer Portal. Some scopes (dm_channels.read, voice, rpc) partner-only; privileged intents need verification at scale.",
+      "api_types": [
+        "REST",
+        "WebSocket"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST routes plus real-time Gateway.",
+      "mcp": "community",
+      "mcp_url": "https://github.com/SaseQ/discord-mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://docs.discord.com/developers/topics/oauth2",
+        "access": "https://docs.discord.com/developers/topics/oauth2",
+        "api": "https://docs.discord.com/developers/topics/oauth2",
+        "mcp": "https://github.com/SaseQ/discord-mcp"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "mcp_url",
+        "old": null,
+        "new": "https://github.com/SaseQ/discord-mcp",
+        "reason": "Representative community server (615 stars, MIT, no Discord affiliation). No Discord-published product MCP: vendor intro and llms.txt do not mention one. docs.discord.com/mcp answers 405 to GET and appears to be a docs-search endpoint only, not product access.",
+        "evidence_url": "https://github.com/SaseQ/discord-mcp"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": null,
+        "new": "https://github.com/SaseQ/discord-mcp",
+        "reason": "Evidence for the community claim. Discord docs have no product MCP.",
+        "evidence_url": "https://docs.discord.com/llms.txt"
+      }
+    ],
+    "flags_resolved": [
+      "mcp-claim-without-evidence"
+    ]
+  },
+  {
+    "id": 31,
+    "app": "Google Ads",
+    "record": {
+      "id": 31,
+      "app": "Google Ads",
+      "category": "Advertising",
+      "one_liner": "Google Ads API (gRPC/REST) with official MCP server.",
+      "auth_methods": [
+        "OAuth2"
+      ],
+      "auth_notes": "OAuth 2.0 (service account or user flows). Developer tokens sunset Sept 9 2026 and are ignored.",
+      "access": "approval",
+      "access_notes": "New Cloud project gets Test access (test accounts only); production needs Explorer/Basic/Standard access via brand verification and review (Basic automated, Standard manual).",
+      "api_types": [
+        "REST",
+        "gRPC"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Full campaign/ads/reporting management.",
+      "mcp": "official",
+      "mcp_url": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server",
+      "buildability": "ready-with-friction",
+      "blocker": "access-level approval/brand verification",
+      "evidence": {
+        "auth": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+        "access": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+        "api": "https://developers.google.com/google-ads/api/docs/oauth/overview",
+        "mcp": "https://developers.google.com/google-ads/api/docs/developer-toolkit/mcp-server"
+      },
+      "confidence": "high",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [],
+    "flags_resolved": [
+      "mcp-evidence-unreachable(ReadTimeout)"
+    ]
+  },
+  {
+    "id": 34,
+    "app": "GoHighLevel",
+    "record": {
+      "id": 34,
+      "app": "GoHighLevel",
+      "category": "CRM/marketing automation",
+      "one_liner": "HighLevel CRM with OAuth marketplace apps and official MCP.",
+      "auth_methods": [
+        "OAuth2",
+        "Bearer token"
+      ],
+      "auth_notes": "OAuth 2.0 auth-code via Marketplace app (agency/location tokens). Private Integration Tokens are created in Settings > Private Integrations and sent as \"Authorization: Bearer <PIT>\". They do not auto-refresh, and 90-day rotation is recommended. Hosted MCP uses HighLevel sign-in (no key).",
+      "access": "self-serve-free",
+      "access_notes": "Developer account via Marketplace sign-up; Developer Portal > Testing > \"+ Create App Test Account\" creates a sandbox that \"remains active for up to 6 months\". \"Sandbox accounts can now generate PITs\" (reduced API limits). Docs do not state a price for either.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Contacts, conversations, calendars, opportunities, payments, locations etc.",
+      "mcp": "official",
+      "mcp_url": "https://marketplace.gohighlevel.com/docs/other/mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0",
+        "access": "https://marketplace.gohighlevel.com/docs/oauth/SandboxAccount.md",
+        "api": "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0",
+        "mcp": "https://marketplace.gohighlevel.com/docs/other/mcp"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "access",
+        "old": "self-serve-trial",
+        "new": "self-serve-free",
+        "reason": "Free Marketplace developer sign-up plus a Developer Portal \"Create App Test Account\" sandbox (active up to 6 months) that supports OAuth app installs and PIT generation, with no HighLevel subscription required. The docs do not state a price outright.",
+        "evidence_url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxAccount.md"
+      },
+      {
+        "field": "access_notes",
+        "old": "Free developer account to create marketplace apps; installing/testing needs a HighLevel account/sub-account; plan requirements not stated in fetched docs.",
+        "new": "Developer account via Marketplace sign-up; Developer Portal > Testing > \"+ Create App Test Account\" creates a sandbox that \"remains active for up to 6 months\". \"Sandbox accounts can now generate PITs\" (reduced API limits). Docs do not state a price for either.",
+        "reason": "Replaced unverified plan/trial assumption.",
+        "evidence_url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT.md"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://marketplace.gohighlevel.com/docs/Authorization/OAuth2.0",
+        "new": "https://marketplace.gohighlevel.com/docs/oauth/SandboxAccount.md",
+        "reason": "Vendor sandbox doc.",
+        "evidence_url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxAccount.md"
+      },
+      {
+        "field": "auth_notes",
+        "old": "OAuth 2.0 auth-code via Marketplace app (agency/location tokens). Private Integration Tokens exist but fetched page was empty.",
+        "new": "OAuth 2.0 auth-code via Marketplace app (agency/location tokens). Private Integration Tokens are created in Settings > Private Integrations and sent as \"Authorization: Bearer <PIT>\". They do not auto-refresh, and 90-day rotation is recommended. Hosted MCP uses HighLevel sign-in (no key).",
+        "reason": "PIT details confirmed from vendor doc.",
+        "evidence_url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT.md"
+      },
+      {
+        "field": "needs_human",
+        "old": true,
+        "new": false,
+        "reason": "Plan/sandbox and PIT questions answered by vendor docs.",
+        "evidence_url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxPIT.md"
+      },
+      {
+        "field": "human_reason",
+        "old": "Plan/trial requirement for test accounts and Private Integration Token details not confirmed from primary docs.",
+        "new": null,
+        "reason": "Resolved.",
+        "evidence_url": "https://marketplace.gohighlevel.com/docs/oauth/SandboxAccount.md"
+      }
+    ],
+    "flags_resolved": [
+      "agent-asked-for-human"
+    ]
+  },
+  {
+    "id": 40,
+    "app": "SendGrid",
+    "record": {
+      "id": 40,
+      "app": "SendGrid",
+      "category": "Transactional email",
+      "one_liner": "Twilio SendGrid v3 email API.",
+      "auth_methods": [
+        "API key"
+      ],
+      "auth_notes": "API key as Bearer token with per-key permissions.",
+      "access": "self-serve-trial",
+      "access_notes": "Free plan retired May 27 2025. Email API pricing: \"Free trial lets you send 100 emails/day for 60 days\", no credit card; paid plans afterwards.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Mail send, templates, contacts, marketing, stats, suppression.",
+      "mcp": "community",
+      "mcp_url": null,
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+        "access": "https://www.twilio.com/en-us/products/email-api/pricing",
+        "api": "https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api/authentication",
+        "mcp": "https://github.com/twilio-labs/mcp"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "evidence.mcp",
+        "old": null,
+        "new": "https://github.com/twilio-labs/mcp",
+        "reason": "Twilio's official MCP (twilio-labs/mcp) covers Twilio's Public API and does not mention SendGrid. Searches find only third-party SendGrid servers, so community stands.",
+        "evidence_url": "https://github.com/twilio-labs/mcp"
+      },
+      {
+        "field": "access_notes",
+        "old": "Free plan retired (May 2025); new accounts get a trial per secondary sources; paid plans otherwise. Trial terms not on primary pages.",
+        "new": "Free plan retired May 27 2025. Email API pricing: \"Free trial lets you send 100 emails/day for 60 days\", no credit card; paid plans afterwards.",
+        "reason": "Trial terms now quoted from the vendor pricing page.",
+        "evidence_url": "https://www.twilio.com/en-us/products/email-api/pricing"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://www.twilio.com/en-us/changelog/sendgrid-free-plan",
+        "new": "https://www.twilio.com/en-us/products/email-api/pricing",
+        "reason": "Vendor pricing page with trial terms.",
+        "evidence_url": "https://www.twilio.com/en-us/products/email-api/pricing"
+      }
+    ],
+    "flags_resolved": [
+      "mcp-claim-without-evidence"
+    ]
+  },
+  {
+    "id": 48,
+    "app": "Gumroad",
+    "record": {
+      "id": 48,
+      "app": "Gumroad",
+      "category": "E-commerce / Creator",
+      "one_liner": "Platform for creators to sell digital products.",
+      "auth_methods": [
+        "OAuth2",
+        "Bearer token"
+      ],
+      "auth_notes": "OAuth2 app (application id/secret, scopes e.g. edit_products, view_sales). The app owner can click \"Generate access token\" for a non-expiring personal token. Tokens are sent as Bearer to api.gumroad.com/v2. The Verify License endpoint needs no app.",
+      "access": "self-serve-free",
+      "access_notes": "Create an application in account Advanced settings and generate a non-expiring access token (per search results/help center; article body not retrievable).",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "REST v2. Endpoint groups in the vendor docs source: products, variants, offer codes, custom fields, files, covers, thumbnails, sales, subscribers, resource subscriptions (webhooks), licenses, payouts, earnings, emails, workflows, tax forms, product reviews, user.",
+      "mcp": "official",
+      "mcp_url": "https://gumroad.com/claude/v1/mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://github.com/antiwork/gumroad/blob/main/app/javascript/components/ApiDocumentation/Introduction.tsx",
+        "access": "https://gumroad.com/help/article/280-create-application-api",
+        "api": "https://github.com/antiwork/gumroad/tree/main/app/javascript/components/ApiDocumentation/Endpoints",
+        "mcp": "https://gumroad.com/claude"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "evidence.auth",
+        "old": "https://gumroad.com/api",
+        "new": "https://github.com/antiwork/gumroad/blob/main/app/javascript/components/ApiDocumentation/Introduction.tsx",
+        "reason": "gumroad.com/api is JS-rendered (Inertia), so its text does not reach the checker. The page source in the vendor repo (antiwork/gumroad, linked from gumroad.com/claude) says \"The Gumroad OAuth API is based around REST\" and \"register your OAuth application\". Authentication.tsx says to click \"Generate access token\" on the application page.",
+        "evidence_url": "https://github.com/antiwork/gumroad/blob/main/app/javascript/components/ApiDocumentation/Introduction.tsx"
+      },
+      {
+        "field": "auth_notes",
+        "old": "OAuth2 for third-party apps; personal access token generated in app settings.",
+        "new": "OAuth2 app (application id/secret, scopes e.g. edit_products, view_sales). The app owner can click \"Generate access token\" for a non-expiring personal token. Tokens are sent as Bearer to api.gumroad.com/v2. The Verify License endpoint needs no app.",
+        "reason": "Grounded in vendor page source.",
+        "evidence_url": "https://github.com/antiwork/gumroad/blob/main/app/javascript/components/ApiDocumentation/Introduction.tsx"
+      },
+      {
+        "field": "api_notes",
+        "old": "gumroad.com/api lists OAuth2, access tokens, endpoints/resources and MCP topics; resource detail from search results (products, sales, subscribers, licenses).",
+        "new": "REST v2. Endpoint groups in the vendor docs source: products, variants, offer codes, custom fields, files, covers, thumbnails, sales, subscribers, resource subscriptions (webhooks), licenses, payouts, earnings, emails, workflows, tax forms, product reviews, user.",
+        "reason": "Resource list taken from the vendor repo instead of search results.",
+        "evidence_url": "https://github.com/antiwork/gumroad/tree/main/app/javascript/components/ApiDocumentation/Endpoints"
+      },
+      {
+        "field": "evidence.api",
+        "old": "https://gumroad.com/api",
+        "new": "https://github.com/antiwork/gumroad/tree/main/app/javascript/components/ApiDocumentation/Endpoints",
+        "reason": "Vendor source of the API docs.",
+        "evidence_url": "https://github.com/antiwork/gumroad/tree/main/app/javascript/components/ApiDocumentation/Endpoints"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:OAuth2",
+      "auth-claim-not-on-page:Bearer token"
+    ]
+  },
+  {
+    "id": 54,
+    "app": "MrScraper",
+    "record": {
+      "id": 54,
+      "app": "MrScraper",
+      "category": "Web scraping",
+      "one_liner": "Scraping API with scraper, web search, workflow and residential proxy products.",
+      "auth_methods": [
+        "Bearer token",
+        "OAuth2"
+      ],
+      "auth_notes": "API Token created in the MrScraper app (API tokens page), sent as Bearer. Hosted MCP https://mcp.mrscraper.com/mcp supports OAuth 2.1 browser sign-in (scopes account:read, scrape:read) or the bearer token.",
+      "access": "self-serve-free",
+      "access_notes": "Pricing page: \"Free costs nothing - no credit card required\". Free plan for trying scraping/proxies/AI extraction; token quota not stated. Every API request uses your API token.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "narrow",
+      "api_notes": "Scraper API, Web Search, Workflow API, proxy; MCP exposes seven services.",
+      "mcp": "official",
+      "mcp_url": "https://github.com/mrscraper-com/mrscraper-mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://github.com/mrscraper-com/mrscraper-mcp",
+        "access": "https://mrscraper.com/pricing",
+        "api": "https://docs.mrscraper.com",
+        "mcp": "https://github.com/mrscraper-com/mrscraper-mcp"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_methods",
+        "old": [
+          "API key",
+          "OAuth2"
+        ],
+        "new": [
+          "Bearer token",
+          "OAuth2"
+        ],
+        "reason": "Vendor calls the credential an \"API Token\" (not API key), sent as a bearer token. OAuth 2.1 is for the hosted MCP.",
+        "evidence_url": "https://github.com/mrscraper-com/mrscraper-mcp"
+      },
+      {
+        "field": "auth_notes",
+        "old": "API token (Bearer) from dashboard; hosted MCP supports OAuth 2.1.",
+        "new": "API Token created in the MrScraper app (API tokens page), sent as Bearer. Hosted MCP https://mcp.mrscraper.com/mcp supports OAuth 2.1 browser sign-in (scopes account:read, scrape:read) or the bearer token.",
+        "reason": "Grounded in vendor MCP README and docs.",
+        "evidence_url": "https://github.com/mrscraper-com/mrscraper-mcp"
+      },
+      {
+        "field": "evidence.auth",
+        "old": "https://docs.mrscraper.com",
+        "new": "https://github.com/mrscraper-com/mrscraper-mcp",
+        "reason": "Vendor repo (\"Official MrScraper MCP server\") documents both OAuth 2.1 and the bearer API token. The docs.mrscraper.com root did not.",
+        "evidence_url": "https://github.com/mrscraper-com/mrscraper-mcp"
+      },
+      {
+        "field": "access_notes",
+        "old": "Sign up via Dashboard; docs do not mention free credits or trial terms.",
+        "new": "Pricing page: \"Free costs nothing - no credit card required\". Free plan for trying scraping/proxies/AI extraction; token quota not stated. Every API request uses your API token.",
+        "reason": "Free plan confirmed on vendor pricing page.",
+        "evidence_url": "https://mrscraper.com/pricing"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://docs.mrscraper.com",
+        "new": "https://mrscraper.com/pricing",
+        "reason": "Vendor pricing page.",
+        "evidence_url": "https://mrscraper.com/pricing"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:API key",
+      "auth-claim-not-on-page:OAuth2"
+    ]
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "record": {
+      "id": 60,
+      "app": "Clay",
+      "category": "Sales data enrichment",
+      "one_liner": "GTM data enrichment/workflow platform with a Public API and hosted MCP.",
+      "auth_methods": [
+        "API key",
+        "OAuth2"
+      ],
+      "auth_notes": "Public API: personal API key in the `clay-api-key` header (created in app API and CLI settings or with `clay api-keys create`). Hosted MCP https://api.clay.com/v3/mcp uses OAuth (auth code + PKCE, Dynamic Client Registration).",
+      "access": "self-serve-free",
+      "access_notes": "Free plan (\"Start building in Clay for free\"): CLI/API capped at 100 search results / 30 days; Launch/Growth 1M; Enterprise 10M. HTTP API integrations and webhooks are Growth/Enterprise only. Tables query API is Enterprise.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "narrow",
+      "api_notes": "Public REST API (OpenAPI at /openapi.json): searches, routines (run/batch), credits, audiences privacy deletion, tables structured query (Enterprise), workflow runs (beta).",
+      "mcp": "official",
+      "mcp_url": "https://api.clay.com/v3/mcp",
+      "buildability": "ready-with-friction",
+      "blocker": "free tier capped at 100 search results/30 days; narrow API",
+      "evidence": {
+        "auth": "https://developers.clay.com/public-api/authentication.md",
+        "access": "https://www.clay.com/pricing",
+        "api": "https://developers.clay.com/llms.txt",
+        "mcp": "https://university.clay.com/docs/connect-to-clay-mcp"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "access",
+        "old": "paid-plan",
+        "new": "self-serve-free",
+        "reason": "Vendor pricing table: Free plan includes \"Build with Clay via CLI / API\" (100 search results / 30 days) and \"Clay MCP for Reps\". HTTP API integrations and webhooks are Growth+.",
+        "evidence_url": "https://www.clay.com/pricing"
+      },
+      {
+        "field": "access_notes",
+        "old": "Sources conflict on plan gating (Enterprise vs all plans); quickstart does not state plans.",
+        "new": "Free plan (\"Start building in Clay for free\"): CLI/API capped at 100 search results / 30 days; Launch/Growth 1M; Enterprise 10M. HTTP API integrations and webhooks are Growth/Enterprise only. Tables query API is Enterprise.",
+        "reason": "Plan gating resolved from vendor pricing page.",
+        "evidence_url": "https://www.clay.com/pricing"
+      },
+      {
+        "field": "evidence.access",
+        "old": "https://developers.clay.com/quickstart.md",
+        "new": "https://www.clay.com/pricing",
+        "reason": "Vendor pricing page.",
+        "evidence_url": "https://www.clay.com/pricing"
+      },
+      {
+        "field": "auth_notes",
+        "old": "Public API uses clay-api-key header; hosted MCP uses OAuth (per search results).",
+        "new": "Public API: personal API key in the `clay-api-key` header (created in app API and CLI settings or with `clay api-keys create`). Hosted MCP https://api.clay.com/v3/mcp uses OAuth (auth code + PKCE, Dynamic Client Registration).",
+        "reason": "OAuth now backed by the vendor MCP doc.",
+        "evidence_url": "https://university.clay.com/docs/connect-to-clay-mcp"
+      },
+      {
+        "field": "evidence.auth",
+        "old": "https://developers.clay.com/quickstart.md",
+        "new": "https://developers.clay.com/public-api/authentication.md",
+        "reason": "Vendor API auth page (API key only). OAuth is documented at university.clay.com/docs/connect-to-clay-mcp (now evidence.mcp).",
+        "evidence_url": "https://developers.clay.com/public-api/authentication.md"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://university.clay.com/docs/http-api-integration-overview",
+        "new": "https://university.clay.com/docs/connect-to-clay-mcp",
+        "reason": "Vendor doc for hosted MCP (URL + OAuth). The old evidence was an HTTP-API page.",
+        "evidence_url": "https://university.clay.com/docs/connect-to-clay-mcp"
+      },
+      {
+        "field": "api_breadth",
+        "old": "moderate",
+        "new": "narrow",
+        "reason": "The vendor llms.txt API reference lists about 15 endpoints: audiences privacy-delete, credits, me, routines run/batch, search, tables query (Enterprise), workflow runs. Mostly execution, little CRUD.",
+        "evidence_url": "https://developers.clay.com/llms.txt"
+      },
+      {
+        "field": "api_notes",
+        "old": "Public API for calling Clay from apps; endpoint list not in quickstart; structured queries need Enterprise table sync (per Clay University via search).",
+        "new": "Public REST API (OpenAPI at /openapi.json): searches, routines (run/batch), credits, audiences privacy deletion, tables structured query (Enterprise), workflow runs (beta).",
+        "reason": "Endpoint list from vendor docs index.",
+        "evidence_url": "https://developers.clay.com/llms.txt"
+      },
+      {
+        "field": "evidence.api",
+        "old": "https://developers.clay.com/quickstart.md",
+        "new": "https://developers.clay.com/llms.txt",
+        "reason": "Vendor docs index with full endpoint list.",
+        "evidence_url": "https://developers.clay.com/llms.txt"
+      },
+      {
+        "field": "blocker",
+        "old": "plan gating unclear",
+        "new": "free tier capped at 100 search results/30 days; narrow API",
+        "reason": "Plan gating is no longer unclear.",
+        "evidence_url": "https://www.clay.com/pricing"
+      },
+      {
+        "field": "confidence",
+        "old": "low",
+        "new": "medium",
+        "reason": "Pricing and auth confirmed from vendor pages.",
+        "evidence_url": "https://www.clay.com/pricing"
+      },
+      {
+        "field": "needs_human",
+        "old": true,
+        "new": false,
+        "reason": "Conflict resolved by vendor pricing table.",
+        "evidence_url": "https://www.clay.com/pricing"
+      },
+      {
+        "field": "human_reason",
+        "old": "Plan requirements for API access conflict between sources; MCP page developers.clay.com/concepts/mcp.md returned 404.",
+        "new": null,
+        "reason": "Resolved.",
+        "evidence_url": "https://www.clay.com/pricing"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:OAuth2",
+      "agent-asked-for-human",
+      "low-confidence"
+    ]
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "record": {
+      "id": 78,
+      "app": "Coda",
+      "category": "Productivity / Docs",
+      "one_liner": "Collaborative docs with tables and automations (now Superhuman Docs).",
+      "auth_methods": [
+        "Bearer token",
+        "OAuth2"
+      ],
+      "auth_notes": "REST API: API token sent as \"Authorization: Bearer <token>\". Hosted MCP (docs.superhuman.com/apis/mcp, also coda.io/apis/mcp) uses OAuth (scope mcp:all).",
+      "access": "self-serve-free",
+      "access_notes": "API free in free and paid workspaces; some endpoints depend on owner role.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "REST API: docs, pages, tables, rows, formulas, permissions, automations.",
+      "mcp": "official",
+      "mcp_url": "https://docs.superhuman.com/apis/mcp",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://docs.superhuman.com/developers/apis/v1",
+        "access": "https://docs.superhuman.com/developers/apis/v1",
+        "api": "https://docs.superhuman.com/developers/apis/v1",
+        "mcp": "https://coda.io/resources/guides/getting_started_with_coda_mcp"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "auth_methods",
+        "old": [
+          "Bearer token"
+        ],
+        "new": [
+          "Bearer token",
+          "OAuth2"
+        ],
+        "reason": "The hosted MCP endpoint returns WWW-Authenticate: Bearer with OAuth protected-resource metadata (authorization server coda.io, \"Superhuman Docs MCP Server\"). The REST API itself uses Bearer API tokens.",
+        "evidence_url": "https://coda.io/.well-known/oauth-protected-resource/apis/mcp"
+      },
+      {
+        "field": "auth_notes",
+        "old": "API token sent as Bearer; how to create token not on opened page.",
+        "new": "REST API: API token sent as \"Authorization: Bearer <token>\". Hosted MCP (docs.superhuman.com/apis/mcp, also coda.io/apis/mcp) uses OAuth (scope mcp:all).",
+        "reason": "Added MCP OAuth.",
+        "evidence_url": "https://coda.io/.well-known/oauth-protected-resource/apis/mcp"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": null,
+        "new": "https://coda.io/resources/guides/getting_started_with_coda_mcp",
+        "reason": "Vendor guide calls it \"Superhuman Docs' implementation of the open Model Context Protocol standard\". Both endpoint URLs answer 401 with vendor OAuth metadata.",
+        "evidence_url": "https://coda.io/resources/guides/getting_started_with_coda_mcp"
+      },
+      {
+        "field": "needs_human",
+        "old": true,
+        "new": false,
+        "reason": "Official MCP confirmed from a vendor page and a live endpoint probe.",
+        "evidence_url": "https://coda.io/resources/guides/getting_started_with_coda_mcp"
+      },
+      {
+        "field": "human_reason",
+        "old": "Official hosted MCP (docs.superhuman.com/apis/mcp) seen only in search results; the page returned 401 so not opened.",
+        "new": null,
+        "reason": "Resolved.",
+        "evidence_url": "https://coda.io/resources/guides/getting_started_with_coda_mcp"
+      }
+    ],
+    "flags_resolved": [
+      "agent-asked-for-human"
+    ]
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "record": {
+      "id": 83,
+      "app": "Binance",
+      "category": "Crypto Exchange",
+      "one_liner": "Cryptocurrency exchange with spot, futures and account APIs.",
+      "auth_methods": [
+        "API key",
+        "JWT/signed"
+      ],
+      "auth_notes": "API key in X-MBX-APIKEY header; signed endpoints need timestamp+signature (HMAC-SHA256, RSA or Ed25519).",
+      "access": "self-serve-free",
+      "access_notes": "Create keys in account API Management; trading permission is off by default and must be enabled. Account (KYC) required.",
+      "api_types": [
+        "REST",
+        "WebSocket"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Spot REST docs reviewed; Binance also publishes WebSocket streams and derivatives APIs (not opened in detail).",
+      "mcp": "official",
+      "mcp_url": "https://agent.binance.com/mcp/agentic",
+      "buildability": "ready",
+      "blocker": "none",
+      "evidence": {
+        "auth": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+        "access": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+        "api": "https://developers.binance.com/docs/binance-spot-api-docs/rest-api/request-security",
+        "mcp": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+      },
+      "confidence": "medium",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "mcp",
+        "old": "community",
+        "new": "official",
+        "reason": "Binance runs the \"Binance MCP Server\" (Agent OS) at https://agent.binance.com/mcp/agentic. It uses consent-screen authorization, trades only inside an Agentic sub-account, and allows no withdrawals.",
+        "evidence_url": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+      },
+      {
+        "field": "mcp_url",
+        "old": null,
+        "new": "https://agent.binance.com/mcp/agentic",
+        "reason": "Vendor-documented endpoint.",
+        "evidence_url": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": null,
+        "new": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic",
+        "reason": "Vendor docs page.",
+        "evidence_url": "https://developers.binance.com/en/docs/agent-native/mcp-server/agentic"
+      }
+    ],
+    "flags_resolved": [
+      "mcp-claim-without-evidence"
+    ]
+  },
+  {
+    "id": 88,
+    "app": "Brex",
+    "record": {
+      "id": 88,
+      "app": "Brex",
+      "category": "Spend Management / Fintech",
+      "one_liner": "Corporate cards, expense, bill pay and travel platform.",
+      "auth_methods": [
+        "Bearer token",
+        "OAuth2"
+      ],
+      "auth_notes": "User tokens (admin-created in Developer > Settings, Bearer, expire after 90 days unused). Partner OAuth2 authorization-code flow (1h access / 90-day rotating refresh tokens) with client ID/secret issued by Brex developer support. Client credentials for the onboarding API. MCP uses OAuth with DCR or a user token.",
+      "access": "approval",
+      "access_notes": "Requires an existing Brex customer account; an account/card admin must accept the Developer API agreement before creating user tokens. Partner OAuth client credentials only by contacting Brex developer support.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "broad",
+      "api_notes": "Team API (users, departments, cards, locations, etc.) plus payments, transactions, expenses, budgets.",
+      "mcp": "official",
+      "mcp_url": "https://api.brex.com/mcp",
+      "buildability": "ready-with-friction",
+      "blocker": "requires Brex customer account + admin agreement",
+      "evidence": {
+        "auth": "https://developer.brex.com/guides/partner_authentication",
+        "access": "https://developer.brex.com/docs/authentication/",
+        "api": "https://developer.brex.com/openapi/team_api/",
+        "mcp": "https://developer.brex.com/docs/mcp"
+      },
+      "confidence": "high",
+      "needs_human": false,
+      "human_reason": null
+    },
+    "changes": [
+      {
+        "field": "evidence.auth",
+        "old": "https://developer.brex.com/docs/authentication/",
+        "new": "https://developer.brex.com/guides/partner_authentication",
+        "reason": "Vendor partner auth guide documents the OAuth2 auth code flow (+ client credentials for onboarding) with Bearer access tokens. The old page only covered user tokens.",
+        "evidence_url": "https://developer.brex.com/guides/partner_authentication"
+      },
+      {
+        "field": "auth_notes",
+        "old": "User tokens created in dashboard (Developer settings) sent as Bearer; OAuth2 supported (MCP and OpenAPI spec).",
+        "new": "User tokens (admin-created in Developer > Settings, Bearer, expire after 90 days unused). Partner OAuth2 authorization-code flow (1h access / 90-day rotating refresh tokens) with client ID/secret issued by Brex developer support. Client credentials for the onboarding API. MCP uses OAuth with DCR or a user token.",
+        "reason": "Added partner OAuth details and the gate.",
+        "evidence_url": "https://developer.brex.com/guides/partner_authentication"
+      },
+      {
+        "field": "access_notes",
+        "old": "Requires an existing Brex customer account; an account/card admin must accept the Developer API agreement before creating tokens.",
+        "new": "Requires an existing Brex customer account; an account/card admin must accept the Developer API agreement before creating user tokens. Partner OAuth client credentials only by contacting Brex developer support.",
+        "reason": "Added the partner OAuth gate.",
+        "evidence_url": "https://developer.brex.com/guides/partner_authentication"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:OAuth2"
+    ]
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "record": {
+      "id": 92,
+      "app": "Otter AI",
+      "category": "Meeting Notes",
+      "one_liner": "AI meeting transcription and notes.",
+      "auth_methods": [
+        "OAuth2",
+        "API key"
+      ],
+      "auth_notes": "MCP: OAuth (otter.ai authorization server, read-only scopes profile:read, conversations:read). Public API: Bearer API keys reportedly Enterprise-only (third-party sources; vendor docs page not renderable).",
+      "access": "partner-gated",
+      "access_notes": "Public API reportedly Enterprise workspaces only; MCP available via user OAuth sign-in.",
+      "api_types": [
+        "REST"
+      ],
+      "api_breadth": "moderate",
+      "api_notes": "Reported api.otter.ai/v1: conversations, channels, audio links, webhooks (unverified).",
+      "mcp": "official",
+      "mcp_url": "https://mcp.otter.ai/mcp",
+      "buildability": "blocked",
+      "blocker": "Public API Enterprise-only",
+      "evidence": {
+        "auth": "https://mcp.otter.ai/.well-known/oauth-protected-resource",
+        "access": "https://otter.ai/api/docs",
+        "api": "https://otter.ai/api/docs",
+        "mcp": "https://mcp.otter.ai/.well-known/oauth-protected-resource"
+      },
+      "confidence": "low",
+      "needs_human": true,
+      "human_reason": "needs-browser: https://otter.ai/api/docs"
+    },
+    "changes": [
+      {
+        "field": "evidence.auth",
+        "old": "https://claude.com/connectors/otter-ai",
+        "new": "https://mcp.otter.ai/.well-known/oauth-protected-resource",
+        "reason": "Vendor MCP OAuth metadata (authorization server otter.ai, scopes profile:read, conversations:read) backs OAuth2. The API key claim is still unverified (otter.ai/api/docs is JS-rendered).",
+        "evidence_url": "https://mcp.otter.ai/.well-known/oauth-protected-resource"
+      },
+      {
+        "field": "evidence.mcp",
+        "old": "https://claude.com/connectors/otter-ai",
+        "new": "https://mcp.otter.ai/.well-known/oauth-protected-resource",
+        "reason": "Replaced the claude.com directory page with the vendor-hosted metadata. The endpoint https://mcp.otter.ai/mcp answers 401 with an OAuth challenge.",
+        "evidence_url": "https://mcp.otter.ai/.well-known/oauth-protected-resource"
+      },
+      {
+        "field": "auth_notes",
+        "old": "MCP uses OAuth; reported Enterprise-only Public API uses Bearer API keys (secondary sources).",
+        "new": "MCP: OAuth (otter.ai authorization server, read-only scopes profile:read, conversations:read). Public API: Bearer API keys reportedly Enterprise-only (third-party sources; vendor docs page not renderable).",
+        "reason": "Added verified MCP scope detail.",
+        "evidence_url": "https://mcp.otter.ai/.well-known/oauth-protected-resource"
+      },
+      {
+        "field": "human_reason",
+        "old": "help.otter.ai returned 403 and otter.ai/api/docs rendered no content; API plan gating comes from third-party sources only.",
+        "new": "needs-browser: https://otter.ai/api/docs",
+        "reason": "The API docs page is a JS bundle with no rendered content. It decides the API-key auth and the Enterprise-only access. Fields kept.",
+        "evidence_url": "https://otter.ai/api/docs"
+      }
+    ],
+    "flags_resolved": [
+      "auth-claim-not-on-page:OAuth2"
+    ]
+  }
+]

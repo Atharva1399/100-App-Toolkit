@@ -1,0 +1,80 @@
+[
+ {
+  "id": 6,
+  "app": "Podio",
+  "field": "mcp",
+  "old": [
+   "none",
+   "community"
+  ],
+  "new": [
+   "official"
+  ],
+  "why": "Gold labeller assumed none; vendor doc shows first-party Podio MCP server.",
+  "evidence": "https://www.progress.com/podio/documentation/using-podio/ai-and-mcp/podio-mcp-server-integration-guide"
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "field": "mcp",
+  "old": [
+   "none",
+   "community"
+  ],
+  "new": [
+   "official"
+  ],
+  "why": "Gold labeller assumed none; Gorgias announced first-party MCP (open beta, May 2026).",
+  "evidence": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta"
+ },
+ {
+  "id": 49,
+  "app": "Amazon Selling Partner",
+  "field": "mcp",
+  "old": [
+   "community",
+   "none"
+  ],
+  "new": [
+   "official"
+  ],
+  "why": "amzn/selling-partner-api-samples ships Amazon-published SP-API MCP servers; gold search only surfaced third-party ones.",
+  "evidence": "https://github.com/amzn/selling-partner-api-samples"
+ },
+ {
+  "id": 82,
+  "app": "Plaid",
+  "field": "auth",
+  "old": [
+   [
+    "API key"
+   ],
+   [
+    "Other"
+   ]
+  ],
+  "new": [
+   [],
+   [
+    "API key",
+    "Other"
+   ]
+  ],
+  "why": "client_id+secret in body is a convention call; accept API key or Other (still must be non-empty).",
+  "evidence": "https://plaid.com/docs/api/"
+ },
+ {
+  "id": 85,
+  "app": "iPayX",
+  "field": "access",
+  "old": [
+   "self-serve-free"
+  ],
+  "new": [
+   "self-serve-free",
+   "paid-plan"
+  ],
+  "why": "Pricing says 3 lifetime free audits; developer page says 3/month; API tier $99+. Genuinely ambiguous.",
+  "evidence": "https://www.ipayx.ai/pricing"
+ }
+]

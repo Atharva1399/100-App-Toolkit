@@ -1,0 +1,315 @@
+<title>100-App Toolkit Audit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Which of 100 SaaS apps can become agent toolkits today: auth, access gating, API surface, MCP, blockers. Agent-researched, loop-verified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap">
+<style>
+/* Layout: a technical field report — one reading column for findings, full-width bands for the matrix and the table. */
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#14181f; --muted:#5b6472; --line:#dde1e7; --accent:#1f5fd1; --accent-soft:#e6eefc;
+  --ok:#1d7a46; --ok-bg:#e3f3ea; --warn:#a15c00; --warn-bg:#fbf0dc; --bad:#b4282e; --bad-bg:#fae4e5; --na:#525a67; --na-bg:#eceef1;
+  --f-display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1318; --panel:#171c23; --ink:#e7eaef; --muted:#9aa3b1; --line:#2a313b; --accent:#7aa7ff; --accent-soft:#1b2a44;
+  --ok:#5fd394; --ok-bg:#14301f; --warn:#f0b35a; --warn-bg:#36280f; --bad:#ff8a8f; --bad-bg:#3a1a1c; --na:#a4acb8; --na-bg:#232932; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1318; --panel:#171c23; --ink:#e7eaef; --muted:#9aa3b1; --line:#2a313b; --accent:#7aa7ff; --accent-soft:#1b2a44;
+  --ok:#5fd394; --ok-bg:#14301f; --warn:#f0b35a; --warn-bg:#36280f; --bad:#ff8a8f; --bad-bg:#3a1a1c; --na:#a4acb8; --na-bg:#232932; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto;padding-block:28px 64px;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(30px,5vw,46px);letter-spacing:-.01em}
+h2{font-size:24px} h3{font-size:16px;font-family:var(--f-body);font-weight:600}
+p{margin:0;max-width:70ch}
+a{color:var(--accent)} a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-size:13px}
+.num{font-variant-numeric:tabular-nums}
+section{display:flex;flex-direction:column;gap:16px;min-width:0}
+.lede{font-size:17px;color:var(--muted)}
+header.top{display:flex;flex-direction:column;gap:14px;border-bottom:1px solid var(--line);padding-bottom:24px}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px}
+nav.toc a{text-decoration:none;color:var(--muted)} nav.toc a:hover{color:var(--accent)}
+/* headline findings */
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.finding{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.finding .big{font-family:var(--f-display);font-size:34px;line-height:1}
+.finding p{font-size:14px}
+.kpis{display:flex;flex-wrap:wrap;gap:8px 28px}
+.kpi{display:flex;flex-direction:column}
+.kpi b{font-family:var(--f-display);font-size:26px}
+.kpi span{font-size:12px;color:var(--muted)}
+/* pills */
+.pill{display:inline-block;font-family:var(--f-mono);font-size:11.5px;padding:2px 8px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+.ok{color:var(--ok);background:var(--ok-bg)} .warn{color:var(--warn);background:var(--warn-bg)} .bad{color:var(--bad);background:var(--bad-bg)} .na{color:var(--na);background:var(--na-bg)}
+.tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;padding:2px 8px;border:1px solid var(--line);border-radius:4px;margin:1px 2px 1px 0;white-space:nowrap}
+/* matrix */
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:12px;color:var(--muted);position:sticky;top:0;background:var(--panel);z-index:1;white-space:nowrap}
+tbody tr:hover{background:var(--accent-soft)}
+.bar{display:flex;height:16px;border-radius:3px;overflow:hidden;min-width:160px;background:var(--na-bg)}
+.bar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted);align-items:center}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:14px}
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;counter-reset:s}
+.step{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.step.human{border-color:var(--warn);background:var(--warn-bg)}
+.step .eyebrow{color:var(--accent)} .step.human .eyebrow{color:var(--warn)}
+.step p{font-size:13px}
+/* accuracy */
+.acc{display:grid;grid-template-columns:110px 1fr 56px;gap:6px 10px;align-items:center;font-size:13px}
+.acc .track{height:10px;background:var(--na-bg);border-radius:3px;position:relative;overflow:hidden}
+.acc .track i{position:absolute;inset:0 auto 0 0;border-radius:3px}
+.funnel{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}
+.funnel div{flex:1 1 130px;border-left:3px solid var(--accent);background:var(--panel);padding:8px 10px;border-radius:0 6px 6px 0}
+.funnel b{font-family:var(--f-display);font-size:22px;display:block}
+.funnel span{font-size:12px;color:var(--muted)}
+/* table controls */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.controls input,.controls select{font:inherit;font-size:14px;padding:6px 9px;border:1px solid var(--line);border-radius:5px;background:var(--panel);color:var(--ink);min-height:36px}
+.controls input{flex:1 1 220px}
+details summary{cursor:pointer;color:var(--accent);font-size:13px}
+pre{font-family:var(--f-mono);font-size:12.5px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px;overflow-x:auto;margin:0}
+.note{font-size:13px;color:var(--muted)}
+td.ev a{font-family:var(--f-mono);font-size:11.5px;margin-right:6px}
+.byline{font-size:14px;color:var(--muted);margin-top:-4px}
+.byline b{color:var(--ink)}
+.foot{border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--muted)}
+/* at a glance */
+.glance{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px}
+@media (max-width:860px){.glance{grid-template-columns:1fr}}
+.waffle{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;max-width:440px}
+.waffle button{aspect-ratio:1;border:0;border-radius:3px;padding:0;cursor:pointer;min-width:0;max-width:100%}
+.waffle button:hover{outline:2px solid var(--ink);outline-offset:1px}
+.waffle button.ready{background:var(--ok)} .waffle button.ready-with-friction{background:var(--warn)} .waffle button.blocked{background:var(--bad)}
+.legend b{color:var(--ink);font-variant-numeric:tabular-nums}
+table.defs td{font-size:13px} table.defs td:first-child{white-space:nowrap}
+table.defs tr.grp td{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;background:var(--bg)}
+/* heatmap */
+table.heat th,table.heat td{text-align:center;min-width:92px}
+table.heat th:first-child,table.heat td:first-child{text-align:left}
+table.heat td.cell{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:500}
+/* charts */
+svg.chart{width:100%;height:auto;display:block;overflow:visible}
+svg.chart text{fill:var(--ink);font-family:var(--f-body);font-size:12px}
+svg.chart text.mut{fill:var(--muted)}
+svg.chart .grid{stroke:var(--line)}
+.sort{all:unset;cursor:pointer;color:inherit;font:inherit}
+.sort:hover{color:var(--accent)} .sort[aria-sort]::after{content:" ↕";opacity:.5}
+.sort[data-dir="asc"]::after{content:" ↑";opacity:1} .sort[data-dir="desc"]::after{content:" ↓";opacity:1}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<script type="application/json" id="data">__DATA__</script>
+
+<div class="wrap">
+  <header class="top">
+    <h1>100-App Toolkit Audit</h1>
+    <p class="byline">By <b>Atharva Gaikwad</b> · <a href="https://github.com/Atharva1399" target="_blank" rel="noopener">@Atharva1399</a> · <a href="https://github.com/Atharva1399/100-App-Toolkit" target="_blank" rel="noopener">source code</a></p>
+    <p class="lede" id="thesis"></p>
+    <div class="kpis" id="kpis"></div>
+    <nav class="toc" aria-label="Sections">
+      <a href="#glance">At a glance</a><a href="#patterns">Patterns</a><a href="#matrix">Matrix</a><a href="#queue">Build queue</a>
+      <a href="#agent">The agent</a><a href="#verification">Verification</a><a href="#table">All 100 apps</a><a href="#run">Run it</a>
+    </nav>
+  </header>
+
+  <section id="glance" aria-labelledby="h-glance">
+    <div class="eyebrow">At a glance</div>
+    <h2 id="h-glance">Each square is one app</h2>
+    <div class="glance">
+      <div class="card">
+        <div class="legend" id="waffle-legend"></div>
+        <div class="waffle" id="waffle" role="list" aria-label="100 apps colored by verdict"></div>
+        <p class="note">Squares follow the brief's order, one row per segment. Hover for the app; click to find it in the full table.</p>
+      </div>
+      <div class="card">
+        <h3>How to read the labels</h3>
+        <div class="scroll"><table class="defs"><tbody id="defs"></tbody></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="patterns" aria-labelledby="h-patterns">
+    <div class="eyebrow">What the data says</div>
+    <h2 id="h-patterns">Patterns</h2>
+    <div class="findings" id="findings"></div>
+  </section>
+
+  <section id="matrix" aria-labelledby="h-matrix">
+    <div class="eyebrow">Where gating lives</div>
+    <h2 id="h-matrix">Segment × access × buildability</h2>
+    <p class="note">Each bar is 10 apps (the list is grouped in blocks of 10 by category). Left bar: how a developer gets credentials. Right bar: can it be a toolkit today.</p>
+    <div class="legend" id="legend"></div>
+    <div class="scroll"><table id="matrix-table"><thead><tr><th>Segment</th><th>Credential access</th><th>Buildability</th><th class="num">Official MCP</th><th>Main blocker in segment</th></tr></thead><tbody></tbody></table></div>
+    <div class="card"><h3>How credentials are obtained vs whether it is buildable</h3>
+      <p class="note">Number of apps in each combination. Darker cell = more apps. Read across a row to see what an access tier usually means for the build.</p>
+      <div class="scroll"><table class="heat" id="heat"></table></div></div>
+    <div class="two">
+      <div class="card"><h3>Auth methods (apps supporting each, multi-select)</h3><div id="authbars" class="acc"></div></div>
+      <div class="card"><h3>Blockers, bucketed</h3><div id="blockbars" class="acc"></div></div>
+    </div>
+  </section>
+
+  <section id="queue" aria-labelledby="h-queue">
+    <div class="eyebrow">What to do next</div>
+    <h2 id="h-queue">Build queue: easy wins vs outreach</h2>
+    <div class="two" id="queue-cards"></div>
+  </section>
+
+  <section id="agent" aria-labelledby="h-agent">
+    <div class="eyebrow">How it was produced</div>
+    <h2 id="h-agent">The agent pipeline, and where a human stepped in</h2>
+    <p>One prompt + schema (<span class="mono">agent/prompt.md</span>) drives every researcher. Each stage writes JSON to disk, so any stage can be re-run alone and a crashed run resumes. Amber steps are where a human was needed.</p>
+    <div class="pipe" id="pipe"></div>
+  </section>
+
+  <section id="verification" aria-labelledby="h-ver">
+    <div class="eyebrow">Why you can trust it</div>
+    <h2 id="h-ver">Verification: hits, misses, and what moved accuracy</h2>
+    <p id="ver-lede"></p>
+    <div class="funnel" id="funnel"></div>
+    <div class="two">
+      <div class="card"><h3>Accuracy on the blind 20-app sample</h3><div id="stagechart"></div><p class="note">Pass 1 is scored twice: against the original hand labels, and against labels corrected where a vendor page proved them wrong.</p></div>
+      <div class="card"><h3>Uncertainty across all 100, before and after the loops</h3><div id="beforeafter"></div><p class="note">Flagged = the deterministic checker found a cited page that does not support the claim, a dead link, low confidence, or an agent asking for help.</p></div>
+    </div>
+    <div class="two">
+      <div class="card"><h3>Accuracy by field</h3><div id="accbars"></div><p class="note" id="acc-note"></p></div>
+      <div class="card"><h3>Where the human labels were wrong</h3><p class="note">After pass-1 scoring, every disagreement was re-opened in a browser. The gold label changed only when a vendor page proved it wrong.</p><ul id="goldfix"></ul></div>
+    </div>
+    <div class="card"><h3>Every scored miss, before and after the loops</h3><div class="scroll"><table id="miss-table"><thead><tr><th>App</th><th>Field</th><th>Pass 1</th><th>Final</th><th>Truth (vendor docs)</th><th>Fixed by</th></tr></thead><tbody></tbody></table></div></div>
+    <div class="card"><h3>What the loops changed across all 100</h3><div class="scroll"><table id="change-table"><thead><tr><th>App</th><th>Field</th><th>Before</th><th>After</th><th>Reason</th></tr></thead><tbody></tbody></table></div></div>
+  </section>
+
+  <section id="table" aria-labelledby="h-table">
+    <div class="eyebrow">The findings</div>
+    <h2 id="h-table">All 100 apps</h2>
+    <div class="controls">
+      <label class="sr" for="q" hidden>Search</label>
+      <input id="q" type="search" placeholder="Search app, category, blocker…" aria-label="Search apps">
+      <select id="f-build" aria-label="Filter by buildability"><option value="">All buildability</option><option>ready</option><option>ready-with-friction</option><option>blocked</option></select>
+      <select id="f-access" aria-label="Filter by access"><option value="">All access</option></select>
+      <select id="f-seg" aria-label="Filter by segment"><option value="">All segments</option></select>
+      <span class="note num" id="count"></span>
+    </div>
+    <div class="scroll" style="max-height:70vh"><table id="apps"><thead><tr>
+      <th><button class="sort" data-k="id">#</button></th><th><button class="sort" data-k="app">App</button></th><th><button class="sort" data-k="segment">Category · what it does</button></th><th>Auth</th><th><button class="sort" data-k="access">Access</button></th><th>API</th><th><button class="sort" data-k="mcp">MCP</button></th><th><button class="sort" data-k="buildability">Verdict · blocker</button></th><th><button class="sort" data-k="confidence">Conf.</button></th><th>Evidence</th>
+    </tr></thead><tbody></tbody></table></div>
+    <p class="note">Machine-readable copies: <a href="results.json">results.json</a> · <a href="results.csv">results.csv</a> · the same JSON is embedded in this page as <span class="mono">&lt;script id="data"&gt;</span>.</p>
+  </section>
+
+  <section id="run" aria-labelledby="h-run">
+    <div class="eyebrow">Proof</div>
+    <h2 id="h-run">Run it yourself</h2>
+    <p id="run-lede"></p>
+    <pre id="cmds"></pre>
+    <p class="note" id="limits"></p>
+  </section>
+  <footer class="foot">Research, pipeline and analysis by <b>Atharva Gaikwad</b> (<a href="https://github.com/Atharva1399" target="_blank" rel="noopener">@Atharva1399</a>). Code and data: <a href="https://github.com/Atharva1399/100-App-Toolkit" target="_blank" rel="noopener">github.com/Atharva1399/100-App-Toolkit</a>.</footer>
+</div>
+
+<script>
+(function(){
+const D=JSON.parse(document.getElementById('data').textContent);
+const R=D.results, $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const BUILD={ready:'ok','ready-with-friction':'warn',blocked:'bad'};
+const ACCESS={'self-serve-free':'ok','self-serve-trial':'ok','paid-plan':'warn',approval:'warn','partner-gated':'bad','n/a':'na'};
+const ACOL={'self-serve-free':'var(--ok)','self-serve-trial':'color-mix(in srgb,var(--ok) 55%,var(--panel))','paid-plan':'var(--warn)',approval:'color-mix(in srgb,var(--warn) 55%,var(--panel))','partner-gated':'var(--bad)','n/a':'var(--na)'};
+const BCOL={ready:'var(--ok)','ready-with-friction':'var(--warn)',blocked:'var(--bad)'};
+const pill=(v,map)=>`<span class="pill ${map[v]||'na'}">${esc(v)}</span>`;
+
+$('#thesis').innerHTML=D.insights.thesis;
+$('#kpis').innerHTML=D.insights.kpis.map(k=>`<div class="kpi"><b class="num">${esc(k[0])}</b><span>${esc(k[1])}</span></div>`).join('');
+$('#findings').innerHTML=D.insights.findings.map(f=>`<div class="finding"><div class="big num">${esc(f.big)}</div><h3>${esc(f.title)}</h3><p>${f.body}</p></div>`).join('');
+
+// matrix
+const order=Object.keys(ACOL);
+$('#legend').innerHTML=order.map(k=>`<span><i class="sw" style="background:${ACOL[k]}"></i>${k}</span>`).join('')+' &nbsp; '+Object.keys(BCOL).map(k=>`<span><i class="sw" style="background:${BCOL[k]}"></i>${k}</span>`).join('');
+const bar=(rows,key,cols)=>`<div class="bar" role="img" aria-label="${Object.keys(cols).map(k=>k+': '+rows.filter(r=>r[key]===k).length).join(', ')}">`+Object.keys(cols).map(k=>{const n=rows.filter(r=>r[key]===k).length;return n?`<i style="width:${n*10}%;background:${cols[k]}" title="${k}: ${n}"></i>`:''}).join('')+'</div>';
+$('#matrix-table tbody').innerHTML=D.segments.map(s=>{const rows=R.filter(r=>r.segment===s.name);return `<tr><td><b>${esc(s.name)}</b><div class="note">${esc(rows.map(r=>r.app).slice(0,4).join(', '))}…</div></td><td>${bar(rows,'access',ACOL)}</td><td>${bar(rows,'buildability',BCOL)}</td><td class="num">${rows.filter(r=>r.mcp==='official').length}/10</td><td>${esc(s.blocker)}</td></tr>`}).join('');
+const hbars=(el,items,total,color)=>{$(el).innerHTML=items.map(([k,n])=>`<span>${esc(k)}</span><span class="track"><i style="width:${n/total*100}%;background:${color}"></i></span><span class="num">${n}</span>`).join('')};
+hbars('#authbars',D.auth_counts,100,'var(--accent)');
+hbars('#blockbars',D.blocker_buckets,Math.max(...D.blocker_buckets.map(b=>b[1])),'var(--warn)');
+
+// queue
+$('#queue-cards').innerHTML=D.insights.queue.map(q=>`<div class="card"><h3>${esc(q.title)} <span class="pill ${q.cls}">${q.items.length}</span></h3><p class="note">${esc(q.note)}</p><div>${q.items.map(a=>`<span class="tag">${esc(a)}</span>`).join('')}</div></div>`).join('');
+
+// pipeline
+$('#pipe').innerHTML=D.pipeline.map(s=>`<div class="step ${s.human?'human':''}"><div class="eyebrow">${esc(s.k)}</div><h3>${esc(s.t)}</h3><p>${s.d}</p></div>`).join('');
+
+// verification
+const V=D.verification;
+$('#ver-lede').innerHTML=V.lede;
+$('#funnel').innerHTML=V.funnel.map(f=>`<div><b class="num">${esc(f[0])}</b><span>${esc(f[1])}</span></div>`).join('');
+const S=D.stats;
+// grouped horizontal bars: rows=[{label, values:[{v,max,color,name}]}]
+function hgroup(rows,{w=460,max=100,unit='%',series}){
+  const lw=160,bh=13,gap=4,rg=14,cw=w-lw-44; let y=22,out='';
+  out+=series.map((s,i)=>`<rect x="${lw+i*120}" y="2" width="10" height="10" rx="2" fill="${s.color}"/><text x="${lw+14+i*120}" y="11" class="mut">${s.name}</text>`).join('');
+  rows.forEach(r=>{out+=`<text x="0" y="${y+bh*series.length/2+gap}" >${esc(r.label)}</text>`;
+    r.values.forEach((v,i)=>{const yy=y+i*(bh+gap),ww=Math.max(1,v/max*cw);out+=`<rect x="${lw}" y="${yy}" width="${cw}" height="${bh}" rx="2" fill="var(--na-bg)"/><rect x="${lw}" y="${yy}" width="${ww}" height="${bh}" rx="2" fill="${series[i].color}"/><text x="${lw+ww+5}" y="${yy+bh-2}" class="num">${(Math.round(v*10)/10)}${unit}</text>`});
+    y+=series.length*(bh+gap)+rg});
+  return `<svg class="chart" viewBox="0 -2 ${w} ${y}" role="img" aria-label="${esc(rows.map(r=>r.label+': '+r.values.join(' → ')).join('; '))}">${out}</svg>`}
+const P1='color-mix(in srgb,var(--muted) 60%,var(--panel))';
+$('#accbars').innerHTML=hgroup(V.fields.map(f=>({label:f.field,values:[f.p1*100,f.p2*100]})),{series:[{name:'Pass 1',color:P1},{name:'Final',color:'var(--ok)'}]});
+$('#stagechart').innerHTML=hgroup([{label:'Pass 1, original labels',values:[S.acc1_raw]},{label:'Pass 1, corrected',values:[S.acc1]},{label:'Final, after loops',values:[S.acc2]}],{series:[{name:'Field accuracy on 20 apps × 4 fields',color:'var(--accent)'}]});
+$('#beforeafter').innerHTML=hgroup([{label:'Apps flagged',values:[S.flagged1,S.flagged2]},{label:'Low confidence',values:[S.low1,S.low2]},{label:'Need a human',values:[S.nh1,S.needs_human]}],{max:Math.max(S.flagged1,S.nh1,S.low1),unit:'',series:[{name:'Pass 1',color:P1},{name:'Final',color:'var(--ok)'}]});
+$('#acc-note').innerHTML=V.acc_note;
+$('#goldfix').innerHTML=V.gold_fixes.map(g=>`<li><b>${esc(g.app)}</b> · ${esc(g.field)}: ${esc(JSON.stringify(g.old))} → ${esc(JSON.stringify(g.new))}. <a href="${esc(g.evidence)}" target="_blank" rel="noopener">source</a></li>`).join('');
+$('#miss-table tbody').innerHTML=V.misses.map(m=>`<tr><td>${esc(m.app)}</td><td>${esc(m.field)}</td><td>${esc(m.p1)}</td><td>${esc(m.final)}</td><td>${esc(m.truth)}</td><td>${esc(m.fixed_by)}</td></tr>`).join('')||'<tr><td colspan="6">No misses.</td></tr>';
+$('#change-table tbody').innerHTML=V.changes.map(c=>`<tr><td>${esc(c.app)}</td><td>${esc(c.field)}</td><td>${esc(c.old)}</td><td>${esc(c.new)}</td><td>${esc(c.reason)}${c.evidence_url?` <a href="${esc(c.evidence_url)}" target="_blank" rel="noopener">source</a>`:''}</td></tr>`).join('');
+
+// at a glance: waffle + definitions
+const vc=k=>R.filter(r=>r.buildability===k).length;
+$('#waffle-legend').innerHTML=Object.keys(BCOL).map(k=>`<span><i class="sw" style="background:${BCOL[k]}"></i><b>${vc(k)}</b> ${k}</span>`).join('');
+$('#waffle').innerHTML=R.map(r=>`<button type="button" role="listitem" class="${r.buildability}" title="#${r.id} ${esc(r.app)}: ${r.buildability} (${r.access})" aria-label="${esc(r.app)}, ${r.buildability}" data-app="${esc(r.app)}"></button>`).join('');
+$('#waffle').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('#q').value=b.dataset.app;['#f-build','#f-access','#f-seg'].forEach(s=>$(s).value='');render();document.getElementById('table').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})});
+const DEFS=[['Verdict',null],['ready','ok','Free or trial credentials + documented API. Buildable today.'],['ready-with-friction','warn','Buildable, but a paid plan, app review or a narrow API slows it.'],['blocked','bad','No hosted API, or a sales / partner contract stands in the way.'],
+ ['Access: how a developer gets credentials',null],['self-serve-free','ok','Free tier, free dev account or sandbox.'],['self-serve-trial','ok','Only during a free trial.'],['paid-plan','warn','Needs a paid plan, no human approval.'],['approval','warn','App review or developer-token approval.'],['partner-gated','bad','Contact sales, partnership or enterprise contract.'],['n/a','na','Local CLI / open-source tool, no hosted API.'],
+ ['MCP',null],['official','ok','Published by the vendor (hosted or in its GitHub org).'],['community','na','Third-party server only.']];
+$('#defs').innerHTML=DEFS.map(d=>d[1]===null?`<tr class="grp"><td colspan="2">${esc(d[0])}</td></tr>`:`<tr><td><span class="pill ${d[1]}">${esc(d[0])}</span></td><td>${esc(d[2])}</td></tr>`).join('');
+// heatmap access x verdict
+const AK=Object.keys(ACOL),BK=Object.keys(BCOL);const hmax=Math.max(...AK.flatMap(a=>BK.map(b=>R.filter(r=>r.access===a&&r.buildability===b).length)));
+$('#heat').innerHTML=`<thead><tr><th>Access ↓ / Verdict →</th>${BK.map(b=>`<th>${b}</th>`).join('')}<th>Total</th></tr></thead><tbody>`+AK.map(a=>{const row=R.filter(r=>r.access===a);return `<tr><td>${pill(a,ACCESS)}</td>`+BK.map(b=>{const n=row.filter(r=>r.buildability===b).length;const pct=n?Math.round(8+n/hmax*27):0;return `<td class="cell" style="background:${n?`color-mix(in srgb,${BCOL[b]} ${pct}%,var(--panel))`:'transparent'}">${n||'·'}</td>`}).join('')+`<td class="cell">${row.length}</td></tr>`}).join('')+'</tbody>';
+
+// full table
+const fa=$('#f-access'),fs=$('#f-seg');
+let sortK='id',sortDir=1;
+const ORD={buildability:BK,access:AK,mcp:['official','community','none'],confidence:['high','medium','low']};
+document.querySelectorAll('.sort').forEach(b=>{b.setAttribute('aria-sort','none');b.addEventListener('click',()=>{const k=b.dataset.k;sortDir=(sortK===k)?-sortDir:1;sortK=k;document.querySelectorAll('.sort').forEach(x=>{x.removeAttribute('data-dir');x.setAttribute('aria-sort','none')});b.dataset.dir=sortDir>0?'asc':'desc';b.setAttribute('aria-sort',sortDir>0?'ascending':'descending');render()})});
+const keyOf=r=>ORD[sortK]?ORD[sortK].indexOf(r[sortK]):r[sortK];
+[...new Set(R.map(r=>r.access))].forEach(v=>fa.insertAdjacentHTML('beforeend',`<option>${esc(v)}</option>`));
+D.segments.forEach(s=>fs.insertAdjacentHTML('beforeend',`<option>${esc(s.name)}</option>`));
+const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return u}};
+function render(){
+  const q=$('#q').value.toLowerCase(),b=$('#f-build').value,a=fa.value,s=fs.value;
+  const rows=R.filter(r=>(!b||r.buildability===b)&&(!a||r.access===a)&&(!s||r.segment===s)&&(!q||JSON.stringify([r.app,r.category,r.one_liner,r.blocker,r.auth_methods]).toLowerCase().includes(q)));
+  rows.sort((x,y)=>{const a=keyOf(x),b=keyOf(y);return (a>b?1:a<b?-1:0)*sortDir});
+  $('#count').textContent=rows.length+' of '+R.length;
+  $('#apps tbody').innerHTML=rows.map(r=>`<tr>
+   <td class="num">${r.id}</td><td><b>${esc(r.app)}</b>${r.needs_human?' <span class="pill warn" title="'+esc(r.human_reason)+'">human</span>':''}</td>
+   <td><span class="note">${esc(r.category)}</span><br>${esc(r.one_liner)}</td>
+   <td>${r.auth_methods.map(m=>`<span class="tag">${esc(m)}</span>`).join('')}</td>
+   <td>${pill(r.access,ACCESS)}</td>
+   <td>${(r.api_types||[]).map(m=>`<span class="tag">${esc(m)}</span>`).join('')}<div class="note">${esc(r.api_breadth)}</div></td>
+   <td>${esc(r.mcp)}</td>
+   <td>${pill(r.buildability,BUILD)}<div class="note">${esc(r.blocker)}</div></td>
+   <td>${esc(r.confidence)}</td>
+   <td class="ev">${Object.entries(r.evidence||{}).filter(([k,u])=>u).map(([k,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener" title="${esc(host(u))}">${k}</a>`).join('')}</td></tr>`).join('');
+}
+['#q','#f-build'].forEach(s=>$(s).addEventListener('input',render));[fa,fs].forEach(e=>e.addEventListener('input',render));render();
+
+$('#run-lede').innerHTML=D.run.lede; $('#cmds').textContent=D.run.cmds; $('#limits').innerHTML=D.run.limits;
+})();
+</script>

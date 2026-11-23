@@ -1,0 +1,625 @@
+[
+ {
+  "id": 1,
+  "app": "Salesforce",
+  "category": "CRM",
+  "one_liner": "Enterprise CRM platform with a very broad REST/SOAP/Bulk API surface.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "REST API requires OAuth 2.0 via an external client app (new) or connected app (creation restricted since Spring '26); multiple flows incl. client credentials. Per search snippets; developer.salesforce.com docs returned HTTP 403 to fetch.",
+  "access": "self-serve-free",
+  "access_notes": "Free Developer Edition org gives working API access (per Salesforce docs search snippet; page not fetchable).",
+  "api_types": [
+   "REST",
+   "SOAP",
+   "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST, SOAP, Bulk, Metadata, UI GraphQL APIs covering essentially all standard and custom objects (from prior knowledge; docs 403).",
+  "mcp": "official",
+  "mcp_url": "https://github.com/salesforcecli/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://github.com/salesforcecli/mcp",
+   "access": "https://github.com/salesforcecli/mcp",
+   "api": "https://github.com/salesforcecli/mcp",
+   "mcp": "https://github.com/salesforcecli/mcp"
+  },
+  "confidence": "low",
+  "needs_human": true,
+  "human_reason": "developer.salesforce.com docs (OAuth, signup, hosted MCP) all returned HTTP 403; auth/access/API fields rest on search snippets and the archived salesforcecli/mcp repo (which also says EOL Nov 2 2026 in favor of hosted MCP servers)."
+ },
+ {
+  "id": 2,
+  "app": "HubSpot",
+  "category": "CRM",
+  "one_liner": "CRM and marketing platform with a broad REST API and an official remote MCP server.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "OAuth 2.0 apps (access tokens expire in 30 min, refresh tokens). Static private-app/service-key bearer tokens exist per prior knowledge, not confirmed on fetched pages.",
+  "access": "self-serve-free",
+  "access_notes": "Developer test accounts are free (90-day enterprise trial features); free HubSpot CRM accounts also work.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Date-versioned REST APIs at api.hubapi.com (e.g. /crm/objects/2026-09/contacts) across CRM, marketing, CMS etc.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.hubspot.com",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.hubspot.com/docs/api-reference/auth-oauth-v3/guide",
+   "access": "https://developers.hubspot.com/docs/getting-started/account-types",
+   "api": "https://developers.hubspot.com/docs/api/overview",
+   "mcp": "https://developers.hubspot.com/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 3,
+  "app": "Pipedrive",
+  "category": "CRM",
+  "one_liner": "Sales CRM with a REST API (v1/v2) and a native hosted MCP server.",
+  "auth_methods": [
+   "OAuth2",
+   "API key"
+  ],
+  "auth_notes": "OAuth 2.0 for apps; personal API token sent in x-api-token header (one per user/company).",
+  "access": "self-serve-free",
+  "access_notes": "API token available from any account; a separate Developer Sandbox account can be requested (free status not stated on page). Trial accounts also give a token.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "~50 endpoint groups (Deals, Leads, Persons, Organizations, Activities, Projects, Webhooks); OpenAPI specs for v1 and v2.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.pipedrive.ai/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://pipedrive.readme.io/docs/core-api-concepts-authentication",
+   "access": "https://developers.pipedrive.com/docs/api/v1",
+   "api": "https://developers.pipedrive.com/docs/api/v1/Deals",
+   "mcp": "https://www.pipedrive.com/en/features/mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 4,
+  "app": "Attio",
+  "category": "CRM",
+  "one_liner": "Modern customizable CRM with a public REST API and an official hosted MCP server.",
+  "auth_methods": [
+   "OAuth2",
+   "API key",
+   "Bearer token"
+  ],
+  "auth_notes": "OAuth 2.0 auth-code (PKCE for user-level tokens) for multi-workspace apps; API key for single workspace; both sent as Bearer header.",
+  "access": "self-serve-free",
+  "access_notes": "API key generated in developer settings; docs do not state plan requirements (Attio has a free plan - not confirmed on opened pages). Unpublished apps installable in up to 25 workspaces.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Records, objects, lists, notes, tasks, comments, webhooks, meetings etc. with endpoint reference.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.attio.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.attio.com/rest-api/guides/authentication",
+   "access": "https://docs.attio.com/rest-api/guides/authentication",
+   "api": "https://docs.attio.com/rest-api/overview",
+   "mcp": "https://docs.attio.com/mcp/overview"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 5,
+  "app": "Twenty",
+  "category": "CRM",
+  "one_liner": "Open-source, self-hostable CRM with REST and GraphQL APIs and built-in MCP.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "Bearer API keys created in Settings > Developers > API (role-scoped); OAuth for external apps acting on behalf of users.",
+  "access": "self-serve-free",
+  "access_notes": "Open source and self-hostable (Docker Compose) or Twenty Cloud at api.twenty.com; API key created in settings.",
+  "api_types": [
+   "REST",
+   "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Core API (CRUD on people, companies, custom objects) and Metadata API (schema), each in REST and GraphQL.",
+  "mcp": "official",
+  "mcp_url": "https://docs.twenty.com/developers/extend/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://docs.twenty.com/developers/extend/api",
+   "access": "https://docs.twenty.com/developers/introduction",
+   "api": "https://docs.twenty.com/developers/extend/api",
+   "mcp": "https://docs.twenty.com/developers/extend/mcp"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 6,
+  "app": "Podio",
+  "category": "Work management / CRM",
+  "one_liner": "Flexible work-management platform (now Progress) with a full REST API and a beta official MCP server.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "OAuth2 with server-side, client-side, username/password and app-authentication flows; Client ID/Secret from API key page.",
+  "access": "self-serve-trial",
+  "access_notes": "Need a Podio account and generate an API key in account settings; whether a free tier still exists is not stated on opened pages (assumed trial/paid).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Described as a complete programmable interface to all Podio functionality; webhooks; client libraries in many languages.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.podio.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.podio.com/authentication",
+   "access": "https://developers.podio.com/",
+   "api": "https://developers.podio.com/",
+   "mcp": "https://www.progress.com/podio/documentation/using-podio/podio-mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 7,
+  "app": "Zoho CRM",
+  "category": "CRM",
+  "one_liner": "Zoho's CRM suite with a versioned REST API and built-in official MCP servers.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "OAuth 2.0 only; Client ID/Secret from a connected app (Zoho API console); access tokens last 1 hour, refresh tokens persist.",
+  "access": "self-serve-free",
+  "access_notes": "Free edition exists with 5,000 API credits per 24h and 5 concurrent calls; trial editions share paid-edition limits.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Six families: Metadata, Core CRUD, Composite, Bulk, Notification, Query (COQL).",
+  "mcp": "official",
+  "mcp_url": "https://www.zoho.com/crm/developer/docs/mcp/overview.html",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html",
+   "access": "https://www.zoho.com/crm/developer/docs/api/v4/api-limits.html",
+   "api": "https://www.zoho.com/crm/developer/docs/api/v8/",
+   "mcp": "https://www.zoho.com/crm/developer/docs/mcp/overview.html"
+  },
+  "confidence": "high",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 8,
+  "app": "Close",
+  "category": "CRM",
+  "one_liner": "Sales CRM for SMBs with REST API and an official hosted MCP server.",
+  "auth_methods": [
+   "API key",
+   "OAuth2",
+   "Basic"
+  ],
+  "auth_notes": "API key from Settings > Developer sent as HTTP Basic (key as username); OAuth2 for integrations.",
+  "access": "self-serve-trial",
+  "access_notes": "API keys created by any user in account settings; Close is paid with a free trial (trial terms not stated on opened pages).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "REST API plus webhooks, event log, reporting, sequences, bulk actions.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.close.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developer.close.com/topics/authentication/",
+   "access": "https://developer.close.com/",
+   "api": "https://developer.close.com/",
+   "mcp": "https://developer.close.com/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 9,
+  "app": "Copper",
+  "category": "CRM",
+  "one_liner": "Google Workspace-native CRM with a REST developer API.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "API key (user token plus user email headers) generated in System settings > API Keys; OAuth 2.0 preferred for partner integrations.",
+  "access": "self-serve-trial",
+  "access_notes": "Key generated in-app; docs do not state plan requirements; Copper is paid with a trial (not confirmed on opened pages).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Leads, People, Companies, Opportunities, Projects, Tasks, Activities, Custom Fields, Webhooks.",
+  "mcp": "community",
+  "mcp_url": null,
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developer.copper.com/introduction/authentication.html",
+   "access": "https://developer.copper.com/introduction/authentication.html",
+   "api": "https://developer.copper.com/",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 10,
+  "app": "DealCloud",
+  "category": "CRM (financial services, Intapp)",
+  "one_liner": "Intapp DealCloud enterprise CRM with REST API, SDKs and an official MCP server.",
+  "auth_methods": [
+   "OAuth2",
+   "API key"
+  ],
+  "auth_notes": "OAuth2 client-credentials flow (scopes data, user_management, publish, ri_import, backup; 15-min tokens) using per-user API key enabled in profile.",
+  "access": "partner-gated",
+  "access_notes": "Enterprise product; an admin must grant the user group API capability; no self-serve trial/sandbox found - needs an existing customer tenant.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "REST at {baseUrl}/api/rest/v1 with Python and C# SDKs; data, user management, publish, backup scopes.",
+  "mcp": "official",
+  "mcp_url": "https://api.docs.dealcloud.com/mcp",
+  "buildability": "blocked",
+  "blocker": "enterprise-only tenant; no self-serve credentials",
+  "evidence": {
+   "auth": "https://api.docs.dealcloud.com/docs/token",
+   "access": "https://api.docs.dealcloud.com/docs/apikeys",
+   "api": "https://api.docs.dealcloud.com",
+   "mcp": "https://api.docs.dealcloud.com/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 11,
+  "app": "Zendesk",
+  "category": "Customer support",
+  "one_liner": "Help desk / service platform with a very broad REST API across Support, Help Center, Sell and more.",
+  "auth_methods": [
+   "OAuth2",
+   "API key",
+   "Basic"
+  ],
+  "auth_notes": "OAuth access tokens (recommended; global OAuth client for multi-customer apps); API tokens via Basic auth (email/token:token) are marked deprecated.",
+  "access": "self-serve-trial",
+  "access_notes": "14-day free trial; API tokens created in Admin Center > APIs; OAuth clients created by admins. Plan requirements not stated.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Ticketing, Help Center, Messaging, Voice, Custom Data, Sell CRM, Apps and more APIs.",
+  "mcp": "community",
+  "mcp_url": null,
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+   "access": "https://www.zendesk.com/register/",
+   "api": "https://developer.zendesk.com/api-reference/",
+   "mcp": "https://www.geckoboard.com/blog/zendesk-mcp-the-different-options-compared-2026/"
+  },
+  "confidence": "medium",
+  "needs_human": true,
+  "human_reason": "Zendesk's own MCP server status is contradictory: an opened Oct 2026 article says announced but no public docs; search results claim early access opened Nov 10 2026 (not verifiable on developer.zendesk.com). Marked community pending confirmation."
+ },
+ {
+  "id": 12,
+  "app": "Intercom",
+  "category": "Customer support",
+  "one_liner": "Customer messaging/support platform with REST API and an official hosted MCP server.",
+  "auth_methods": [
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "Access token for private apps (Developer Hub > Configure > Authentication); OAuth for public apps.",
+  "access": "self-serve-free",
+  "access_notes": "Create an app in Developer Hub via developer signup to get a token for your workspace; pricing of the dev workspace not stated on opened page (assumed free test workspace).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Conversations, contacts, companies, articles etc. (MCP scopes show read/write across these).",
+  "mcp": "official",
+  "mcp_url": "https://mcp.intercom.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+   "access": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+   "api": "https://developers.intercom.com/docs/guides/mcp",
+   "mcp": "https://developers.intercom.com/docs/guides/mcp"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 13,
+  "app": "Freshdesk",
+  "category": "Customer support",
+  "one_liner": "Freshworks help desk with a broad v2 REST API and an official MCP endpoint (GA Sept 2026).",
+  "auth_methods": [
+   "API key",
+   "Basic",
+   "OAuth2"
+  ],
+  "auth_notes": "Personal API key as Basic-auth username (password X); OAuth scopes exist but flow not described on opened page.",
+  "access": "self-serve-trial",
+  "access_notes": "API key from profile settings; trial accounts limited to 50 calls/min; rate limits and some features vary by plan. Free trial assumed from prior knowledge.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Tickets, contacts, companies, agents, solutions, forums, SLA, automations, custom objects, CSAT etc.",
+  "mcp": "official",
+  "mcp_url": "https://partnersupport.freshworks.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.freshdesk.com/api/",
+   "access": "https://developers.freshdesk.com/api/",
+   "api": "https://developers.freshdesk.com/api/",
+   "mcp": "https://partnersupport.freshworks.com/support/solutions/articles/50000012670-model-context-protocol-mcp-integration-in-freshdesk"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 14,
+  "app": "Front",
+  "category": "Customer support / shared inbox",
+  "one_liner": "Shared inbox and customer ops platform with a REST Core API.",
+  "auth_methods": [
+   "Bearer token",
+   "OAuth2"
+  ],
+  "auth_notes": "Admin-created company API tokens (Settings > Developers) sent as Bearer; OAuth authorization-code required for public integrations. MCP server scope not available to API tokens.",
+  "access": "self-serve-trial",
+  "access_notes": "Only admins can create tokens; no plan requirement stated; paid product with trial (trial not confirmed on opened pages).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Core API for conversations, contacts, inboxes, rules, tags, teams, accounts (api2.frontapp.com) per search summary; token scope page confirms core resources.",
+  "mcp": "official",
+  "mcp_url": null,
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+   "access": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+   "api": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens",
+   "mcp": "https://dev.frontapp.com/docs/create-and-revoke-api-tokens"
+  },
+  "confidence": "low",
+  "needs_human": true,
+  "human_reason": "Front's token page references an 'MCP server' scope (implying an official MCP server) but I did not open an MCP doc page or find its URL; main API docs fetch returned 404."
+ },
+ {
+  "id": 15,
+  "app": "Pylon",
+  "category": "B2B customer support",
+  "one_liner": "B2B support platform with a REST API (SDKs in TS/Python/Go) and an official OAuth-only hosted MCP.",
+  "auth_methods": [
+   "Bearer token"
+  ],
+  "auth_notes": "Admin-created Bearer API tokens (Settings > Integrations & dev > API), region-specific, non-expiring; MCP is OAuth-only.",
+  "access": "paid-plan",
+  "access_notes": "Need an existing Pylon tenant and an Admin to create tokens; no self-serve signup or plan info found.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "Issues, accounts, contacts and more; TS/Python/Go SDKs and experimental CLI; breadth inferred from docs summary.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.usepylon.com",
+  "buildability": "ready-with-friction",
+  "blocker": "no self-serve signup; need paying/sales-onboarded tenant",
+  "evidence": {
+   "auth": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+   "access": "https://docs.usepylon.com/pylon-docs/developer/api",
+   "api": "https://docs.usepylon.com/pylon-docs/developer/api",
+   "mcp": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": true,
+  "human_reason": "Could not find any page stating how a new developer gets a Pylon tenant or plan requirements for API/trial."
+ },
+ {
+  "id": 16,
+  "app": "LiveAgent",
+  "category": "Customer support",
+  "one_liner": "Help desk platform with API v3 (key-based) and an official MCP integration.",
+  "auth_methods": [
+   "API key",
+   "OAuth2",
+   "Bearer token"
+  ],
+  "auth_notes": "API v3 uses an apikey parameter; MCP supports OAuth 2.1 or Bearer token (up to 10 tokens, 2-year expiry).",
+  "access": "self-serve-trial",
+  "access_notes": "Key created in agent panel; docs opened do not state plan requirements or trial terms (trial assumed from prior knowledge).",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "moderate",
+  "api_notes": "API v3 with scoped keys; breadth not confirmed from opened pages.",
+  "mcp": "official",
+  "mcp_url": "https://support.liveagent.com/647358-MCP-Integration-for-Agents",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://support.liveagent.com/061754-How-to-make-requests-with-API-v3",
+   "access": "https://support.liveagent.com/061754-How-to-make-requests-with-API-v3",
+   "api": "https://support.liveagent.com/061754-How-to-make-requests-with-API-v3",
+   "mcp": "https://support.liveagent.com/647358-MCP-Integration-for-Agents"
+  },
+  "confidence": "low",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 17,
+  "app": "Plain",
+  "category": "Customer support",
+  "one_liner": "API-first B2B support tool with a GraphQL API (no UI/API gap) and official OAuth MCP.",
+  "auth_methods": [
+   "API key",
+   "OAuth2"
+  ],
+  "auth_notes": "API keys (Bearer) created on machine users with per-permission scopes; OAuth app for acting as a user.",
+  "access": "self-serve-trial",
+  "access_notes": "Key created in Settings > Machine users & agents; plan requirements not stated on opened pages.",
+  "api_types": [
+   "GraphQL"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Docs state no limitations in API vs UI; GraphQL schema.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.plain.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://www.plain.com/docs/graphql/authentication",
+   "access": "https://www.plain.com/docs/graphql/introduction",
+   "api": "https://www.plain.com/docs/graphql/introduction",
+   "mcp": "https://www.plain.com/docs/agents/mcp-server"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 18,
+  "app": "Help Scout",
+  "category": "Customer support",
+  "one_liner": "Shared inbox/help desk with Inbox API 2.0 (OAuth2) and an official read-only hosted MCP.",
+  "auth_methods": [
+   "OAuth2"
+  ],
+  "auth_notes": "Authorization-code flow for public integrations; client-credentials for internal; create app in Profile > My apps.",
+  "access": "self-serve-trial",
+  "access_notes": "Any user with API access can create an app; docs state no plan requirement for API (MCP needs Standard/Plus/Pro). Trial assumed from prior knowledge.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Conversations, customers, inboxes, organizations, reports, tags, users/teams, workflows, webhooks.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.helpscout.net/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+   "access": "https://developer.helpscout.com/mailbox-api/overview/authentication/",
+   "api": "https://developer.helpscout.com/mailbox-api/",
+   "mcp": "https://docs.helpscout.com/article/1779-connect-your-ai-agent-with-help-scout-to-search-conversations-and-pull-reports"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 19,
+  "app": "Gorgias",
+  "category": "E-commerce customer support",
+  "one_liner": "E-commerce help desk with a REST API and first-party hosted MCP (open beta).",
+  "auth_methods": [
+   "API key",
+   "OAuth2",
+   "Basic"
+  ],
+  "auth_notes": "Private apps use API key (Basic with email + key); public apps must use OAuth2.",
+  "access": "self-serve-trial",
+  "access_notes": "Credentials from account settings; docs fetched do not explain obtaining keys or plans (trial assumed). MCP works on any plan.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Resource-oriented JSON REST API with full reference; undocumented resources are internal.",
+  "mcp": "official",
+  "mcp_url": "https://mcp.gorgias.com/mcp",
+  "buildability": "ready",
+  "blocker": "none",
+  "evidence": {
+   "auth": "https://developers.gorgias.com/docs/authentication",
+   "access": "https://developers.gorgias.com/docs/authentication",
+   "api": "https://developers.gorgias.com/reference/introduction",
+   "mcp": "https://updates.gorgias.com/publications/gorgias-mcp-is-now-in-open-beta"
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ },
+ {
+  "id": 20,
+  "app": "Gladly",
+  "category": "Customer support",
+  "one_liner": "Enterprise customer-service platform with a REST API using per-user API tokens (Basic auth).",
+  "auth_methods": [
+   "Basic"
+  ],
+  "auth_notes": "Agent email as username and API token as password; token created in More settings > API Tokens by a user with API User permission.",
+  "access": "partner-gated",
+  "access_notes": "Enterprise product, no self-serve trial or free tier found; an admin of an existing Gladly tenant must grant API User permission.",
+  "api_types": [
+   "REST"
+  ],
+  "api_breadth": "broad",
+  "api_notes": "Agents, conversations, customers, tasks, topics, inboxes, reports, webhooks, data exports, etc.",
+  "mcp": "none",
+  "mcp_url": null,
+  "buildability": "blocked",
+  "blocker": "enterprise/sales-gated tenant; no self-serve credentials",
+  "evidence": {
+   "auth": "https://developer.gladly.com/rest/",
+   "access": "https://developer.gladly.com/rest/",
+   "api": "https://developer.gladly.com/rest/",
+   "mcp": null
+  },
+  "confidence": "medium",
+  "needs_human": false,
+  "human_reason": null
+ }
+]

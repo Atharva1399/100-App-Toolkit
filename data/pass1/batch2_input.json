@@ -1,0 +1,102 @@
+[
+ {
+  "id": 21,
+  "app": "Slack",
+  "hint": "slack.com"
+ },
+ {
+  "id": 22,
+  "app": "Twilio",
+  "hint": "twilio.com"
+ },
+ {
+  "id": 23,
+  "app": "Zoho Cliq",
+  "hint": "zoho.com/cliq"
+ },
+ {
+  "id": 24,
+  "app": "Lark (Larksuite)",
+  "hint": "open.larksuite.com"
+ },
+ {
+  "id": 25,
+  "app": "Pumble",
+  "hint": "pumble.com"
+ },
+ {
+  "id": 26,
+  "app": "Discord",
+  "hint": "discord.com"
+ },
+ {
+  "id": 27,
+  "app": "Telegram",
+  "hint": "core.telegram.org"
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "hint": "developers.facebook.com/docs/whatsapp"
+ },
+ {
+  "id": 29,
+  "app": "Aircall",
+  "hint": "aircall.io"
+ },
+ {
+  "id": 30,
+  "app": "Vonage",
+  "hint": "developer.vonage.com"
+ },
+ {
+  "id": 31,
+  "app": "Google Ads",
+  "hint": "developers.google.com/google-ads"
+ },
+ {
+  "id": 32,
+  "app": "Meta Ads",
+  "hint": "developers.facebook.com/docs/marketing-apis"
+ },
+ {
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "hint": "learn.microsoft.com/linkedin/marketing"
+ },
+ {
+  "id": 34,
+  "app": "GoHighLevel",
+  "hint": "highlevel.stoplight.io"
+ },
+ {
+  "id": 35,
+  "app": "Mailchimp",
+  "hint": "mailchimp.com/developer"
+ },
+ {
+  "id": 36,
+  "app": "Klaviyo",
+  "hint": "developers.klaviyo.com"
+ },
+ {
+  "id": 37,
+  "app": "systeme.io",
+  "hint": "systeme.io (funnel builder)"
+ },
+ {
+  "id": 38,
+  "app": "Pinterest",
+  "hint": "developers.pinterest.com"
+ },
+ {
+  "id": 39,
+  "app": "Threads (Meta)",
+  "hint": "developers.facebook.com/docs/threads"
+ },
+ {
+  "id": 40,
+  "app": "SendGrid",
+  "hint": "sendgrid.com"
+ }
+]

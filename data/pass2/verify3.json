@@ -1,0 +1,971 @@
+[
+ {
+  "id": 9,
+  "app": "Copper",
+  "record": {
+   "id": 9,
+   "app": "Copper",
+   "category": "CRM",
+   "one_liner": "Google Workspace-native CRM with a REST developer API.",
+   "auth_methods": [
+    "API key",
+    "OAuth2"
+   ],
+   "auth_notes": "API key (user token plus user email headers) generated in System settings > API Keys; OAuth 2.0 preferred for partner integrations.",
+   "access": "self-serve-trial",
+   "access_notes": "14-day free trial, no credit card (copper.com/free-trial); no free plan on pricing page; API keys generated in-app (System settings > API Keys); plan gating of API not stated.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "moderate",
+   "api_notes": "Leads, People, Companies, Opportunities, Projects, Tasks, Activities, Custom Fields, Webhooks. Official Copper-hosted MCP announced (coming soon, beta Nov 2026, read-only); community MCP servers exist.",
+   "mcp": "community",
+   "mcp_url": "https://github.com/dazanza/copper-mcp",
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://developer.copper.com/introduction/authentication.html",
+    "access": "https://copper.com/free-trial",
+    "api": "https://developer.copper.com/",
+    "mcp": "https://www.copper.com/mcp"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "access_notes",
+    "old": "Key generated in-app; docs do not state plan requirements; Copper is paid with a trial (not confirmed on opened pages).",
+    "new": "14-day free trial, no credit card (copper.com/free-trial); no free plan on pricing page; API keys generated in-app (System settings > API Keys); plan gating of API not stated.",
+    "reason": "Confirmed trial via vendor page; no free plan.",
+    "evidence_url": "https://copper.com/free-trial"
+   },
+   {
+    "field": "evidence.access",
+    "old": "https://developer.copper.com/introduction/authentication.html",
+    "new": "https://copper.com/free-trial",
+    "reason": "Vendor page states 'Free 14-day trial' / 'No credit card required'.",
+    "evidence_url": "https://copper.com/free-trial"
+   },
+   {
+    "field": "mcp_url",
+    "old": null,
+    "new": "https://github.com/dazanza/copper-mcp",
+    "reason": "Community server (not Copper-affiliated). Copper's own hosted MCP is announced 'COMING SOON' (beta Nov 2026, waitlist, read-only), so not counted as official yet.",
+    "evidence_url": "https://www.copper.com/mcp"
+   },
+   {
+    "field": "evidence.mcp",
+    "old": null,
+    "new": "https://www.copper.com/mcp",
+    "reason": "Vendor page shows official MCP not yet launched; community server listed at glama.ai/mcp/servers/pfiwqd1su5.",
+    "evidence_url": "https://www.copper.com/mcp"
+   },
+   {
+    "field": "api_notes",
+    "old": "Leads, People, Companies, Opportunities, Projects, Tasks, Activities, Custom Fields, Webhooks.",
+    "new": "Leads, People, Companies, Opportunities, Projects, Tasks, Activities, Custom Fields, Webhooks. Official Copper-hosted MCP announced (coming soon, beta Nov 2026, read-only); community MCP servers exist.",
+    "reason": "Record MCP status nuance.",
+    "evidence_url": "https://www.copper.com/mcp"
+   }
+  ],
+  "flags_resolved": [
+   "mcp-claim-without-evidence"
+  ]
+ },
+ {
+  "id": 15,
+  "app": "Pylon",
+  "record": {
+   "id": 15,
+   "app": "Pylon",
+   "category": "B2B customer support",
+   "one_liner": "B2B support platform with a REST API (SDKs in TS/Python/Go) and an official OAuth-only hosted MCP.",
+   "auth_methods": [
+    "Bearer token"
+   ],
+   "auth_notes": "Admin-created Bearer API tokens (Settings > Integrations & dev > API), region-specific, non-expiring; MCP is OAuth-only.",
+   "access": "partner-gated",
+   "access_notes": "No free plan or self-serve signup; trials/demo orgs set up by a sales rep. REST API included on Professional, Advanced and Enterprise tiers. Admin creates Bearer API tokens.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "moderate",
+   "api_notes": "Issues, accounts, contacts and more; TS/Python/Go SDKs and experimental CLI; breadth inferred from docs summary.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.usepylon.com",
+   "buildability": "blocked",
+   "blocker": "sales-led onboarding (trial/tenant via sales rep)",
+   "evidence": {
+    "auth": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+    "access": "https://www.usepylon.com/pricing",
+    "api": "https://docs.usepylon.com/pylon-docs/developer/api",
+    "mcp": "https://support.usepylon.com/articles/2407390554-connecting-to-the-pylon-mcp-server"
+   },
+   "confidence": "high",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "access",
+    "old": "paid-plan",
+    "new": "partner-gated",
+    "reason": "Pricing page: no free plan; 'Pylon offers free trials for prospects. Your sales representative will work with you on setting up the demo organization.' CTAs are Book a demo/Talk to sales; no self-serve signup.",
+    "evidence_url": "https://www.usepylon.com/pricing"
+   },
+   {
+    "field": "access_notes",
+    "old": "Need an existing Pylon tenant and an Admin to create tokens; no self-serve signup or plan info found.",
+    "new": "No free plan or self-serve signup; trials/demo orgs set up by a sales rep. REST API included on Professional, Advanced and Enterprise tiers. Admin creates Bearer API tokens.",
+    "reason": "Quoted vendor pricing page.",
+    "evidence_url": "https://www.usepylon.com/pricing"
+   },
+   {
+    "field": "buildability",
+    "old": "ready-with-friction",
+    "new": "blocked",
+    "reason": "Per prompt.md, a sales/contact gate to get a tenant => blocked.",
+    "evidence_url": "https://www.usepylon.com/pricing"
+   },
+   {
+    "field": "blocker",
+    "old": "no self-serve signup; need paying/sales-onboarded tenant",
+    "new": "sales-led onboarding (trial/tenant via sales rep)",
+    "reason": "Reflect sales gate.",
+    "evidence_url": "https://www.usepylon.com/pricing"
+   },
+   {
+    "field": "evidence.access",
+    "old": "https://docs.usepylon.com/pylon-docs/developer/api",
+    "new": "https://www.usepylon.com/pricing",
+    "reason": "Primary pricing page answers the access question.",
+    "evidence_url": "https://www.usepylon.com/pricing"
+   },
+   {
+    "field": "confidence",
+    "old": "medium",
+    "new": "high",
+    "reason": "Auth, access, MCP all confirmed on vendor pages.",
+    "evidence_url": "https://www.usepylon.com/pricing"
+   },
+   {
+    "field": "needs_human",
+    "old": true,
+    "new": false,
+    "reason": "Access question resolved via vendor pricing page.",
+    "evidence_url": "https://www.usepylon.com/pricing"
+   },
+   {
+    "field": "human_reason",
+    "old": "Could not find any page stating how a new developer gets a Pylon tenant or plan requirements for API/trial.",
+    "new": null,
+    "reason": "Resolved.",
+    "evidence_url": "https://www.usepylon.com/pricing"
+   }
+  ],
+  "flags_resolved": [
+   "agent-asked-for-human"
+  ]
+ },
+ {
+  "id": 25,
+  "app": "Pumble",
+  "record": {
+   "id": 25,
+   "app": "Pumble",
+   "category": "Team messaging",
+   "one_liner": "Free Slack-like chat with API-key add-on and OAuth app SDK.",
+   "auth_methods": [
+    "API key",
+    "OAuth2"
+   ],
+   "auth_notes": "API-key add-on ('Available on all plans', Owner/Admin/Member) per pumble.com help; OAuth2 for apps (client ID/secret, user+bot tokens) per https://cake-com.github.io/pumble-node-sdk/authorization.html. Official MCP uses app key + user/bot tokens in headers.",
+   "access": "self-serve-free",
+   "access_notes": "Install API add-on and generate key; available on all plans for Owner/Admin/Member.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "narrow",
+   "api_notes": "Send/reply/delete messages, reactions, create channels, list channels/messages; 1000 req/min.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.pumble.com/mcp",
+   "buildability": "ready-with-friction",
+   "blocker": "narrow API",
+   "evidence": {
+    "auth": "https://pumble.com/help/integrations/api-keys-integration",
+    "access": "https://pumble.com/help/integrations/api-keys-integration",
+    "api": "https://pumble.com/help/integrations/api-keys-integration",
+    "mcp": "https://pumble.com/learn/?p=16174"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "evidence.auth",
+    "old": "https://cake-com.github.io/pumble-node-sdk/authorization.html",
+    "new": "https://pumble.com/help/integrations/api-keys-integration",
+    "reason": "Prior auth page (Node SDK authorization) only describes OAuth2; API-key method is documented on vendor help page. OAuth2 confirmed at https://cake-com.github.io/pumble-node-sdk/authorization.html.",
+    "evidence_url": "https://pumble.com/help/integrations/api-keys-integration"
+   },
+   {
+    "field": "auth_notes",
+    "old": "API-key add-on (all plans) or OAuth2 for apps (client ID/secret from app manifest).",
+    "new": "API-key add-on ('Available on all plans', Owner/Admin/Member) per pumble.com help; OAuth2 for apps (client ID/secret, user+bot tokens) per https://cake-com.github.io/pumble-node-sdk/authorization.html. Official MCP uses app key + user/bot tokens in headers.",
+    "reason": "Cite both sources.",
+    "evidence_url": "https://cake-com.github.io/pumble-node-sdk/authorization.html"
+   }
+  ],
+  "flags_resolved": [
+   "auth-claim-not-on-page:API key"
+  ]
+ },
+ {
+  "id": 28,
+  "app": "WhatsApp Business",
+  "record": {
+   "id": 28,
+   "app": "WhatsApp Business",
+   "category": "Messaging",
+   "one_liner": "Meta WhatsApp Business Cloud API.",
+   "auth_methods": [
+    "OAuth2",
+    "Bearer token"
+   ],
+   "auth_notes": "System user access tokens (long-lived, Bearer); Business Integration System User tokens via Embedded Signup + Facebook Login for Businesses (OAuth authorization-code exchange) for tech providers; short-lived user access tokens for testing.",
+   "access": "self-serve-free",
+   "access_notes": "Meta developer account + app + test number is free; production use needs business portfolio, number registration, and app review/business verification for others' accounts; conversation pricing applies.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "moderate",
+   "api_notes": "Messaging, templates, phone numbers, webhooks, media.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.facebook.com/whatsapp_business_tools",
+   "buildability": "ready-with-friction",
+   "blocker": "Meta app review/business verification for production",
+   "evidence": {
+    "auth": "https://developers.facebook.com/docs/whatsapp/access-tokens",
+    "access": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "api": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "mcp": "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "evidence.auth",
+    "old": "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
+    "new": "https://developers.facebook.com/docs/whatsapp/access-tokens",
+    "reason": "Access-tokens page lists system user tokens, Business Integration System User tokens obtained via Embedded Signup with Facebook Login for Businesses (OAuth code exchange), and user access tokens.",
+    "evidence_url": "https://developers.facebook.com/docs/whatsapp/access-tokens"
+   },
+   {
+    "field": "auth_notes",
+    "old": "Access tokens; permanent system-user token with whatsapp_business_messaging/management permissions.",
+    "new": "System user access tokens (long-lived, Bearer); Business Integration System User tokens via Embedded Signup + Facebook Login for Businesses (OAuth authorization-code exchange) for tech providers; short-lived user access tokens for testing.",
+    "reason": "Complete list from vendor access-tokens page.",
+    "evidence_url": "https://developers.facebook.com/docs/whatsapp/access-tokens"
+   },
+   {
+    "field": "evidence.mcp",
+    "old": "https://developers.facebook.com/documentation/mcp",
+    "new": "https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp",
+    "reason": "Meta-hosted WhatsApp Business Tools MCP at mcp.facebook.com/whatsapp_business_tools (OAuth) confirmed on Meta docs.",
+    "evidence_url": "https://developers.facebook.com/documentation/mcp"
+   }
+  ],
+  "flags_resolved": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "id": 33,
+  "app": "LinkedIn Ads",
+  "record": {
+   "id": 33,
+   "app": "LinkedIn Ads",
+   "category": "Advertising",
+   "one_liner": "LinkedIn Marketing/Advertising API.",
+   "auth_methods": [
+    "OAuth2"
+   ],
+   "auth_notes": "3-legged OAuth only; scopes r_ads, rw_ads, r_ads_reporting; no client credentials for marketing.",
+   "access": "approval",
+   "access_notes": "Advertising API product must be approved for the developer app (Development Tier, up to 5 ad accounts); further tiers need review.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Ad accounts, campaigns, creatives, reporting, organizations.",
+   "mcp": "community",
+   "mcp_url": "https://github.com/Nuraveda/linkedin-ads-mcp",
+   "buildability": "ready-with-friction",
+   "blocker": "Advertising API program approval",
+   "evidence": {
+    "auth": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "access": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "api": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "mcp": "https://pypi.org/project/linkedin-ads-mcp/"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "mcp_url",
+    "old": null,
+    "new": "https://github.com/Nuraveda/linkedin-ads-mcp",
+    "reason": "Community server; its PyPI page states 'There's no official LinkedIn MCP'. No LinkedIn/Microsoft-published MCP found on learn.microsoft.com.",
+    "evidence_url": "https://pypi.org/project/linkedin-ads-mcp/"
+   },
+   {
+    "field": "evidence.mcp",
+    "old": null,
+    "new": "https://pypi.org/project/linkedin-ads-mcp/",
+    "reason": "Evidence for community classification.",
+    "evidence_url": "https://pypi.org/project/linkedin-ads-mcp/"
+   }
+  ],
+  "flags_resolved": [
+   "mcp-claim-without-evidence"
+  ]
+ },
+ {
+  "id": 38,
+  "app": "Pinterest",
+  "record": {
+   "id": 38,
+   "app": "Pinterest",
+   "category": "Social media",
+   "one_liner": "Pinterest API v5 with OAuth2; official MCP announced but not yet launched.",
+   "auth_methods": [
+    "OAuth2"
+   ],
+   "auth_notes": "OAuth 2.0 authorization code; trial tokens expire in 24h.",
+   "access": "approval",
+   "access_notes": "Business account; app request reviewed for Trial access, then Standard access upgrade review for production.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Pins, boards, ads, analytics, catalogs (v5). Official MCP at api.pinterest.com/mcp announced, pre-launch (sign up for updates). After Trial approval, 24h test tokens available.",
+   "mcp": "community",
+   "mcp_url": "https://glama.ai/mcp/servers/clugtu/pinterest-mcp",
+   "buildability": "ready-with-friction",
+   "blocker": "trial/standard access review",
+   "evidence": {
+    "auth": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "access": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "api": "https://developers.pinterest.com/docs/getting-started/connect-app/",
+    "mcp": "https://developers.pinterest.com/about-pinterest-mcp/"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "mcp",
+    "old": "official",
+    "new": "community",
+    "reason": "Vendor page developers.pinterest.com/about-pinterest-mcp/ shows the official server (api.pinterest.com/mcp, OAuth) is announced but not launched ('Be the first to know when it launches'); only community servers are usable today.",
+    "evidence_url": "https://developers.pinterest.com/about-pinterest-mcp/"
+   },
+   {
+    "field": "mcp_url",
+    "old": "https://api.pinterest.com/mcp",
+    "new": "https://glama.ai/mcp/servers/clugtu/pinterest-mcp",
+    "reason": "Community Pinterest API v5 MCP (OAuth2).",
+    "evidence_url": "https://glama.ai/mcp/servers/clugtu/pinterest-mcp"
+   },
+   {
+    "field": "evidence.mcp",
+    "old": "https://community.pinterest.biz/t/introducing-the-pinterest-mcp-server/51358.md",
+    "new": "https://developers.pinterest.com/about-pinterest-mcp/",
+    "reason": "Primary vendor page replaces community forum post.",
+    "evidence_url": "https://developers.pinterest.com/about-pinterest-mcp/"
+   },
+   {
+    "field": "one_liner",
+    "old": "Pinterest API v5 with OAuth2 and newly announced MCP.",
+    "new": "Pinterest API v5 with OAuth2; official MCP announced but not yet launched.",
+    "reason": "Reflect MCP status.",
+    "evidence_url": "https://developers.pinterest.com/about-pinterest-mcp/"
+   },
+   {
+    "field": "api_notes",
+    "old": "Pins, boards, ads, analytics, catalogs (v5).",
+    "new": "Pins, boards, ads, analytics, catalogs (v5). Official MCP at api.pinterest.com/mcp announced, pre-launch (sign up for updates). After Trial approval, 24h test tokens available.",
+    "reason": "Note MCP status.",
+    "evidence_url": "https://developers.pinterest.com/about-pinterest-mcp/"
+   },
+   {
+    "field": "confidence",
+    "old": "low",
+    "new": "medium",
+    "reason": "Access review ('Application requests are reviewed by Pinterest') and OAuth2 confirmed on vendor page; MCP status confirmed on vendor page.",
+    "evidence_url": "https://developers.pinterest.com/docs/getting-started/connect-app/"
+   },
+   {
+    "field": "needs_human",
+    "old": true,
+    "new": false,
+    "reason": "MCP status resolved on vendor page.",
+    "evidence_url": "https://developers.pinterest.com/about-pinterest-mcp/"
+   },
+   {
+    "field": "human_reason",
+    "old": "MCP availability/URL from third-party blog; Pinterest announcement page gave no details; GA status unclear.",
+    "new": null,
+    "reason": "Resolved.",
+    "evidence_url": "https://developers.pinterest.com/about-pinterest-mcp/"
+   }
+  ],
+  "flags_resolved": [
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "id": 45,
+  "app": "Magento (Adobe Commerce)",
+  "record": {
+   "id": 45,
+   "app": "Magento (Adobe Commerce)",
+   "category": "E-commerce",
+   "one_liner": "Adobe Commerce/Magento platform (self-hosted PaaS and SaaS) with REST and GraphQL APIs.",
+   "auth_methods": [
+    "OAuth2",
+    "Bearer token",
+    "Other"
+   ],
+   "auth_notes": "PaaS: admin/customer Bearer tokens, OAuth 1.0a integrations, session cookies; SaaS: IMS OAuth2 server-to-server (client credentials) via Adobe Developer Console. No HTTP Basic auth documented.",
+   "access": "paid-plan",
+   "access_notes": "Each deployment is licensed/self-hosted per merchant (Adobe Commerce or open-source Magento); credentials created per instance in admin or Adobe Developer Console with org admin.",
+   "api_types": [
+    "REST",
+    "GraphQL"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "REST /V1 resources for catalog, customers, orders, etc.; GraphQL storefront; the fetched page did not mention GraphQL.",
+   "mcp": "community",
+   "mcp_url": "https://www.cdata.com/drivers/adobecommerce/docs/mcp/",
+   "buildability": "ready-with-friction",
+   "blocker": "per-instance deployment and two auth models",
+   "evidence": {
+    "auth": "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+    "access": "https://developer.adobe.com/commerce/webapi/rest/authentication/server-to-server",
+    "api": "https://developer.adobe.com/commerce/webapi/get-started/authentication/",
+    "mcp": "https://developer.adobe.com/commerce/extensibility/developer-agent/tools-overview"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": [
+     "OAuth2",
+     "Bearer token",
+     "Basic"
+    ],
+    "new": [
+     "OAuth2",
+     "Bearer token",
+     "Other"
+    ],
+    "reason": "Vendor auth page lists token-based (Bearer), OAuth 1.0a integrations, session-based; no HTTP Basic auth. OAuth 1.0a/session -> Other; SaaS uses IMS OAuth2 server-to-server.",
+    "evidence_url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/"
+   },
+   {
+    "field": "auth_notes",
+    "old": "PaaS: admin/customer token auth, OAuth 1.0a integrations, session; SaaS: IMS OAuth2 server-to-server (client credentials, commerce.accs scope) via Adobe Developer Console.",
+    "new": "PaaS: admin/customer Bearer tokens, OAuth 1.0a integrations, session cookies; SaaS: IMS OAuth2 server-to-server (client credentials) via Adobe Developer Console. No HTTP Basic auth documented.",
+    "reason": "Removed unsupported Basic claim.",
+    "evidence_url": "https://developer.adobe.com/commerce/webapi/get-started/authentication/"
+   },
+   {
+    "field": "mcp",
+    "old": "none",
+    "new": "community",
+    "reason": "Adobe publishes only developer-tooling MCPs (App Builder MCP, Dropins AI tools) per its tools overview, not a store-data MCP; third-party store MCPs exist (CData, StackOne, codexpect, rafaelstz/adobe-commerce-dev-mcp).",
+    "evidence_url": "https://developer.adobe.com/commerce/extensibility/developer-agent/tools-overview"
+   },
+   {
+    "field": "mcp_url",
+    "old": null,
+    "new": "https://www.cdata.com/drivers/adobecommerce/docs/mcp/",
+    "reason": "Example third-party Adobe Commerce data MCP.",
+    "evidence_url": "https://www.cdata.com/drivers/adobecommerce/docs/mcp/"
+   },
+   {
+    "field": "evidence.mcp",
+    "old": null,
+    "new": "https://developer.adobe.com/commerce/extensibility/developer-agent/tools-overview",
+    "reason": "Vendor page shows Adobe MCPs are dev-tooling only.",
+    "evidence_url": "https://developer.adobe.com/commerce/extensibility/developer-agent/tools-overview"
+   }
+  ],
+  "flags_resolved": [
+   "auth-claim-not-on-page:Basic"
+  ]
+ },
+ {
+  "id": 53,
+  "app": "Ahrefs",
+  "record": {
+   "id": 53,
+   "app": "Ahrefs",
+   "category": "SEO",
+   "one_liner": "SEO toolset with API v3 and hosted MCP.",
+   "auth_methods": [
+    "API key",
+    "OAuth2"
+   ],
+   "auth_notes": "API v3 keys (owners/admins create in Account settings > API keys) sent as Authorization: Bearer; OAuth2 via Ahrefs Connect (requires approval) per https://docs.ahrefs.com/ahrefs-connect/docs/oauth-guide.md; hosted MCP OAuth consent mints MCP-scoped API key, or MCP key as Bearer.",
+   "access": "paid-plan",
+   "access_notes": "API v3 and MCP require Lite or higher subscription; custom endpoints Enterprise only; units are metered.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "API v3 over site explorer, keywords, rank tracker, etc.; some endpoints free; v2 deprecated.",
+   "mcp": "official",
+   "mcp_url": "https://api.ahrefs.com/mcp/mcp",
+   "buildability": "ready-with-friction",
+   "blocker": "paid subscription required",
+   "evidence": {
+    "auth": "https://docs.ahrefs.com/api/docs/api-keys-creation-and-management.md",
+    "access": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+    "api": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+    "mcp": "https://docs.ahrefs.com/mcp/docs/introduction.md"
+   },
+   "confidence": "high",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "auth_methods",
+    "old": [
+     "Bearer token",
+     "OAuth2"
+    ],
+    "new": [
+     "API key",
+     "OAuth2"
+    ],
+    "reason": "Vendor calls it an API key ('Authorization: Bearer YOUR_API_KEY') -> enum 'API key' per prompt.md; OAuth2 via Ahrefs Connect (client ID in Account settings, approval process) and MCP OAuth consent.",
+    "evidence_url": "https://docs.ahrefs.com/api/docs/api-keys-creation-and-management.md"
+   },
+   {
+    "field": "auth_notes",
+    "old": "API v3 uses API key as Bearer token; hosted MCP uses OAuth consent that mints a separate MCP-scoped key (per search results).",
+    "new": "API v3 keys (owners/admins create in Account settings > API keys) sent as Authorization: Bearer; OAuth2 via Ahrefs Connect (requires approval) per https://docs.ahrefs.com/ahrefs-connect/docs/oauth-guide.md; hosted MCP OAuth consent mints MCP-scoped API key, or MCP key as Bearer.",
+    "reason": "Primary docs opened.",
+    "evidence_url": "https://docs.ahrefs.com/ahrefs-connect/docs/oauth-guide.md"
+   },
+   {
+    "field": "evidence.auth",
+    "old": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+    "new": "https://docs.ahrefs.com/api/docs/api-keys-creation-and-management.md",
+    "reason": "Primary docs page (the .md variant loads).",
+    "evidence_url": "https://docs.ahrefs.com/api/docs/api-keys-creation-and-management.md"
+   },
+   {
+    "field": "evidence.mcp",
+    "old": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+    "new": "https://docs.ahrefs.com/mcp/docs/introduction.md",
+    "reason": "Vendor MCP doc: endpoint https://api.ahrefs.com/mcp/mcp, OAuth, Lite plan or higher.",
+    "evidence_url": "https://docs.ahrefs.com/mcp/docs/introduction.md"
+   },
+   {
+    "field": "confidence",
+    "old": "medium",
+    "new": "high",
+    "reason": "All fields confirmed on vendor pages.",
+    "evidence_url": "https://help.ahrefs.com/en/articles/6559232-about-api-v3"
+   },
+   {
+    "field": "needs_human",
+    "old": true,
+    "new": false,
+    "reason": "Docs reachable via .md URLs.",
+    "evidence_url": "https://docs.ahrefs.com/mcp/docs/introduction.md"
+   },
+   {
+    "field": "human_reason",
+    "old": "docs.ahrefs.com pages returned 404; auth and MCP endpoint details come from search snippets, not an opened primary page.",
+    "new": null,
+    "reason": "Resolved.",
+    "evidence_url": "https://docs.ahrefs.com/mcp/docs/introduction.md"
+   }
+  ],
+  "flags_resolved": [
+   "auth-claim-not-on-page:Bearer token",
+   "auth-claim-not-on-page:OAuth2",
+   "agent-asked-for-human"
+  ]
+ },
+ {
+  "id": 59,
+  "app": "Waterfall.io",
+  "record": {
+   "id": 59,
+   "app": "Waterfall.io",
+   "category": "B2B data enrichment",
+   "one_liner": "Aggregates 30+ data vendors for contact, phone and company enrichment.",
+   "auth_methods": [
+    "API key"
+   ],
+   "auth_notes": "API key in x-api-key header; master key can create sub-keys.",
+   "access": "partner-gated",
+   "access_notes": "Auth docs: contact the team (support@waterfall.io) for API access and pricing; homepage CTAs are 'Book a Call'; no signup, trial or free credits.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "moderate",
+   "api_notes": "Prospector, contact/phone/company enrichment, search, email verification, job change, reporting.",
+   "mcp": "none",
+   "mcp_url": null,
+   "buildability": "blocked",
+   "blocker": "key issuance via sales call",
+   "evidence": {
+    "auth": "https://docs.waterfall.io/v1/authentication",
+    "access": "https://docs.waterfall.io/v1/authentication",
+    "api": "https://docs.waterfall.io/v1/introduction",
+    "mcp": null
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "access_notes",
+    "old": "Docs do not say how to obtain a key; site funnels to Book a Call with founders; no free trial mentioned.",
+    "new": "Auth docs: contact the team (support@waterfall.io) for API access and pricing; homepage CTAs are 'Book a Call'; no signup, trial or free credits.",
+    "reason": "Vendor auth page confirms sales gate.",
+    "evidence_url": "https://docs.waterfall.io/v1/authentication"
+   },
+   {
+    "field": "evidence.access",
+    "old": "https://waterfall.io",
+    "new": "https://docs.waterfall.io/v1/authentication",
+    "reason": "Primary docs page states how keys are obtained.",
+    "evidence_url": "https://docs.waterfall.io/v1/authentication"
+   },
+   {
+    "field": "auth_notes",
+    "old": "API key in x-api-key header (site shows two header names).",
+    "new": "API key in x-api-key header; master key can create sub-keys.",
+    "reason": "Confirmed on auth page.",
+    "evidence_url": "https://docs.waterfall.io/v1/authentication"
+   },
+   {
+    "field": "evidence.auth",
+    "old": "https://docs.waterfall.io/v1/introduction",
+    "new": "https://docs.waterfall.io/v1/authentication",
+    "reason": "Dedicated auth page.",
+    "evidence_url": "https://docs.waterfall.io/v1/authentication"
+   },
+   {
+    "field": "confidence",
+    "old": "low",
+    "new": "medium",
+    "reason": "Access gate confirmed on vendor docs; no MCP found on vendor site/docs.",
+    "evidence_url": "https://docs.waterfall.io/v1/authentication"
+   },
+   {
+    "field": "needs_human",
+    "old": true,
+    "new": false,
+    "reason": "Key-issuance path now documented (contact team).",
+    "evidence_url": "https://docs.waterfall.io/v1/authentication"
+   },
+   {
+    "field": "human_reason",
+    "old": "No documented self-serve key path; pricing/sign-up not confirmed; no MCP found in the pages opened.",
+    "new": null,
+    "reason": "Resolved.",
+    "evidence_url": "https://docs.waterfall.io/v1/authentication"
+   }
+  ],
+  "flags_resolved": [
+   "agent-asked-for-human",
+   "low-confidence"
+  ]
+ },
+ {
+  "id": 73,
+  "app": "Linear",
+  "record": {
+   "id": 73,
+   "app": "Linear",
+   "category": "Project Management",
+   "one_liner": "Issue tracking and project management for software teams.",
+   "auth_methods": [
+    "OAuth2",
+    "API key"
+   ],
+   "auth_notes": "Personal API keys (Authorization: <API_KEY>) and OAuth2 (Authorization: Bearer <token>; auth code and client credentials).",
+   "access": "self-serve-free",
+   "access_notes": "Free plan ($0) includes 'API and webhook access' per pricing page; OAuth apps created in workspace settings.",
+   "api_types": [
+    "GraphQL"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "GraphQL API at api.linear.app/graphql plus SDK.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.linear.app/mcp",
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://linear.app/developers/graphql",
+    "access": "https://linear.app/pricing",
+    "api": "https://linear.app/developers/graphql",
+    "mcp": "https://linear.app/docs/mcp"
+   },
+   "confidence": "high",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "evidence.auth",
+    "old": "https://linear.app/developers/oauth-2-0-authentication",
+    "new": "https://linear.app/developers/graphql",
+    "reason": "Page states API 'supports personal API keys and OAuth2 authentication'.",
+    "evidence_url": "https://linear.app/developers/graphql"
+   },
+   {
+    "field": "auth_notes",
+    "old": "OAuth2 (auth code and client credentials, Bearer); personal API keys (confirmed via MCP page, not auth page).",
+    "new": "Personal API keys (Authorization: <API_KEY>) and OAuth2 (Authorization: Bearer <token>; auth code and client credentials).",
+    "reason": "Confirmed on GraphQL docs page.",
+    "evidence_url": "https://linear.app/developers/graphql"
+   },
+   {
+    "field": "access_notes",
+    "old": "OAuth apps created in workspace settings; API keys by users; plan gating not stated.",
+    "new": "Free plan ($0) includes 'API and webhook access' per pricing page; OAuth apps created in workspace settings.",
+    "reason": "Plan gating now confirmed.",
+    "evidence_url": "https://linear.app/pricing"
+   },
+   {
+    "field": "evidence.access",
+    "old": "https://linear.app/developers/oauth-2-0-authentication",
+    "new": "https://linear.app/pricing",
+    "reason": "Pricing page confirms free plan API access.",
+    "evidence_url": "https://linear.app/pricing"
+   },
+   {
+    "field": "evidence.api",
+    "old": "https://linear.app/developers/oauth-2-0-authentication",
+    "new": "https://linear.app/developers/graphql",
+    "reason": "GraphQL API page.",
+    "evidence_url": "https://linear.app/developers/graphql"
+   },
+   {
+    "field": "confidence",
+    "old": "medium",
+    "new": "high",
+    "reason": "All fields confirmed on vendor pages.",
+    "evidence_url": "https://linear.app/pricing"
+   }
+  ],
+  "flags_resolved": [
+   "auth-claim-not-on-page:API key"
+  ]
+ },
+ {
+  "id": 81,
+  "app": "Stripe",
+  "record": {
+   "id": 81,
+   "app": "Stripe",
+   "category": "Payments",
+   "one_liner": "Online payments, billing, invoicing and payouts platform.",
+   "auth_methods": [
+    "API key",
+    "OAuth2"
+   ],
+   "auth_notes": "Secret/restricted API keys (sk_/rk_) as Bearer-style auth; OAuth used for MCP and Stripe Apps/Connect; agent-tagged restricted keys supported.",
+   "access": "self-serve-free",
+   "access_notes": "Free account; sandbox with test keys is self-serve; live keys after account activation.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "broad",
+   "api_notes": "Very broad REST API (customers, charges, PaymentIntents, subscriptions, invoices, Connect, Issuing, Treasury, Tax, etc.) plus v2 APIs.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.stripe.com",
+   "buildability": "ready",
+   "blocker": "none",
+   "evidence": {
+    "auth": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+    "access": "https://docs.stripe.com/keys",
+    "api": "https://docs.stripe.com/mcp",
+    "mcp": "https://docs.stripe.com/mcp"
+   },
+   "confidence": "high",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "evidence.auth",
+    "old": "https://docs.stripe.com/keys",
+    "new": "https://docs.stripe.com/stripe-apps/api-authentication/oauth",
+    "reason": "Vendor OAuth 2.0 page ('Use the industry standard OAuth 2.0 to authenticate requests to the Stripe API on behalf of your users'); also references secret API keys. API keys documented at https://docs.stripe.com/keys.",
+    "evidence_url": "https://docs.stripe.com/stripe-apps/api-authentication/oauth"
+   }
+  ],
+  "flags_resolved": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ },
+ {
+  "id": 85,
+  "app": "iPayX",
+  "record": {
+   "id": 85,
+   "app": "iPayX",
+   "category": "FX Audit / Fintech",
+   "one_liner": "FX forensic audit API that scores bank/card FX rates against live mid-market.",
+   "auth_methods": [
+    "API key"
+   ],
+   "auth_notes": "Production key (ipx_live_...) sent as Authorization: Bearer in REST and MCP.",
+   "access": "paid-plan",
+   "access_notes": "No free API tier; API plans from $99/mo (Developer, 100 audits, sandbox). MCP has 3 public tools rate-limited per IP plus 3 free forensic reports/IP/month without key.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "narrow",
+   "api_notes": "Few endpoints: POST /v1/audit and score-config GET/PUT/DELETE; docs oddly list a Supabase function base URL.",
+   "mcp": "official",
+   "mcp_url": "https://mcp.ipayx.ai/mcp",
+   "buildability": "ready-with-friction",
+   "blocker": "paid plan and narrow API",
+   "evidence": {
+    "auth": "https://www.ipayx.ai/.well-known/mcp.json",
+    "access": "https://www.ipayx.ai/developers",
+    "api": "https://www.ipayx.ai/developers",
+    "mcp": "https://www.ipayx.ai/.well-known/mcp.json"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "evidence.auth",
+    "old": "https://www.ipayx.ai/developers",
+    "new": "https://www.ipayx.ai/.well-known/mcp.json",
+    "reason": "/developers is a JS-rendered SPA (raw HTML lacks content). Vendor manifest states authentication type 'apiKey', scheme Bearer, 'Authorization: Bearer <ipx_live_...>' from /developers.",
+    "evidence_url": "https://www.ipayx.ai/.well-known/mcp.json"
+   },
+   {
+    "field": "evidence.mcp",
+    "old": "https://www.ipayx.ai/developers",
+    "new": "https://www.ipayx.ai/.well-known/mcp.json",
+    "reason": "Vendor-published manifest: vendor iPayX Protocol, server_url https://mcp.ipayx.ai/mcp, repo github.com/iPAYX-Technologies/mcp-fx-audit; also listed in https://www.ipayx.ai/llms.txt.",
+    "evidence_url": "https://www.ipayx.ai/.well-known/mcp.json"
+   },
+   {
+    "field": "access_notes",
+    "old": "Account signup is free with only 3 lifetime audits; API plans start at $99/mo (Developer, 100 audits, sandbox).",
+    "new": "No free API tier; API plans from $99/mo (Developer, 100 audits, sandbox). MCP has 3 public tools rate-limited per IP plus 3 free forensic reports/IP/month without key.",
+    "reason": "Refined from vendor manifest/llms.txt.",
+    "evidence_url": "https://www.ipayx.ai/llms.txt"
+   }
+  ],
+  "flags_resolved": [
+   "auth-claim-not-on-page:API key",
+   "mcp-not-mentioned-on-evidence"
+  ]
+ },
+ {
+  "id": 91,
+  "app": "NotebookLM",
+  "record": {
+   "id": 91,
+   "app": "NotebookLM",
+   "category": "AI Research / Notes",
+   "one_liner": "Google's AI notebook; Enterprise edition has a notebooks REST API.",
+   "auth_methods": [
+    "OAuth2"
+   ],
+   "auth_notes": "Google user OAuth access token (e.g. gcloud auth print-access-token) as Bearer; user account, not service account.",
+   "access": "paid-plan",
+   "access_notes": "Needs Gemini/NotebookLM Enterprise license plus Cloud NotebookLM User role and Google Cloud project.",
+   "api_types": [
+    "REST"
+   ],
+   "api_breadth": "narrow",
+   "api_notes": "v1alpha Pre-GA: notebooks (create, get, listRecentlyViewed, batchDelete, share), sources (add data sources), audioOverviews (create, delete); separate podcast API. No chat/query endpoint seen.",
+   "mcp": "community",
+   "mcp_url": "https://github.com/jacob-bd/notebooklm-mcp",
+   "buildability": "ready-with-friction",
+   "blocker": "enterprise license, alpha narrow API",
+   "evidence": {
+    "auth": "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.notebooks.audioOverviews/create",
+    "access": "https://docs.cloud.google.com/agentspace/notebooklm-enterprise/docs/api-notebooks",
+    "api": "https://docs.cloud.google.com/agentspace/notebooklm-enterprise/docs/api-notebooks",
+    "mcp": "https://pypi.org/project/notebooklm-mcp-server/"
+   },
+   "confidence": "medium",
+   "needs_human": false,
+   "human_reason": null
+  },
+  "changes": [
+   {
+    "field": "evidence.auth",
+    "old": "https://docs.cloud.google.com/agentspace/notebooklm-enterprise/docs/api-notebooks",
+    "new": "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.notebooks.audioOverviews/create",
+    "reason": "REST reference 'Requires one of the following OAuth scopes: https://www.googleapis.com/auth/cloud-platform ...'; gcloud tokens are Google OAuth2 access tokens.",
+    "evidence_url": "https://docs.cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.notebooks.audioOverviews/create"
+   },
+   {
+    "field": "api_notes",
+    "old": "v1alpha Pre-GA notebooks methods: create, get, list recent, batchDelete, share. No source/content/chat endpoints seen.",
+    "new": "v1alpha Pre-GA: notebooks (create, get, listRecentlyViewed, batchDelete, share), sources (add data sources), audioOverviews (create, delete); separate podcast API. No chat/query endpoint seen.",
+    "reason": "Sources and audio overview APIs exist beyond notebooks methods.",
+    "evidence_url": "https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/api-audio-overview"
+   },
+   {
+    "field": "mcp",
+    "old": "none",
+    "new": "community",
+    "reason": "No Google-published MCP found; community servers exist (e.g. jacob-bd/notebooklm-mcp, unofficial, uses undocumented consumer APIs).",
+    "evidence_url": "https://pypi.org/project/notebooklm-mcp-server/"
+   },
+   {
+    "field": "mcp_url",
+    "old": null,
+    "new": "https://github.com/jacob-bd/notebooklm-mcp",
+    "reason": "Community MCP.",
+    "evidence_url": "https://pypi.org/project/notebooklm-mcp-server/"
+   },
+   {
+    "field": "evidence.mcp",
+    "old": null,
+    "new": "https://pypi.org/project/notebooklm-mcp-server/",
+    "reason": "Community MCP listing.",
+    "evidence_url": "https://pypi.org/project/notebooklm-mcp-server/"
+   }
+  ],
+  "flags_resolved": [
+   "auth-claim-not-on-page:OAuth2"
+  ]
+ }
+]
